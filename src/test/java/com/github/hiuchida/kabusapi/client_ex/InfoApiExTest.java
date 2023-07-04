@@ -1,4 +1,4 @@
-package com.github.hiuchida.kabusapi.client.ex;
+package com.github.hiuchida.kabusapi.client_ex;
 
 import org.junit.Test;
 import org.junit.Ignore;
