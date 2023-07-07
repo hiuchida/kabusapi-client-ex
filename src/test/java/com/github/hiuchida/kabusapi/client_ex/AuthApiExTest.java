@@ -1,12 +1,12 @@
 package com.github.hiuchida.kabusapi.client_ex;
 
-import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.Test;
 
 import io.swagger.client.model.TokenSuccess;
 
 /**
- * API tests for AuthApiWrapper
+ * API tests for AuthApiEx
  */
 //@Ignore
 public class AuthApiExTest {
@@ -27,5 +27,4 @@ public class AuthApiExTest {
 
         // TODO: test validations
     }
-
 }

@@ -1,7 +1,7 @@
 package com.github.hiuchida.kabusapi.client_ex;
 
-import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.Test;
 
 import com.github.hiuchida.kabusapi.enums.symbolname.future.FutureCode;
 import com.github.hiuchida.kabusapi.enums.symbolname.option.PutOrCallCode;
