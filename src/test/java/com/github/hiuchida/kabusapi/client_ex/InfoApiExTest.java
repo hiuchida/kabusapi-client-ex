@@ -3,6 +3,8 @@ package com.github.hiuchida.kabusapi.client_ex;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import com.github.hiuchida.kabusapi.client_ex.model.BoardSuccessEx;
+import com.github.hiuchida.kabusapi.enums.commons.ExchangeCode;
 import com.github.hiuchida.kabusapi.enums.symbolname.future.FutureCode;
 import com.github.hiuchida.kabusapi.enums.symbolname.option.PutOrCallCode;
 
@@ -29,6 +31,23 @@ public class InfoApiExTest {
     public void apisoftlimitGetTest() throws Exception {
         String X_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
         ApiSoftLimitResponse response = api.apisoftlimitGet(X_API_KEY);
+
+        // TODO: test validations
+    }
+    /**
+     * 時価情報・板情報
+     *
+     * 指定した銘柄の時価情報・板情報を取得します&lt;br&gt; レスポンスの一部にnullが発生した場合、該当銘柄を銘柄登録をしてから、 &lt;br&gt;再度時価情報・板情報APIを実行してください。
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void boardGetTest() throws Exception {
+        String X_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        String symbol = "symbol";
+        ExchangeCode ec = ExchangeCode.東証;
+        BoardSuccessEx response = api.boardGet(X_API_KEY, symbol, ec);
 
         // TODO: test validations
     }

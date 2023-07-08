@@ -1,5 +1,7 @@
 package com.github.hiuchida.kabusapi.client_ex;
 
+import com.github.hiuchida.kabusapi.client_ex.model.BoardSuccessEx;
+import com.github.hiuchida.kabusapi.enums.commons.ExchangeCode;
 import com.github.hiuchida.kabusapi.enums.symbolname.future.FutureCode;
 import com.github.hiuchida.kabusapi.enums.symbolname.option.PutOrCallCode;
 
@@ -7,6 +9,7 @@ import io.swagger.client.ApiClient;
 import io.swagger.client.ApiException;
 import io.swagger.client.api.InfoApi;
 import io.swagger.client.model.ApiSoftLimitResponse;
+import io.swagger.client.model.BoardSuccess;
 import io.swagger.client.model.SymbolNameSuccess;
 
 public class InfoApiEx {
@@ -23,6 +26,12 @@ public class InfoApiEx {
 	public ApiSoftLimitResponse apisoftlimitGet(String X_API_KEY) throws ApiException {
 		ApiSoftLimitResponse response = api.apisoftlimitGet(X_API_KEY);
 		return response;
+	}
+
+	public BoardSuccessEx boardGet(String X_API_KEY, String symbol, ExchangeCode ec) throws ApiException {
+		String symbolStr = symbol + "@" + ec.toString();
+		BoardSuccess response = api.boardGet(X_API_KEY, symbolStr);
+		return new BoardSuccessEx(response);
 	}
 
 	public SymbolNameSuccess symbolnameFutureGet(String X_API_KEY, Integer derivMonth, FutureCode futureCode)
