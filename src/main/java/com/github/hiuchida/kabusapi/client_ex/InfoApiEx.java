@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.github.hiuchida.kabusapi.client_ex.model.BoardSuccessEx;
-import com.github.hiuchida.kabusapi.client_ex.model.OrdersSuccessWrapper;
+import com.github.hiuchida.kabusapi.client_ex.model.OrdersSuccessEx;
 import com.github.hiuchida.kabusapi.client_ex.model.PositionsSuccessEx;
 import com.github.hiuchida.kabusapi.enums.commons.ExchangeCode;
 import com.github.hiuchida.kabusapi.enums.commons.ProductCode;
@@ -45,16 +45,16 @@ public class InfoApiEx {
 		return new BoardSuccessEx(response);
 	}
 
-	public List<OrdersSuccessWrapper> ordersGet(String X_API_KEY, ProductCode product, String id, String updtime, String details, String symbol, StateOCode state, SideCode side, CashmarginOCode cashmargin)
+	public List<OrdersSuccessEx> ordersGet(String X_API_KEY, ProductCode product, String id, String updtime, String details, String symbol, StateOCode state, SideCode side, CashmarginOCode cashmargin)
 			throws ApiException {
 		String productStr = (product != null) ? product.toString() : null;
 		String stateStr = (state != null) ? state.toString() : null;
 		String sideStr = (side != null) ? side.toString() : null;
 		String cashmarginStr = (cashmargin != null) ? cashmargin.toString() : null;
 		List<OrdersSuccess> response = api.ordersGet(X_API_KEY, productStr, id, updtime, details, symbol, stateStr, sideStr, cashmarginStr);
-		List<OrdersSuccessWrapper> list = new ArrayList<>();
+		List<OrdersSuccessEx> list = new ArrayList<>();
 		for (OrdersSuccess os : response) {
-			OrdersSuccessWrapper item = new OrdersSuccessWrapper(os);
+			OrdersSuccessEx item = new OrdersSuccessEx(os);
 			list.add(item);
 		}
 		return list;

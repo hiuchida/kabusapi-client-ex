@@ -23,7 +23,7 @@ import com.github.hiuchida.kabusapi.enums.stock.MarginTradeTypeCode;
 import io.swagger.client.model.OrdersSuccess;
 import io.swagger.client.model.OrdersSuccessDetails;
 
-public class OrdersSuccessWrapperTest {
+public class OrdersSuccessExTest {
 
 	@Test
 	public void newOrdersSuccessWrapperTest() {
@@ -101,7 +101,7 @@ public class OrdersSuccessWrapperTest {
 		details.add(osd);
 		os.setDetails(details);
 
-		OrdersSuccessWrapper a1 = new OrdersSuccessWrapper(os);
+		OrdersSuccessEx a1 = new OrdersSuccessEx(os);
 		assertEquals(ID, a1.getID());
 		assertEquals(state, a1.getState());
 		assertEquals(orderState, a1.getOrderState());
@@ -124,7 +124,7 @@ public class OrdersSuccessWrapperTest {
 		assertEquals(marginPremium, a1.getMarginPremium());
 
 		assertEquals(1, a1.getDetails().size());
-		OrdersSuccessWrapper.Detail a2 = a1.getDetails().get(0);
+		OrdersSuccessEx.Detail a2 = a1.getDetails().get(0);
 		assertEquals(seqNum, a2.getSeqNum());
 		assertEquals(ID, a2.getID());
 		assertEquals(recType, a2.getRecType());
@@ -217,7 +217,7 @@ public class OrdersSuccessWrapperTest {
 		details.add(osd);
 		os.setDetails(details);
 
-		OrdersSuccessWrapper o1 = new OrdersSuccessWrapper(os);
+		OrdersSuccessEx o1 = new OrdersSuccessEx(os);
 
 		String a1 = o1.toString();
 		assertNotNull(a1);

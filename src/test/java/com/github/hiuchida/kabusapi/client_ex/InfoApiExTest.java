@@ -6,10 +6,13 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import com.github.hiuchida.kabusapi.client_ex.model.BoardSuccessEx;
+import com.github.hiuchida.kabusapi.client_ex.model.OrdersSuccessEx;
 import com.github.hiuchida.kabusapi.client_ex.model.PositionsSuccessEx;
 import com.github.hiuchida.kabusapi.enums.commons.ExchangeCode;
 import com.github.hiuchida.kabusapi.enums.commons.ProductCode;
 import com.github.hiuchida.kabusapi.enums.commons.SideCode;
+import com.github.hiuchida.kabusapi.enums.orders.CashmarginOCode;
+import com.github.hiuchida.kabusapi.enums.orders.StateOCode;
 import com.github.hiuchida.kabusapi.enums.symbolname.future.FutureCode;
 import com.github.hiuchida.kabusapi.enums.symbolname.option.PutOrCallCode;
 
@@ -53,6 +56,29 @@ public class InfoApiExTest {
         String symbol = "symbol";
         ExchangeCode ec = ExchangeCode.東証;
         BoardSuccessEx response = api.boardGet(X_API_KEY, symbol, ec);
+
+        // TODO: test validations
+    }
+    /**
+     * 注文約定照会
+     *
+     * 注文一覧を取得します。&lt;br&gt; ※下記Queryパラメータは任意設定となります。
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void ordersGetTest() throws Exception {
+        String X_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        ProductCode product = null;
+        String id = null;
+        String updtime = null;
+        String details = null;
+        String symbol = null;
+        StateOCode state = null;
+        SideCode side = null;
+        CashmarginOCode cashmargin = null;
+        List<OrdersSuccessEx> response = api.ordersGet(X_API_KEY, product, id, updtime, details, symbol, state, side, cashmargin);
 
         // TODO: test validations
     }

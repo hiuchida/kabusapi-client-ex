@@ -18,7 +18,7 @@ import com.github.hiuchida.kabusapi.enums.stock.MarginTradeTypeCode;
 import io.swagger.client.model.OrdersSuccess;
 import io.swagger.client.model.OrdersSuccessDetails;
 
-public class OrdersSuccessWrapper {
+public class OrdersSuccessEx {
 
 	public static class Detail {
 		
@@ -257,7 +257,7 @@ public class OrdersSuccessWrapper {
 
 	private List<Detail> details = null;
 
-	public OrdersSuccessWrapper(OrdersSuccess response) {
+	public OrdersSuccessEx(OrdersSuccess response) {
 		this.ID = response.getID();
 		this.state = StateOCode.valueOf(response.getState());
 		this.orderState = StateOCode.valueOf(response.getOrderState());
