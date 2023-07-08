@@ -1,7 +1,13 @@
 package com.github.hiuchida.kabusapi.client_ex;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.github.hiuchida.kabusapi.client_ex.model.BoardSuccessEx;
+import com.github.hiuchida.kabusapi.client_ex.model.PositionsSuccessEx;
 import com.github.hiuchida.kabusapi.enums.commons.ExchangeCode;
+import com.github.hiuchida.kabusapi.enums.commons.ProductCode;
+import com.github.hiuchida.kabusapi.enums.commons.SideCode;
 import com.github.hiuchida.kabusapi.enums.symbolname.future.FutureCode;
 import com.github.hiuchida.kabusapi.enums.symbolname.option.PutOrCallCode;
 
@@ -10,6 +16,7 @@ import io.swagger.client.ApiException;
 import io.swagger.client.api.InfoApi;
 import io.swagger.client.model.ApiSoftLimitResponse;
 import io.swagger.client.model.BoardSuccess;
+import io.swagger.client.model.PositionsSuccess;
 import io.swagger.client.model.SymbolNameSuccess;
 
 public class InfoApiEx {
@@ -32,6 +39,22 @@ public class InfoApiEx {
 		String symbolStr = symbol + "@" + ec.toString();
 		BoardSuccess response = api.boardGet(X_API_KEY, symbolStr);
 		return new BoardSuccessEx(response);
+	}
+
+	public List<PositionsSuccessEx> positionsGet(String X_API_KEY, ProductCode product, String symbol, SideCode side, String addinfo)
+			throws ApiException {
+		String productStr = (product != null) ? product.toString() : null;
+		String sideStr = (side != null) ? side.toString() : null;
+		List<PositionsSuccess> response = api.positionsGet(X_API_KEY, productStr, symbol, sideStr, addinfo);
+		if (response == null) {
+			return null;
+		}
+		List<PositionsSuccessEx> list = new ArrayList<>();
+		for (PositionsSuccess ps : response) {
+			PositionsSuccessEx item = new PositionsSuccessEx(ps);
+			list.add(item);
+		}
+		return list;
 	}
 
 	public SymbolNameSuccess symbolnameFutureGet(String X_API_KEY, Integer derivMonth, FutureCode futureCode)
