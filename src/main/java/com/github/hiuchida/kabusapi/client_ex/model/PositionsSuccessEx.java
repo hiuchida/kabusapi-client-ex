@@ -247,7 +247,7 @@ public class PositionsSuccessEx {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("class PositionsSuccessWrapper {\n");
+		sb.append("class PositionsSuccessEx {\n");
 
 		sb.append("    executionID: ").append(toIndentedString(executionID)).append("\n");
 		sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");

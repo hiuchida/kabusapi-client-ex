@@ -460,7 +460,7 @@ public class OrdersSuccessEx {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("class OrdersSuccessWrapper {\n");
+		sb.append("class OrdersSuccessEx {\n");
 
 		sb.append("    ID: ").append(toIndentedString(ID)).append("\n");
 		sb.append("    state: ").append(toIndentedString(state)).append("\n");
