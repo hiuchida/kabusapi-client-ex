@@ -1,5 +1,7 @@
 package com.github.hiuchida.kabusapi.client_ex;
 
+import com.github.hiuchida.kabusapi.client_ex.model.SendOrderFutureRequestEx;
+import com.github.hiuchida.kabusapi.client_ex.model.SendOrderOptionRequestEx;
 import com.github.hiuchida.kabusapi.client_ex.model.SendOrderRequestEx;
 
 import io.swagger.client.ApiClient;
@@ -8,6 +10,8 @@ import io.swagger.client.api.OrderApi;
 import io.swagger.client.model.OrderSuccess;
 import io.swagger.client.model.RequestCancelOrder;
 import io.swagger.client.model.RequestSendOrder;
+import io.swagger.client.model.RequestSendOrderDerivFuture;
+import io.swagger.client.model.RequestSendOrderDerivOption;
 
 public class OrderApiEx {
 	private OrderApi api;
@@ -25,6 +29,22 @@ public class OrderApiEx {
 		body.setOrderId(orderId);
 		body.setPassword(password);
 		OrderSuccess response = api.cancelorderPut(body, X_API_KEY);
+		return response;
+	}
+
+	public OrderSuccess sendoderFuturePost(SendOrderFutureRequestEx req, String password, String X_API_KEY)
+			throws ApiException {
+		RequestSendOrderDerivFuture body = req.toRequestSendOrderDerivFuture();
+		body.setPassword(password);
+		OrderSuccess response = api.sendoderFuturePost(body, X_API_KEY);
+		return response;
+	}
+
+	public OrderSuccess sendorderOptionPost(SendOrderOptionRequestEx req, String password, String X_API_KEY)
+			throws ApiException {
+		RequestSendOrderDerivOption body = req.toRequestSendOrderDerivOption();
+		body.setPassword(password);
+		OrderSuccess response = api.sendorderOptionPost(body, X_API_KEY);
 		return response;
 	}
 
