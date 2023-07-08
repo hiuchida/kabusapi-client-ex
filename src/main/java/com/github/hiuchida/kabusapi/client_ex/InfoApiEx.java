@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.github.hiuchida.kabusapi.client_ex.model.BoardSuccessEx;
+import com.github.hiuchida.kabusapi.client_ex.model.OrdersSuccessWrapper;
 import com.github.hiuchida.kabusapi.client_ex.model.PositionsSuccessEx;
 import com.github.hiuchida.kabusapi.enums.commons.ExchangeCode;
 import com.github.hiuchida.kabusapi.enums.commons.ProductCode;
 import com.github.hiuchida.kabusapi.enums.commons.SideCode;
+import com.github.hiuchida.kabusapi.enums.orders.CashmarginOCode;
+import com.github.hiuchida.kabusapi.enums.orders.StateOCode;
 import com.github.hiuchida.kabusapi.enums.symbolname.future.FutureCode;
 import com.github.hiuchida.kabusapi.enums.symbolname.option.PutOrCallCode;
 
@@ -16,6 +19,7 @@ import io.swagger.client.ApiException;
 import io.swagger.client.api.InfoApi;
 import io.swagger.client.model.ApiSoftLimitResponse;
 import io.swagger.client.model.BoardSuccess;
+import io.swagger.client.model.OrdersSuccess;
 import io.swagger.client.model.PositionsSuccess;
 import io.swagger.client.model.SymbolNameSuccess;
 
@@ -39,6 +43,21 @@ public class InfoApiEx {
 		String symbolStr = symbol + "@" + ec.toString();
 		BoardSuccess response = api.boardGet(X_API_KEY, symbolStr);
 		return new BoardSuccessEx(response);
+	}
+
+	public List<OrdersSuccessWrapper> ordersGet(String X_API_KEY, ProductCode product, String id, String updtime, String details, String symbol, StateOCode state, SideCode side, CashmarginOCode cashmargin)
+			throws ApiException {
+		String productStr = (product != null) ? product.toString() : null;
+		String stateStr = (state != null) ? state.toString() : null;
+		String sideStr = (side != null) ? side.toString() : null;
+		String cashmarginStr = (cashmargin != null) ? cashmargin.toString() : null;
+		List<OrdersSuccess> response = api.ordersGet(X_API_KEY, productStr, id, updtime, details, symbol, stateStr, sideStr, cashmarginStr);
+		List<OrdersSuccessWrapper> list = new ArrayList<>();
+		for (OrdersSuccess os : response) {
+			OrdersSuccessWrapper item = new OrdersSuccessWrapper(os);
+			list.add(item);
+		}
+		return list;
 	}
 
 	public List<PositionsSuccessEx> positionsGet(String X_API_KEY, ProductCode product, String symbol, SideCode side, String addinfo)
