@@ -13,6 +13,7 @@ import com.github.hiuchida.kabusapi.enums.orders.CashmarginOCode;
 import com.github.hiuchida.kabusapi.enums.orders.StateOCode;
 import com.github.hiuchida.kabusapi.enums.symbolname.future.FutureCode;
 import com.github.hiuchida.kabusapi.enums.symbolname.option.PutOrCallCode;
+import com.github.hiuchida.kabusapi.enums.util.EnumsUtil;
 
 import io.swagger.client.ApiClient;
 import io.swagger.client.ApiException;
@@ -47,10 +48,10 @@ public class InfoApiEx {
 
 	public List<OrdersSuccessEx> ordersGet(String X_API_KEY, ProductCode product, String id, String updtime, String details, String symbol, StateOCode state, SideCode side, CashmarginOCode cashmargin)
 			throws ApiException {
-		String productStr = (product != null) ? product.toString() : null;
-		String stateStr = (state != null) ? state.toString() : null;
-		String sideStr = (side != null) ? side.toString() : null;
-		String cashmarginStr = (cashmargin != null) ? cashmargin.toString() : null;
+		String productStr = EnumsUtil.toString(product);
+		String stateStr = EnumsUtil.toString(state);
+		String sideStr = EnumsUtil.toString(side);
+		String cashmarginStr = EnumsUtil.toString(cashmargin);
 		List<OrdersSuccess> response = api.ordersGet(X_API_KEY, productStr, id, updtime, details, symbol, stateStr, sideStr, cashmarginStr);
 		List<OrdersSuccessEx> list = new ArrayList<>();
 		for (OrdersSuccess os : response) {
@@ -62,8 +63,8 @@ public class InfoApiEx {
 
 	public List<PositionsSuccessEx> positionsGet(String X_API_KEY, ProductCode product, String symbol, SideCode side, String addinfo)
 			throws ApiException {
-		String productStr = (product != null) ? product.toString() : null;
-		String sideStr = (side != null) ? side.toString() : null;
+		String productStr = EnumsUtil.toString(product);
+		String sideStr = EnumsUtil.toString(side);
 		List<PositionsSuccess> response = api.positionsGet(X_API_KEY, productStr, symbol, sideStr, addinfo);
 		if (response == null) {
 			return null;
@@ -78,14 +79,14 @@ public class InfoApiEx {
 
 	public SymbolNameSuccess symbolnameFutureGet(String X_API_KEY, Integer derivMonth, FutureCode futureCode)
 			throws ApiException {
-		String futureCodeStr = (futureCode != null) ? futureCode.toString() : null;
+		String futureCodeStr = EnumsUtil.toString(futureCode);
 		SymbolNameSuccess response = api.symbolnameFutureGet(X_API_KEY, derivMonth, futureCodeStr);
 		return response;
 	}
 
 	public SymbolNameSuccess symbolnameOptionGet(String X_API_KEY, Integer derivMonth, PutOrCallCode putOrCall, Integer strikePrice)
 			throws ApiException {
-		String putOrCallStr = (putOrCall != null) ? putOrCall.toString() : null;
+		String putOrCallStr = EnumsUtil.toString(putOrCall);
 		SymbolNameSuccess response = api.symbolnameOptionGet(X_API_KEY, derivMonth, putOrCallStr, strikePrice);
 		return response;
 	}
