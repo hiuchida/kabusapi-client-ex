@@ -66,9 +66,6 @@ public class InfoApiEx {
 		String productStr = EnumsUtil.toString(product);
 		String sideStr = EnumsUtil.toString(side);
 		List<PositionsSuccess> response = api.positionsGet(X_API_KEY, productStr, symbol, sideStr, addinfo);
-		if (response == null) {
-			return null;
-		}
 		List<PositionsSuccessEx> list = new ArrayList<>();
 		for (PositionsSuccess ps : response) {
 			PositionsSuccessEx item = new PositionsSuccessEx(ps);
