@@ -1,6 +1,7 @@
 package com.github.hiuchida.kabusapi.client_ex.model;
 
 import com.github.hiuchida.kabusapi.enums.commons.ExchangeCode;
+import com.github.hiuchida.kabusapi.enums.util.EnumsUtil;
 
 import io.swagger.client.model.RequestRegisterSymbols;
 
@@ -37,7 +38,7 @@ public class RegisterSymbolEx {
 	public RequestRegisterSymbols toRequestRegisterSymbols() {
 		RequestRegisterSymbols rrs = new RequestRegisterSymbols();
 		rrs.setSymbol(symbol);
-		rrs.setExchange(exchange != null ? exchange.intValue() : null);
+		rrs.setExchange(EnumsUtil.intValue(exchange));
 		return rrs;
 	}
 
