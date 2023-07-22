@@ -66,6 +66,11 @@ public class SendOrderOptionRequestEx extends SendOrderDerivRequestEx {
 		return this;
 	}
 
+	public SendOrderOptionRequestEx reverseLimitOrder(ReverseLimitOrder reverseLimitOrder) {
+		this.reverseLimitOrder = reverseLimitOrder;
+		return this;
+	}
+
 	public RequestSendOrderDerivOption toRequestSendOrderDerivOption() {
 		RequestSendOrderDerivOption body = new RequestSendOrderDerivOption();
 		body.setSymbol(symbol);
