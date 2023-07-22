@@ -23,4 +23,7 @@ public class BoardBeanFactory {
 		return bb;
 	}
 
+	private BoardBeanFactory() {
+	}
+
 }

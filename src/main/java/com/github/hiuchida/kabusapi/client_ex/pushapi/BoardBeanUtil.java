@@ -23,4 +23,7 @@ public class BoardBeanUtil {
 		return s;
 	}
 
+	private BoardBeanUtil() {
+	}
+
 }
