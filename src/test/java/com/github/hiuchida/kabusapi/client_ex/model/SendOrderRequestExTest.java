@@ -2,6 +2,7 @@ package com.github.hiuchida.kabusapi.client_ex.model;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 
@@ -170,7 +171,7 @@ public class SendOrderRequestExTest {
 		
 		String a1 = o1.toString();
 		assertNotNull(a1);
-		System.out.println(a1);
+//		System.out.println(a1);
 	}
 
 	@Test
@@ -222,7 +223,58 @@ public class SendOrderRequestExTest {
 		
 		String a1 = o1.toString();
 		assertNotNull(a1);
-		System.out.println(a1);
+//		System.out.println(a1);
+	}
+
+	@Test
+	public void toIndentedStringTest() {
+		TriggerSecCode triggerSec = TriggerSecCode.発注銘柄;
+		Double triggerPrice = 12.3;
+		UnderOverCode underOver = UnderOverCode.以下;
+		AfterHitOrderTypeSCode afterHitOrderType = AfterHitOrderTypeSCode.指値;
+		Double afterHitPrice = 12.1;
+
+		SendOrderRequestEx.ReverseLimitOrder sr = new SendOrderRequestEx.ReverseLimitOrder(triggerSec, triggerPrice, underOver, afterHitOrderType, afterHitPrice);
+		assertEquals(triggerSec, sr.getTriggerSec());
+		assertEquals(triggerPrice, sr.getTriggerPrice());
+		assertEquals(underOver, sr.getUnderOver());
+		assertEquals(afterHitOrderType, sr.getAfterHitOrderType());
+		assertEquals(afterHitPrice, sr.getAfterHitPrice());
+
+		sr.setTriggerSec(null);
+		sr.setTriggerPrice(null);
+		sr.setUnderOver(null);
+		sr.setAfterHitOrderType(null);
+		sr.setAfterHitPrice(null);
+		String a2 = sr.toString();
+		assertNotNull(a2);
+//		System.out.println(a2);
+
+		SendOrderRequestEx o1 = new SendOrderRequestEx();
+		o1.setClosePositions(null);
+		o1.reverseLimitOrder(null);
+		o1.setReverseLimitOrder(null);
+		assertNull(o1.getSymbol());
+		assertNull(o1.getExchange());
+		assertNull(o1.getSecurityType());
+		assertNull(o1.getSide());
+		assertNull(o1.getCashMargin());
+		assertNull(o1.getMarginTradeType());
+		assertNull(o1.getMarginPremiumUnit());
+		assertNull(o1.getDelivType());
+		assertNull(o1.getFundType());
+		assertNull(o1.getAccountType());
+		assertNull(o1.getQty());
+		assertNull(o1.getClosePositionOrder());
+		assertNull(o1.getClosePositions());
+		assertNull(o1.getFrontOrderType());
+		assertNull(o1.getPrice());
+		assertNull(o1.getExpireDay());
+		assertNull(o1.getReverseLimitOrder());
+
+		String a1 = o1.toString();
+		assertNotNull(a1);
+//		System.out.println(a1);
 	}
 
 }

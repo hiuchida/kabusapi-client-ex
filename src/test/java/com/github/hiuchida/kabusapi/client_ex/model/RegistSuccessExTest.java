@@ -50,4 +50,16 @@ public class RegistSuccessExTest {
 //		System.out.println(a1);
 	}
 
+	@Test
+	public void toIndentedStringTest() {
+		RegistSuccess rs = new RegistSuccess();
+
+		RegistSuccessEx o1 = new RegistSuccessEx(rs);
+
+		o1.setRegistList(null);
+		String a1 = o1.toString();
+		assertNotNull(a1);
+//		System.out.println(a1);
+	}
+
 }

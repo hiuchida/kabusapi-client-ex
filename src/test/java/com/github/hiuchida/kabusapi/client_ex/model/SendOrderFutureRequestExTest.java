@@ -2,6 +2,7 @@ package com.github.hiuchida.kabusapi.client_ex.model;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 
@@ -132,7 +133,7 @@ public class SendOrderFutureRequestExTest {
 		
 		String a1 = o1.toString();
 		assertNotNull(a1);
-		System.out.println(a1);
+//		System.out.println(a1);
 	}
 
 	@Test
@@ -173,7 +174,31 @@ public class SendOrderFutureRequestExTest {
 		
 		String a1 = o1.toString();
 		assertNotNull(a1);
-		System.out.println(a1);
+//		System.out.println(a1);
+	}
+
+	@Test
+	public void toIndentedStringTest() {
+		SendOrderFutureRequestEx o1 = new SendOrderFutureRequestEx();
+		o1.setClosePositions(null);
+		o1.reverseLimitOrder(null);
+		o1.setReverseLimitOrder(null);
+		assertNull(o1.getSymbol());
+		assertNull(o1.getExchange());
+		assertNull(o1.getTradeType());
+		assertNull(o1.getTimeInForce());
+		assertNull(o1.getSide());
+		assertNull(o1.getQty());
+		assertNull(o1.getClosePositionOrder());
+		assertNull(o1.getClosePositions());
+		assertNull(o1.getFrontOrderType());
+		assertNull(o1.getPrice());
+		assertNull(o1.getExpireDay());
+		assertNull(o1.getReverseLimitOrder());
+
+		String a1 = o1.toString();
+		assertNotNull(a1);
+//		System.out.println(a1);
 	}
 
 }

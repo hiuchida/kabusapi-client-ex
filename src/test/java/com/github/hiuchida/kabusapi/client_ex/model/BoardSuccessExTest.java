@@ -479,7 +479,102 @@ public class BoardSuccessExTest {
 
 		String a1 = o1.toString();
 		assertNotNull(a1);
-		System.out.println(a1);
+//		System.out.println(a1);
+	}
+
+	@Test
+	public void toIndentedStringTest() {
+		BoardSuccess bs = new BoardSuccess();
+
+		BoardSuccessSell1 sell1 = new BoardSuccessSell1();
+
+		BoardSuccessEx.Quotation1 q1 = BoardSuccessEx.Quotation1.create(sell1);
+
+		q1.setTime(null);
+		q1.setSign(null);
+		q1.setPrice(null);
+		q1.setQty(null);
+		String a2 = q1.toString();
+		assertNotNull(a2);
+//		System.out.println(a2);
+
+		BoardSuccessSell2 sell2 = new BoardSuccessSell2();
+
+		BoardSuccessEx.Quotation2 q2 = BoardSuccessEx.Quotation2.create(sell2);
+		q2.setPrice(null);
+		q2.setQty(null);
+		String a3 = q2.toString();
+		assertNotNull(a3);
+//		System.out.println(a3);
+
+		BoardSuccessEx o1 = new BoardSuccessEx(bs);
+
+		o1.setSymbol(null);
+		o1.setSymbolName(null);
+		o1.setExchange(null);
+		o1.setExchangeName(null);
+		o1.setCurrentPrice(null);
+		o1.setCurrentPriceTime(null);
+		o1.setCurrentPriceChangeStatus(null);
+		o1.setCurrentPriceStatus(null);
+		o1.setCalcPrice(null);
+		o1.setPreviousClose(null);
+		o1.setPreviousCloseTime(null);
+		o1.setChangePreviousClose(null);
+		o1.setChangePreviousClosePer(null);
+		o1.setOpeningPrice(null);
+		o1.setOpeningPriceTime(null);
+		o1.setHighPrice(null);
+		o1.setHighPriceTime(null);
+		o1.setLowPrice(null);
+		o1.setLowPriceTime(null);
+		o1.setTradingVolume(null);
+		o1.setTradingVolumeTime(null);
+		o1.setVWAP(null);
+		o1.setTradingValue(null);
+		o1.setBidQty(null);
+		o1.setBidPrice(null);
+		o1.setBidTime(null);
+		o1.setBidSign(null);
+		o1.setMarketOrderSellQty(null);
+		o1.setSell1(q1);
+		o1.setSell2(q2);
+		o1.setSell3(null);
+		o1.setSell4(null);
+		o1.setSell5(null);
+		o1.setSell6(null);
+		o1.setSell7(null);
+		o1.setSell8(null);
+		o1.setSell9(null);
+		o1.setSell10(null);
+		o1.setAskQty(null);
+		o1.setAskPrice(null);
+		o1.setAskTime(null);
+		o1.setAskSign(null);
+		o1.setMarketOrderBuyQty(null);
+		o1.setBuy1(null);
+		o1.setBuy2(null);
+		o1.setBuy3(null);
+		o1.setBuy4(null);
+		o1.setBuy5(null);
+		o1.setBuy6(null);
+		o1.setBuy7(null);
+		o1.setBuy8(null);
+		o1.setBuy9(null);
+		o1.setBuy10(null);
+		o1.setOverSellQty(null);
+		o1.setUnderBuyQty(null);
+		o1.setTotalMarketValue(null);
+		o1.setClearingPrice(null);
+		o1.setIV(null);
+		o1.setGamma(null);
+		o1.setTheta(null);
+		o1.setVega(null);
+		o1.setDelta(null);
+		o1.setSecurityType(null);
+		String a1 = o1.toString();
+		assertNotNull(a1);
+//		System.out.println(a1);
 	}
 
 }

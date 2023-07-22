@@ -6,6 +6,7 @@ import org.junit.Test;
 import com.github.hiuchida.kabusapi.client_ex.model.SendOrderFutureRequestEx;
 import com.github.hiuchida.kabusapi.client_ex.model.SendOrderOptionRequestEx;
 import com.github.hiuchida.kabusapi.client_ex.model.SendOrderRequestEx;
+import com.github.hiuchida.kabusapi.enums.commons.ClosePositionOrderCode;
 import com.github.hiuchida.kabusapi.enums.commons.SideCode;
 import com.github.hiuchida.kabusapi.enums.deliv.ExchangeDCode;
 import com.github.hiuchida.kabusapi.enums.deliv.FrontOrderTypeDCode;
@@ -16,6 +17,8 @@ import com.github.hiuchida.kabusapi.enums.stock.CashmarginStockCode;
 import com.github.hiuchida.kabusapi.enums.stock.DelivTypeCode;
 import com.github.hiuchida.kabusapi.enums.stock.ExchangeSCode;
 import com.github.hiuchida.kabusapi.enums.stock.FrontOrderTypeSCode;
+import com.github.hiuchida.kabusapi.enums.stock.FundTypeCode;
+import com.github.hiuchida.kabusapi.enums.stock.MarginTradeTypeCode;
 import com.github.hiuchida.kabusapi.enums.stock.SecurityTypeSCode;
 
 import io.swagger.client.model.OrderSuccess;
@@ -56,6 +59,7 @@ public class OrderApiExTest {
         SendOrderFutureRequestEx body = new SendOrderFutureRequestEx();
         body.symbol("symbol").exchange(ExchangeDCode.日中).tradeType(TradeTypeCode.新規);
         body.timeInForce(TimeInForceCode.FAK).side(SideCode.買).qty(0);
+        body.closePositionOrder(ClosePositionOrderCode.日付_古い順_損益_高い順);
         body.frontOrderType(FrontOrderTypeDCode.成行).price(0.0).expireDay(0);
         String X_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
         OrderSuccess response = api.sendoderFuturePost(body, "xxxxxx", X_API_KEY);
@@ -75,6 +79,7 @@ public class OrderApiExTest {
         SendOrderOptionRequestEx body = new SendOrderOptionRequestEx();
         body.symbol("symbol").exchange(ExchangeDCode.日中).tradeType(TradeTypeCode.新規);
         body.timeInForce(TimeInForceCode.FAK).side(SideCode.買).qty(0);
+        body.closePositionOrder(ClosePositionOrderCode.日付_古い順_損益_高い順);
         body.frontOrderType(FrontOrderTypeDCode.成行).price(0.0).expireDay(0);
         String X_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
         OrderSuccess response = api.sendorderOptionPost(body, "xxxxxx", X_API_KEY);
@@ -93,8 +98,12 @@ public class OrderApiExTest {
     public void sendorderPostTest() throws Exception {
         SendOrderRequestEx body = new SendOrderRequestEx();
         body.symbol("symbol").exchange(ExchangeSCode.東証).securityType(SecurityTypeSCode.株式);
-        body.side(SideCode.買).cashMargin(CashmarginStockCode.新規).delivType(DelivTypeCode.指定なし);
-        body.accountType(AccountTypeCode.特定).qty(0).frontOrderType(FrontOrderTypeSCode.成行);
+        body.side(SideCode.買).cashMargin(CashmarginStockCode.新規).marginTradeType(MarginTradeTypeCode.制度信用);
+        body.marginPremiumUnit(12.3).delivType(DelivTypeCode.指定なし);
+        body.fundType(FundTypeCode.信用代用);
+        body.accountType(AccountTypeCode.特定).qty(0);
+        body.closePositionOrder(ClosePositionOrderCode.日付_古い順_損益_高い順);
+        body.frontOrderType(FrontOrderTypeSCode.成行);
         body.price(0.0).expireDay(0);
         String X_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
         OrderSuccess response = api.sendorderPost(body, "xxxxxx", X_API_KEY);

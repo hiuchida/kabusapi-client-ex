@@ -1,5 +1,8 @@
 package com.github.hiuchida.kabusapi.client_ex;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -25,10 +28,20 @@ public class RegisterApiExTest {
      *          if the Api call fails
      */
     @Test
-    public void registerPutTest() throws Exception {
+    public void registerPut1Test() throws Exception {
         RegisterSymbolEx body = new RegisterSymbolEx();
         String X_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
         RegistSuccessEx response = api.registerPut(body, X_API_KEY);
+
+        // TODO: test validations
+    }
+    @Test
+    public void registerPut2Test() throws Exception {
+        List<RegisterSymbolEx> reqList = new ArrayList<>();
+        RegisterSymbolEx body = new RegisterSymbolEx();
+        reqList.add(body);
+        String X_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        RegistSuccessEx response = api.registerPut(reqList, X_API_KEY);
 
         // TODO: test validations
     }
@@ -56,10 +69,20 @@ public class RegisterApiExTest {
      *          if the Api call fails
      */
     @Test
-    public void unregisterPutTest() throws Exception {
+    public void unregisterPut1Test() throws Exception {
         RegisterSymbolEx body = new RegisterSymbolEx();
         String X_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
         RegistSuccessEx response = api.unregisterPut(body, X_API_KEY);
+
+        // TODO: test validations
+    }
+    @Test
+    public void unregisterPut2Test() throws Exception {
+        List<RegisterSymbolEx> reqList = new ArrayList<>();
+        RegisterSymbolEx body = new RegisterSymbolEx();
+        reqList.add(body);
+        String X_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        RegistSuccessEx response = api.unregisterPut(reqList, X_API_KEY);
 
         // TODO: test validations
     }

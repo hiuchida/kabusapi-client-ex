@@ -128,4 +128,48 @@ public class BoardBeanTest {
 //		System.out.println(a1);
 	}
 
+	@Test
+	public void toJsonStringTest1() {
+		BoardBean bb = BoardBeanFactory.parseJson(JSON1);
+		String a1 = BoardBeanUtil.toJsonString(bb);
+//		assertEquals(JSON1, a1); // 属性の並び順が変わるため単純に比較できない
+		assertNotNull(a1);
+//		System.out.println(a1);
+	}
+
+	@Test
+	public void toJsonStringTest2() {
+		BoardBean bb = BoardBeanFactory.parseJson(JSON2);
+		String a1 = BoardBeanUtil.toJsonString(bb);
+//		assertEquals(JSON2, a1); // 属性の並び順が変わるため単純に比較できない
+		assertNotNull(a1);
+//		System.out.println(a1);
+	}
+
+	@Test
+	public void toJsonStringTest3() {
+		BoardBean bb = BoardBeanFactory.parseJson(JSON3);
+		String a1 = BoardBeanUtil.toJsonString(bb);
+//		assertEquals(JSON3, a1); // 属性の並び順が変わるため単純に比較できない
+		assertNotNull(a1);
+//		System.out.println(a1);
+	}
+
+	@Test
+	public void toJsonStringTest4() {
+		BoardBean bb = BoardBeanFactory.parseJson(JSON4);
+		String a1 = BoardBeanUtil.toJsonString(bb);
+//		assertEquals(JSON4, a1); // 属性の並び順が変わるため単純に比較できない
+		assertNotNull(a1);
+//		System.out.println(a1);
+	}
+
+	@Test
+	public void toIndentedStringTest() {
+		BoardBean bb = new BoardBean();
+		String a1 = bb.toString();
+		assertNotNull(a1);
+//		System.out.println(a1);
+	}
+
 }

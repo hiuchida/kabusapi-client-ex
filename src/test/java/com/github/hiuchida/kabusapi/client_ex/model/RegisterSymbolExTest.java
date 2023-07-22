@@ -36,4 +36,17 @@ public class RegisterSymbolExTest {
 //		System.out.println(a1);
 	}
 
+	@Test
+	public void toIndentedStringTest() {
+		String symbol = "symbol";
+		ExchangeCode exchange = ExchangeCode.東証;
+		
+		RegisterSymbolEx o1 = new RegisterSymbolEx(symbol, exchange);
+		o1.setSymbol(null);
+		o1.setExchange(null);
+		String a1 = o1.toString();
+		assertNotNull(a1);
+//		System.out.println(a1);
+	}
+
 }

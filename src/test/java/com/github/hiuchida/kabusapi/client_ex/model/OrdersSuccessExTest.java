@@ -221,7 +221,63 @@ public class OrdersSuccessExTest {
 
 		String a1 = o1.toString();
 		assertNotNull(a1);
-		System.out.println(a1);
+//		System.out.println(a1);
+	}
+
+	@Test
+	public void toIndentedStringTest() {
+		OrdersSuccess os = new OrdersSuccess();
+
+		OrdersSuccessDetails osd = new OrdersSuccessDetails();
+
+		List<OrdersSuccessEx.Detail> details = new ArrayList<>();
+		OrdersSuccessEx.Detail d1 = new OrdersSuccessEx.Detail(osd);
+
+		d1.setSeqNum(null);
+		d1.setID(null);
+		d1.setRecType(null);
+		d1.setExchangeID(null);
+		d1.setState(null);
+		d1.setTransactTime(null);
+		d1.setOrdType(null);
+		d1.setPrice(null);
+		d1.setQty(null);
+		d1.setExecutionID(null);
+		d1.setExecutionDay(null);
+		d1.setDelivDay(null);
+		d1.setCommission(null);
+		d1.setCommissionTax(null);
+		String a2 = d1.toString();
+		assertNotNull(a2);
+//		System.out.println(a2);
+		details.add(d1);
+
+		OrdersSuccessEx o1 = new OrdersSuccessEx(os);
+
+		o1.setID(null);
+		o1.setState(null);
+		o1.setOrderState(null);
+		o1.setOrdType(null);
+		o1.setRecvTime(null);
+		o1.setSymbol(null);
+		o1.setSymbolName(null);
+		o1.setExchange(null);
+		o1.setExchangeName(null);
+		o1.setTimeInForce(null);
+		o1.setPrice(null);
+		o1.setOrderQty(null);
+		o1.setCumQty(null);
+		o1.setSide(null);
+		o1.setCashMargin(null);
+		o1.setAccountType(null);
+		o1.setDelivType(null);
+		o1.setExpireDay(null);
+		o1.setMarginTradeType(null);
+		o1.setMarginPremium(null);
+		o1.setDetails(details);
+		String a1 = o1.toString();
+		assertNotNull(a1);
+//		System.out.println(a1);
 	}
 
 }

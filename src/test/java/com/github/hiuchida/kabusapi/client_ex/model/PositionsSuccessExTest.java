@@ -137,7 +137,39 @@ public class PositionsSuccessExTest {
 
 		String a1 = o1.toString();
 		assertNotNull(a1);
-		System.out.println(a1);
+//		System.out.println(a1);
+	}
+
+	@Test
+	public void toIndentedStringTest() {
+		PositionsSuccess ps = new PositionsSuccess();
+
+		PositionsSuccessEx o1 = new PositionsSuccessEx(ps);
+
+		o1.setExecutionID(null);
+		o1.setAccountType(null);
+		o1.setSymbol(null);
+		o1.setSymbolName(null);
+		o1.setExchange(null);
+		o1.setExchangeName(null);
+		o1.setSecurityType(null);
+		o1.setExecutionDay(null);
+		o1.setPrice(null);
+		o1.setLeavesQty(null);
+		o1.setHoldQty(null);
+		o1.setSide(null);
+		o1.setExpenses(null);
+		o1.setCommission(null);
+		o1.setCommissionTax(null);
+		o1.setExpireDay(null);
+		o1.setMarginTradeType(null);
+		o1.setCurrentPrice(null);
+		o1.setValuation(null);
+		o1.setProfitLoss(null);
+		o1.setProfitLossRate(null);
+		String a1 = o1.toString();
+		assertNotNull(a1);
+//		System.out.println(a1);
 	}
 
 }
