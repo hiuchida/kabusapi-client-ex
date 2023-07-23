@@ -14,6 +14,7 @@ import com.github.hiuchida.kabusapi.enums.commons.SideCode;
 import com.github.hiuchida.kabusapi.enums.orders.CashmarginOCode;
 import com.github.hiuchida.kabusapi.enums.orders.StateOCode;
 import com.github.hiuchida.kabusapi.enums.symbolname.future.FutureCode;
+import com.github.hiuchida.kabusapi.enums.symbolname.option.OptionCode;
 import com.github.hiuchida.kabusapi.enums.symbolname.option.PutOrCallCode;
 
 import io.swagger.client.model.ApiSoftLimitResponse;
@@ -127,12 +128,31 @@ public class InfoApiExTest {
      *          if the Api call fails
      */
     @Test
-    public void symbolnameOptionGetTest() throws Exception {
+    public void symbolnameOptionGetTest_5_19_1() throws Exception {
         String X_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
         Integer derivMonth = 0;
         PutOrCallCode putOrCall = PutOrCallCode.CALL;
         Integer strikePrice = 0;
         SymbolNameSuccess response = api.symbolnameOptionGet(X_API_KEY, derivMonth, putOrCall, strikePrice);
+
+        // TODO: test validations
+    }
+    /**
+     * オプション銘柄コード取得
+     *
+     * オプション銘柄コード取得
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void symbolnameOptionGetTest() throws Exception {
+        String X_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        Integer derivMonth = 0;
+        PutOrCallCode putOrCall = PutOrCallCode.CALL;
+        Integer strikePrice = 0;
+        OptionCode optionCode = OptionCode.日経225オプション;
+        SymbolNameSuccess response = api.symbolnameOptionGet(X_API_KEY, derivMonth, putOrCall, strikePrice, optionCode);
 
         // TODO: test validations
     }

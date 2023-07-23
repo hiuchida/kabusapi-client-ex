@@ -12,6 +12,7 @@ import com.github.hiuchida.kabusapi.enums.commons.SideCode;
 import com.github.hiuchida.kabusapi.enums.orders.CashmarginOCode;
 import com.github.hiuchida.kabusapi.enums.orders.StateOCode;
 import com.github.hiuchida.kabusapi.enums.symbolname.future.FutureCode;
+import com.github.hiuchida.kabusapi.enums.symbolname.option.OptionCode;
 import com.github.hiuchida.kabusapi.enums.symbolname.option.PutOrCallCode;
 import com.github.hiuchida.kabusapi.enums.util.EnumsUtil;
 
@@ -83,9 +84,15 @@ public class InfoApiEx {
 
 	public SymbolNameSuccess symbolnameOptionGet(String X_API_KEY, Integer derivMonth, PutOrCallCode putOrCall, Integer strikePrice)
 			throws ApiException {
+		SymbolNameSuccess response = this.symbolnameOptionGet(X_API_KEY, derivMonth, putOrCall, strikePrice, null);
+		return response;
+	}
+
+	public SymbolNameSuccess symbolnameOptionGet(String X_API_KEY, Integer derivMonth, PutOrCallCode putOrCall, Integer strikePrice, OptionCode optionCode)
+			throws ApiException {
 		String putOrCallStr = EnumsUtil.toString(putOrCall);
-		String optionCode = null;
-		SymbolNameSuccess response = api.symbolnameOptionGet(X_API_KEY, derivMonth, putOrCallStr, strikePrice, optionCode);
+		String optionCodeStr = EnumsUtil.toString(optionCode);
+		SymbolNameSuccess response = api.symbolnameOptionGet(X_API_KEY, derivMonth, putOrCallStr, strikePrice, optionCodeStr);
 		return response;
 	}
 
