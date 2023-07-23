@@ -156,4 +156,23 @@ public class InfoApiExTest {
 
         // TODO: test validations
     }
+    /**
+     * ミニオプション（限週）銘柄コード取得
+     *
+     * ミニオプション（限週）銘柄コード取得
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void symbolnameOptionMiniGetTest() throws Exception {
+        String X_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        Integer derivMonth = 0;
+        Integer derivWeekly = 0;
+        PutOrCallCode putOrCall = PutOrCallCode.CALL;
+        Integer strikePrice = 0;
+        SymbolNameSuccess response = api.symbolnameOptionMiniGet(X_API_KEY, derivMonth, derivWeekly, putOrCall, strikePrice);
+
+        // TODO: test validations
+    }
 }

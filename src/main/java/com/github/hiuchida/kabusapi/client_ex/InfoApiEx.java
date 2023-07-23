@@ -96,4 +96,11 @@ public class InfoApiEx {
 		return response;
 	}
 
+	public SymbolNameSuccess symbolnameOptionMiniGet(String X_API_KEY, Integer derivMonth, Integer derivWeekly, PutOrCallCode putOrCall, Integer strikePrice)
+			throws ApiException {
+		String putOrCallStr = EnumsUtil.toString(putOrCall);
+		SymbolNameSuccess response = api.symbolnameOptionMiniGet(X_API_KEY, derivMonth, derivWeekly, putOrCallStr, strikePrice);
+		return response;
+	}
+
 }
