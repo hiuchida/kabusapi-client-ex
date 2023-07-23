@@ -84,7 +84,8 @@ public class InfoApiEx {
 	public SymbolNameSuccess symbolnameOptionGet(String X_API_KEY, Integer derivMonth, PutOrCallCode putOrCall, Integer strikePrice)
 			throws ApiException {
 		String putOrCallStr = EnumsUtil.toString(putOrCall);
-		SymbolNameSuccess response = api.symbolnameOptionGet(X_API_KEY, derivMonth, putOrCallStr, strikePrice);
+		String optionCode = null;
+		SymbolNameSuccess response = api.symbolnameOptionGet(X_API_KEY, derivMonth, putOrCallStr, strikePrice, optionCode);
 		return response;
 	}
 
