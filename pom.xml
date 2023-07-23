@@ -5,7 +5,7 @@
   <artifactId>kabusapi-client-ex</artifactId>
   <packaging>jar</packaging>
   <name>kabusapi-client-ex</name>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
   <url>https://github.com/hiuchida/kabusapi-client-ex</url>
   <description>kabusapi-client-ex</description>
   <prerequisites>
@@ -24,7 +24,7 @@
     <dependency>
       <groupId>com.github.hiuchida</groupId>
       <artifactId>kabusapi-client</artifactId>
-      <version>5.19.1</version>
+      <version>5.21.0</version>
     </dependency>
     <dependency>
       <groupId>com.github.hiuchida</groupId>
