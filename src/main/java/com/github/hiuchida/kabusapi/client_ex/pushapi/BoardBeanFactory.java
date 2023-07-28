@@ -1,8 +1,7 @@
 package com.github.hiuchida.kabusapi.client_ex.pushapi;
 
+import com.github.hiuchida.kabusapi.client_ex.util.GsonUtil;
 import com.google.gson.Gson;
-
-import io.swagger.client.JSON;
 
 /**
  * PUSH配信された時価情報Beanクラスを生成するファクトリクラス。
@@ -16,9 +15,7 @@ public class BoardBeanFactory {
 	 * @return 時価情報Bean。
 	 */
 	public static BoardBean parseJson(String message) {
-		JSON json = new JSON();
-		Gson gson = json.getGson();
-//		Gson gson = new Gson();
+		Gson gson = GsonUtil.getGson();
 		BoardBean bb = gson.fromJson(message, BoardBean.class);
 		return bb;
 	}

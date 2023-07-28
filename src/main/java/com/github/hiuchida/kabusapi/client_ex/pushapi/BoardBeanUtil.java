@@ -1,8 +1,7 @@
 package com.github.hiuchida.kabusapi.client_ex.pushapi;
 
+import com.github.hiuchida.kabusapi.client_ex.util.GsonUtil;
 import com.google.gson.Gson;
-
-import io.swagger.client.JSON;
 
 /**
  * 時価情報Beanクラスに関するユーティリティクラス。
@@ -16,9 +15,7 @@ public class BoardBeanUtil {
 	 * @return JSON文字列。
 	 */
 	public static String toJsonString(BoardBean bb) {
-		JSON json = new JSON();
-		Gson gson = json.getGson();
-//		Gson gson = new Gson();
+		Gson gson = GsonUtil.getGson();
 		String s = gson.toJson(bb);
 		return s;
 	}
