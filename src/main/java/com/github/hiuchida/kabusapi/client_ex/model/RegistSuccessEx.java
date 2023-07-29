@@ -35,7 +35,7 @@ public class RegistSuccessEx {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("class RegisterSymbolEx {\n");
+		sb.append("class RegistSuccessEx {\n");
 
 		sb.append("    registList: ").append(toIndentedString(registList)).append("\n");
 		sb.append("}");

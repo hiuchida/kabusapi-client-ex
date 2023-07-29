@@ -103,7 +103,7 @@ public class SendOrderFutureRequestEx extends SendOrderDerivRequestEx {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("class SendOrderFutureRequestWrapper {\n");
+		sb.append("class SendOrderFutureRequestEx {\n");
 	    
 //		sb.append("    password: ").append(toIndentedString(password)).append("\n");
 		sb.append("    symbol: ").append(toIndentedString(symbol)).append("\n");

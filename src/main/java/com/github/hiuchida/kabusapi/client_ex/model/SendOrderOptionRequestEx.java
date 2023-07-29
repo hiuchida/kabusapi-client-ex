@@ -103,7 +103,7 @@ public class SendOrderOptionRequestEx extends SendOrderDerivRequestEx {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("class SendOrderOptionRequestWrapper {\n");
+		sb.append("class SendOrderOptionRequestEx {\n");
 	    
 //		sb.append("    password: ").append(toIndentedString(password)).append("\n");
 		sb.append("    symbol: ").append(toIndentedString(symbol)).append("\n");
