@@ -10,9 +10,12 @@ import io.swagger.client.model.RequestRegisterSymbols;
 
 public class RegistSuccessEx {
 
+	private RegistSuccess response = null;
+
 	private List<RegisterSymbolEx> registList = null;
 
 	public RegistSuccessEx(RegistSuccess response) {
+		this.response = response;
 		List<RequestRegisterSymbols> list = response.getRegistList();
 		if (list != null) {
 			registList = new ArrayList<>();
@@ -30,6 +33,10 @@ public class RegistSuccessEx {
 
 	public void setRegistList(List<RegisterSymbolEx> registList) {
 		this.registList = registList;
+	}
+
+	public RegistSuccess toRegistSuccess() {
+		return response;
 	}
 
 	@Override

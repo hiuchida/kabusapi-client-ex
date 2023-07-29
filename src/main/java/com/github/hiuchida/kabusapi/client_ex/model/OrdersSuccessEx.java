@@ -215,6 +215,8 @@ public class OrdersSuccessEx {
 
 	}
 
+	private OrdersSuccess response = null;
+
 	private String ID = null;
 
 	private StateOCode state = null;
@@ -258,6 +260,7 @@ public class OrdersSuccessEx {
 	private List<Detail> details = null;
 
 	public OrdersSuccessEx(OrdersSuccess response) {
+		this.response = response;
 		this.ID = response.getID();
 		this.state = StateOCode.valueOf(response.getState());
 		this.orderState = StateOCode.valueOf(response.getOrderState());
@@ -455,6 +458,10 @@ public class OrdersSuccessEx {
 
 	public void setDetails(List<Detail> details) {
 		this.details = details;
+	}
+
+	public OrdersSuccess toOrdersSuccess() {
+		return response;
 	}
 
 	@Override

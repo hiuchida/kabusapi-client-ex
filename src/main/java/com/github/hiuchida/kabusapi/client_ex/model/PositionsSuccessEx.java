@@ -10,6 +10,8 @@ import io.swagger.client.model.PositionsSuccess;
 
 public class PositionsSuccessEx {
 
+	private PositionsSuccess response = null;
+
 	private String executionID = null;
 
 	private AccountTypeCode accountType = null;
@@ -53,6 +55,7 @@ public class PositionsSuccessEx {
 	private Double profitLossRate = null;
 
 	public PositionsSuccessEx(PositionsSuccess response) {
+		this.response = response;
 		this.executionID = response.getExecutionID();
 		this.accountType = AccountTypeCode.valueOf(response.getAccountType());
 		this.symbol = response.getSymbol();
@@ -242,6 +245,10 @@ public class PositionsSuccessEx {
 
 	public void setProfitLossRate(Double profitLossRate) {
 		this.profitLossRate = profitLossRate;
+	}
+
+	public PositionsSuccess toPositionsSuccess() {
+		return response;
 	}
 
 	@Override

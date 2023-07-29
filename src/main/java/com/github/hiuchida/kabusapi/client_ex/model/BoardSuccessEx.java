@@ -296,6 +296,8 @@ public class BoardSuccessEx {
 
 	}
 
+	private BoardSuccess response = null;
+
 	private String symbol = null;
 
 	private String symbolName = null;
@@ -423,6 +425,7 @@ public class BoardSuccessEx {
 	private SecurityTypeCode securityType = null;
 
 	public BoardSuccessEx(BoardSuccess response) {
+		this.response = response;
 		this.symbol = response.getSymbol();
 		this.symbolName = response.getSymbolName();
 		this.exchange = ExchangeCode.valueOf(response.getExchange());
@@ -990,6 +993,10 @@ public class BoardSuccessEx {
 
 	public void setSecurityType(SecurityTypeCode securityType) {
 		this.securityType = securityType;
+	}
+
+	public BoardSuccess toBoardSuccess() {
+		return response;
 	}
 
 	@Override
