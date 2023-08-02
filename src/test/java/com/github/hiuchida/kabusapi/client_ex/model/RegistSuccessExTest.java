@@ -32,6 +32,14 @@ public class RegistSuccessExTest {
 	}
 
 	@Test
+	public void toRegistSuccessTest() {
+		RegistSuccess rs = new RegistSuccess();
+		RegistSuccessEx o1 = new RegistSuccessEx(rs);
+		RegistSuccess a1 = o1.toRegistSuccess();
+		assertEquals(rs, a1);
+	}
+
+	@Test
 	public void toStringTest() {
 		String symbol = "symbol";
 		ExchangeCode exchange = ExchangeCode.東証;

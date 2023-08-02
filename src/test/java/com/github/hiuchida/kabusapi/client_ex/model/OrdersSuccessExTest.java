@@ -142,6 +142,14 @@ public class OrdersSuccessExTest {
 	}
 
 	@Test
+	public void toOrdersSuccessTest() {
+		OrdersSuccess os = new OrdersSuccess();
+		OrdersSuccessEx o1 = new OrdersSuccessEx(os);
+		OrdersSuccess a1 = o1.toOrdersSuccess();
+		assertEquals(os, a1);
+	}
+
+	@Test
 	public void toStringTest() {
 		String ID = "ID";
 		StateOCode state = StateOCode.待機;

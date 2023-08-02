@@ -301,6 +301,14 @@ public class BoardSuccessExTest {
 	}
 
 	@Test
+	public void toBoardSuccessTest() {
+		BoardSuccess bs = new BoardSuccess();
+		BoardSuccessEx o1 = new BoardSuccessEx(bs);
+		BoardSuccess a1 = o1.toBoardSuccess();
+		assertEquals(bs, a1);
+	}
+
+	@Test
 	public void toStringTest() {
 		String symbol = "symbol";
 		String symbolName = "symbolName";

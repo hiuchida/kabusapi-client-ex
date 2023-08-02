@@ -87,6 +87,14 @@ public class PositionsSuccessExTest {
 	}
 
 	@Test
+	public void toPositionsSuccessTest() {
+		PositionsSuccess ps = new PositionsSuccess();
+		PositionsSuccessEx o1 = new PositionsSuccessEx(ps);
+		PositionsSuccess a1 = o1.toPositionsSuccess();
+		assertEquals(ps, a1);
+	}
+
+	@Test
 	public void toStringTest() {
 		String executionID = "executionID";
 		AccountTypeCode accountType = AccountTypeCode.特定;
