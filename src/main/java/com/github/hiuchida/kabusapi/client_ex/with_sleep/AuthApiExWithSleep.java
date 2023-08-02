@@ -8,6 +8,7 @@ import io.swagger.client.model.TokenSuccess;
 
 public class AuthApiExWithSleep {
 	private AuthApiEx api;
+	private boolean bInterrupted = false;
 
 	public AuthApiExWithSleep() {
 		api = new AuthApiEx();
@@ -17,13 +18,17 @@ public class AuthApiExWithSleep {
 		api = new AuthApiEx(apiClient);
 	}
 
-	public TokenSuccess tokenPost(String apIPassword) throws ApiException, InterruptedException {
+	public TokenSuccess tokenPost(String apIPassword) throws ApiException {
 		try {
 			TokenSuccess response = api.tokenPost(apIPassword);
 			return response;
 		} finally {
-			SleepUtil.sleep10times();
+			bInterrupted |= SleepUtil.sleep10times();
 		}
+	}
+
+	public boolean isInterrupted() {
+		return bInterrupted;
 	}
 
 }

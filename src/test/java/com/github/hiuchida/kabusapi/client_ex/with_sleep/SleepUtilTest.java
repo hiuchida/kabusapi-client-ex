@@ -1,5 +1,6 @@
 package com.github.hiuchida.kabusapi.client_ex.with_sleep;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -14,7 +15,7 @@ public class SleepUtilTest {
 	public void sleep10timesTest() throws InterruptedException {
 		long start = System.currentTimeMillis();
 		for (int i = 0; i < 9; i++) {
-			SleepUtil.sleep10times();
+			assertFalse(SleepUtil.sleep10times());
 		}
 		long end = System.currentTimeMillis();
 		assertTrue((end - start) > 1000);
@@ -28,7 +29,7 @@ public class SleepUtilTest {
 	public void sleep5timesTest() throws InterruptedException {
 		long start = System.currentTimeMillis();
 		for (int i = 0; i < 5; i++) {
-			SleepUtil.sleep5times();
+			assertFalse(SleepUtil.sleep5times());
 		}
 		long end = System.currentTimeMillis();
 		assertTrue((end - start) > 1000);

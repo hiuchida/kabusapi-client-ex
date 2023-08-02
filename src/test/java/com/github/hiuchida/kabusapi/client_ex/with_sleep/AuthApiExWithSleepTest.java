@@ -1,5 +1,6 @@
 package com.github.hiuchida.kabusapi.client_ex.with_sleep;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -16,6 +17,8 @@ public class AuthApiExWithSleepTest {
 		}
 		long end = System.currentTimeMillis();
 		assertTrue((end - start) > 1000);
+
+		assertFalse(api.isInterrupted());
 	}
 
 }

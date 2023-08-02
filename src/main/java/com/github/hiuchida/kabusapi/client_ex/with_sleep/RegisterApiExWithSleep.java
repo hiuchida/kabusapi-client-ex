@@ -12,6 +12,7 @@ import io.swagger.client.model.UnregisterAllSuccess;
 
 public class RegisterApiExWithSleep {
 	private RegisterApiEx api;
+	private boolean bInterrupted = false;
 
 	public RegisterApiExWithSleep() {
 		api = new RegisterApiEx();
@@ -21,49 +22,53 @@ public class RegisterApiExWithSleep {
 		api = new RegisterApiEx(apiClient);
 	}
 
-	public RegistSuccessEx registerPut(RegisterSymbolEx req, String X_API_KEY) throws ApiException, InterruptedException {
+	public RegistSuccessEx registerPut(RegisterSymbolEx req, String X_API_KEY) throws ApiException {
 		try {
 			RegistSuccessEx response = api.registerPut(req, X_API_KEY);
 			return response;
 		} finally {
-			SleepUtil.sleep10times();
+			bInterrupted |= SleepUtil.sleep10times();
 		}
 	}
 
-	public RegistSuccessEx registerPut(List<RegisterSymbolEx> reqList, String X_API_KEY) throws ApiException, InterruptedException {
+	public RegistSuccessEx registerPut(List<RegisterSymbolEx> reqList, String X_API_KEY) throws ApiException {
 		try {
 			RegistSuccessEx response = api.registerPut(reqList, X_API_KEY);
 			return response;
 		} finally {
-			SleepUtil.sleep10times();
+			bInterrupted |= SleepUtil.sleep10times();
 		}
 	}
 
-	public UnregisterAllSuccess unregisterAllPut(String X_API_KEY) throws ApiException, InterruptedException {
+	public UnregisterAllSuccess unregisterAllPut(String X_API_KEY) throws ApiException {
 		try {
 			UnregisterAllSuccess response = api.unregisterAllPut(X_API_KEY);
 			return response;
 		} finally {
-			SleepUtil.sleep10times();
+			bInterrupted |= SleepUtil.sleep10times();
 		}
 	}
 
-	public RegistSuccessEx unregisterPut(RegisterSymbolEx req, String X_API_KEY) throws ApiException, InterruptedException {
+	public RegistSuccessEx unregisterPut(RegisterSymbolEx req, String X_API_KEY) throws ApiException {
 		try {
 			RegistSuccessEx response = api.unregisterPut(req, X_API_KEY);
 			return response;
 		} finally {
-			SleepUtil.sleep10times();
+			bInterrupted |= SleepUtil.sleep10times();
 		}
 	}
 
-	public RegistSuccessEx unregisterPut(List<RegisterSymbolEx> reqList, String X_API_KEY) throws ApiException, InterruptedException {
+	public RegistSuccessEx unregisterPut(List<RegisterSymbolEx> reqList, String X_API_KEY) throws ApiException {
 		try {
 			RegistSuccessEx response = api.unregisterPut(reqList, X_API_KEY);
 			return response;
 		} finally {
-			SleepUtil.sleep10times();
+			bInterrupted |= SleepUtil.sleep10times();
 		}
+	}
+
+	public boolean isInterrupted() {
+		return bInterrupted;
 	}
 
 }
