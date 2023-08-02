@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>OrdersSuccessEx.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">kabusapi-client-ex</a> &gt; <a href="index.source.html" class="el_package">com.github.hiuchida.kabusapi.client_ex.model</a> &gt; <span class="el_source">OrdersSuccessEx.java</span></div><h1>OrdersSuccessEx.java</h1><pre class="source lang-java linenums">package com.github.hiuchida.kabusapi.client_ex.model;
+
+import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.github.hiuchida.kabusapi.enums.commons.SideCode;
+import com.github.hiuchida.kabusapi.enums.deliv.TimeInForceCode;
+import com.github.hiuchida.kabusapi.enums.orders.CashmarginOCode;
+import com.github.hiuchida.kabusapi.enums.orders.ExchangeOCode;
+import com.github.hiuchida.kabusapi.enums.orders.OrdTypeOCode;
+import com.github.hiuchida.kabusapi.enums.orders.RecTypeOCode;
+import com.github.hiuchida.kabusapi.enums.orders.StateOCode;
+import com.github.hiuchida.kabusapi.enums.stock.AccountTypeCode;
+import com.github.hiuchida.kabusapi.enums.stock.DelivTypeCode;
+import com.github.hiuchida.kabusapi.enums.stock.MarginTradeTypeCode;
+
+import io.swagger.client.model.OrdersSuccess;
+import io.swagger.client.model.OrdersSuccessDetails;
+
+public class OrdersSuccessEx {
+
+	public static class Detail {
+		
+<span class="fc" id="L25">		private Integer seqNum = null;</span>
+
+<span class="fc" id="L27">		private String ID = null;</span>
+
+<span class="fc" id="L29">		private RecTypeOCode recType = null;</span>
+
+<span class="fc" id="L31">		private String exchangeID = null;</span>
+
+<span class="fc" id="L33">		private StateOCode state = null;</span>
+
+<span class="fc" id="L35">		private String transactTime = null;</span>
+
+<span class="fc" id="L37">		private OrdTypeOCode ordType = null;</span>
+
+<span class="fc" id="L39">		private Double price = null;</span>
+
+<span class="fc" id="L41">		private Double qty = null;</span>
+
+<span class="fc" id="L43">		private String executionID = null;</span>
+
+<span class="fc" id="L45">		private OffsetDateTime executionDay = null;</span>
+
+<span class="fc" id="L47">		private Integer delivDay = null;</span>
+
+<span class="fc" id="L49">		private Double commission = null;</span>
+
+<span class="fc" id="L51">		private Double commissionTax = null;</span>
+
+<span class="fc" id="L53">		public Detail(OrdersSuccessDetails response) {</span>
+<span class="fc" id="L54">			this.seqNum = response.getSeqNum();</span>
+<span class="fc" id="L55">			this.ID = response.getID();</span>
+<span class="fc" id="L56">			this.recType = RecTypeOCode.valueOf(response.getRecType());</span>
+<span class="fc" id="L57">			this.exchangeID = response.getExchangeID();</span>
+<span class="fc" id="L58">			this.state = StateOCode.valueOf(response.getState());</span>
+<span class="fc" id="L59">			this.transactTime = response.getTransactTime();</span>
+<span class="fc" id="L60">			this.ordType = OrdTypeOCode.valueOf(response.getOrdType());</span>
+<span class="fc" id="L61">			this.price = response.getPrice();</span>
+<span class="fc" id="L62">			this.qty = response.getQty();</span>
+<span class="fc" id="L63">			this.executionID = response.getExecutionID();</span>
+<span class="fc" id="L64">			this.executionDay = response.getExecutionDay();</span>
+<span class="fc" id="L65">			this.delivDay = response.getDelivDay();</span>
+<span class="fc" id="L66">			this.commission = response.getCommission();</span>
+<span class="fc" id="L67">			this.commissionTax = response.getCommissionTax();</span>
+<span class="fc" id="L68">		}</span>
+
+		public Integer getSeqNum() {
+<span class="fc" id="L71">			return seqNum;</span>
+		}
+
+		public void setSeqNum(Integer seqNum) {
+<span class="fc" id="L75">			this.seqNum = seqNum;</span>
+<span class="fc" id="L76">		}</span>
+
+		public String getID() {
+<span class="fc" id="L79">			return ID;</span>
+		}
+
+		public void setID(String iD) {
+<span class="fc" id="L83">			ID = iD;</span>
+<span class="fc" id="L84">		}</span>
+
+		public RecTypeOCode getRecType() {
+<span class="fc" id="L87">			return recType;</span>
+		}
+
+		public void setRecType(RecTypeOCode recType) {
+<span class="fc" id="L91">			this.recType = recType;</span>
+<span class="fc" id="L92">		}</span>
+
+		public String getExchangeID() {
+<span class="fc" id="L95">			return exchangeID;</span>
+		}
+
+		public void setExchangeID(String exchangeID) {
+<span class="fc" id="L99">			this.exchangeID = exchangeID;</span>
+<span class="fc" id="L100">		}</span>
+
+		public StateOCode getState() {
+<span class="fc" id="L103">			return state;</span>
+		}
+
+		public void setState(StateOCode state) {
+<span class="fc" id="L107">			this.state = state;</span>
+<span class="fc" id="L108">		}</span>
+
+		public String getTransactTime() {
+<span class="fc" id="L111">			return transactTime;</span>
+		}
+
+		public void setTransactTime(String transactTime) {
+<span class="fc" id="L115">			this.transactTime = transactTime;</span>
+<span class="fc" id="L116">		}</span>
+
+		public OrdTypeOCode getOrdType() {
+<span class="fc" id="L119">			return ordType;</span>
+		}
+
+		public void setOrdType(OrdTypeOCode ordType) {
+<span class="fc" id="L123">			this.ordType = ordType;</span>
+<span class="fc" id="L124">		}</span>
+
+		public Double getPrice() {
+<span class="fc" id="L127">			return price;</span>
+		}
+
+		public void setPrice(Double price) {
+<span class="fc" id="L131">			this.price = price;</span>
+<span class="fc" id="L132">		}</span>
+
+		public Double getQty() {
+<span class="fc" id="L135">			return qty;</span>
+		}
+
+		public void setQty(Double qty) {
+<span class="fc" id="L139">			this.qty = qty;</span>
+<span class="fc" id="L140">		}</span>
+
+		public String getExecutionID() {
+<span class="fc" id="L143">			return executionID;</span>
+		}
+
+		public void setExecutionID(String executionID) {
+<span class="fc" id="L147">			this.executionID = executionID;</span>
+<span class="fc" id="L148">		}</span>
+
+		public OffsetDateTime getExecutionDay() {
+<span class="fc" id="L151">			return executionDay;</span>
+		}
+
+		public void setExecutionDay(OffsetDateTime executionDay) {
+<span class="fc" id="L155">			this.executionDay = executionDay;</span>
+<span class="fc" id="L156">		}</span>
+
+		public Integer getDelivDay() {
+<span class="fc" id="L159">			return delivDay;</span>
+		}
+
+		public void setDelivDay(Integer delivDay) {
+<span class="fc" id="L163">			this.delivDay = delivDay;</span>
+<span class="fc" id="L164">		}</span>
+
+		public Double getCommission() {
+<span class="fc" id="L167">			return commission;</span>
+		}
+
+		public void setCommission(Double commission) {
+<span class="fc" id="L171">			this.commission = commission;</span>
+<span class="fc" id="L172">		}</span>
+
+		public Double getCommissionTax() {
+<span class="fc" id="L175">			return commissionTax;</span>
+		}
+
+		public void setCommissionTax(Double commissionTax) {
+<span class="fc" id="L179">			this.commissionTax = commissionTax;</span>
+<span class="fc" id="L180">		}</span>
+
+		@Override
+		public String toString() {
+<span class="fc" id="L184">			StringBuilder sb = new StringBuilder();</span>
+<span class="fc" id="L185">			sb.append(&quot;class Detail {\n&quot;);</span>
+
+<span class="fc" id="L187">			sb.append(&quot;    seqNum: &quot;).append(toIndentedString(seqNum)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L188">			sb.append(&quot;    ID: &quot;).append(toIndentedString(ID)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L189">			sb.append(&quot;    recType: &quot;).append(toIndentedString(recType)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L190">			sb.append(&quot;    exchangeID: &quot;).append(toIndentedString(exchangeID)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L191">			sb.append(&quot;    state: &quot;).append(toIndentedString(state)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L192">			sb.append(&quot;    transactTime: &quot;).append(toIndentedString(transactTime)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L193">			sb.append(&quot;    ordType: &quot;).append(toIndentedString(ordType)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L194">			sb.append(&quot;    price: &quot;).append(toIndentedString(price)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L195">			sb.append(&quot;    qty: &quot;).append(toIndentedString(qty)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L196">			sb.append(&quot;    executionID: &quot;).append(toIndentedString(executionID)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L197">			sb.append(&quot;    executionDay: &quot;).append(toIndentedString(executionDay)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L198">			sb.append(&quot;    delivDay: &quot;).append(toIndentedString(delivDay)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L199">			sb.append(&quot;    commission: &quot;).append(toIndentedString(commission)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L200">			sb.append(&quot;    commissionTax: &quot;).append(toIndentedString(commissionTax)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L201">			sb.append(&quot;}&quot;);</span>
+<span class="fc" id="L202">			return sb.toString();</span>
+		}
+
+		/**
+		 * Convert the given object to string with each line indented by 4 spaces
+		 * (except the first line).
+		 */
+		private String toIndentedString(java.lang.Object o) {
+<span class="fc bfc" id="L210" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L211">				return &quot;null&quot;;</span>
+			}
+<span class="fc" id="L213">			return o.toString().replace(&quot;\n&quot;, &quot;\n    &quot;);</span>
+		}
+
+	}
+
+<span class="fc" id="L218">	private OrdersSuccess response = null;</span>
+
+<span class="fc" id="L220">	private String ID = null;</span>
+
+<span class="fc" id="L222">	private StateOCode state = null;</span>
+
+<span class="fc" id="L224">	private StateOCode orderState = null;</span>
+
+<span class="fc" id="L226">	private OrdTypeOCode ordType = null;</span>
+
+<span class="fc" id="L228">	private String recvTime = null;</span>
+
+<span class="fc" id="L230">	private String symbol = null;</span>
+
+<span class="fc" id="L232">	private String symbolName = null;</span>
+
+<span class="fc" id="L234">	private ExchangeOCode exchange = null;</span>
+
+<span class="fc" id="L236">	private String exchangeName = null;</span>
+
+<span class="fc" id="L238">	private TimeInForceCode timeInForce = null;</span>
+
+<span class="fc" id="L240">	private Double price = null;</span>
+
+<span class="fc" id="L242">	private Double orderQty = null;</span>
+
+<span class="fc" id="L244">	private Double cumQty = null;</span>
+
+<span class="fc" id="L246">	private SideCode side = null;</span>
+
+<span class="fc" id="L248">	private CashmarginOCode cashMargin = null;</span>
+
+<span class="fc" id="L250">	private AccountTypeCode accountType = null;</span>
+
+<span class="fc" id="L252">	private DelivTypeCode delivType = null;</span>
+
+<span class="fc" id="L254">	private Integer expireDay = null;</span>
+
+<span class="fc" id="L256">	private MarginTradeTypeCode marginTradeType = null;</span>
+
+<span class="fc" id="L258">	private Double marginPremium = null;</span>
+
+<span class="fc" id="L260">	private List&lt;Detail&gt; details = null;</span>
+
+<span class="fc" id="L262">	public OrdersSuccessEx(OrdersSuccess response) {</span>
+<span class="fc" id="L263">		this.response = response;</span>
+<span class="fc" id="L264">		this.ID = response.getID();</span>
+<span class="fc" id="L265">		this.state = StateOCode.valueOf(response.getState());</span>
+<span class="fc" id="L266">		this.orderState = StateOCode.valueOf(response.getOrderState());</span>
+<span class="fc" id="L267">		this.ordType = OrdTypeOCode.valueOf(response.getOrdType());</span>
+<span class="fc" id="L268">		this.recvTime = response.getRecvTime();</span>
+<span class="fc" id="L269">		this.symbol = response.getSymbol();</span>
+<span class="fc" id="L270">		this.symbolName = response.getSymbolName();</span>
+<span class="fc" id="L271">		this.exchange = ExchangeOCode.valueOf(response.getExchange());</span>
+<span class="fc" id="L272">		this.exchangeName = response.getExchangeName();</span>
+<span class="fc" id="L273">		this.timeInForce = TimeInForceCode.valueOf(response.getTimeInForce());</span>
+<span class="fc" id="L274">		this.price = response.getPrice();</span>
+<span class="fc" id="L275">		this.orderQty = response.getOrderQty();</span>
+<span class="fc" id="L276">		this.cumQty = response.getCumQty();</span>
+<span class="fc" id="L277">		this.side = SideCode.valueOfCode(response.getSide());</span>
+<span class="fc" id="L278">		this.cashMargin = CashmarginOCode.valueOf(response.getCashMargin());</span>
+<span class="fc" id="L279">		this.accountType = AccountTypeCode.valueOf(response.getAccountType());</span>
+<span class="fc" id="L280">		this.delivType = DelivTypeCode.valueOf(response.getDelivType());</span>
+<span class="fc" id="L281">		this.expireDay = response.getExpireDay();</span>
+<span class="fc" id="L282">		this.marginTradeType = MarginTradeTypeCode.valueOf(response.getMarginTradeType());</span>
+<span class="fc" id="L283">		this.marginPremium = response.getMarginPremium();</span>
+<span class="fc bfc" id="L284" title="All 2 branches covered.">		if (response.getDetails() == null) {</span>
+<span class="fc" id="L285">			this.details = null;</span>
+		} else {
+<span class="fc" id="L287">			this.details = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L288" title="All 2 branches covered.">			for (OrdersSuccessDetails osd : response.getDetails()) {</span>
+<span class="fc" id="L289">				Detail item = new Detail(osd);</span>
+<span class="fc" id="L290">				details.add(item);</span>
+<span class="fc" id="L291">			}</span>
+		}
+<span class="fc" id="L293">	}</span>
+
+	public String getID() {
+<span class="fc" id="L296">		return ID;</span>
+	}
+
+	public void setID(String iD) {
+<span class="fc" id="L300">		ID = iD;</span>
+<span class="fc" id="L301">	}</span>
+
+	public StateOCode getState() {
+<span class="fc" id="L304">		return state;</span>
+	}
+
+	public void setState(StateOCode state) {
+<span class="fc" id="L308">		this.state = state;</span>
+<span class="fc" id="L309">	}</span>
+
+	public StateOCode getOrderState() {
+<span class="fc" id="L312">		return orderState;</span>
+	}
+
+	public void setOrderState(StateOCode orderState) {
+<span class="fc" id="L316">		this.orderState = orderState;</span>
+<span class="fc" id="L317">	}</span>
+
+	public OrdTypeOCode getOrdType() {
+<span class="fc" id="L320">		return ordType;</span>
+	}
+
+	public void setOrdType(OrdTypeOCode ordType) {
+<span class="fc" id="L324">		this.ordType = ordType;</span>
+<span class="fc" id="L325">	}</span>
+
+	public String getRecvTime() {
+<span class="fc" id="L328">		return recvTime;</span>
+	}
+
+	public void setRecvTime(String recvTime) {
+<span class="fc" id="L332">		this.recvTime = recvTime;</span>
+<span class="fc" id="L333">	}</span>
+
+	public String getSymbol() {
+<span class="fc" id="L336">		return symbol;</span>
+	}
+
+	public void setSymbol(String symbol) {
+<span class="fc" id="L340">		this.symbol = symbol;</span>
+<span class="fc" id="L341">	}</span>
+
+	public String getSymbolName() {
+<span class="fc" id="L344">		return symbolName;</span>
+	}
+
+	public void setSymbolName(String symbolName) {
+<span class="fc" id="L348">		this.symbolName = symbolName;</span>
+<span class="fc" id="L349">	}</span>
+
+	public ExchangeOCode getExchange() {
+<span class="fc" id="L352">		return exchange;</span>
+	}
+
+	public void setExchange(ExchangeOCode exchange) {
+<span class="fc" id="L356">		this.exchange = exchange;</span>
+<span class="fc" id="L357">	}</span>
+
+	public String getExchangeName() {
+<span class="fc" id="L360">		return exchangeName;</span>
+	}
+
+	public void setExchangeName(String exchangeName) {
+<span class="fc" id="L364">		this.exchangeName = exchangeName;</span>
+<span class="fc" id="L365">	}</span>
+
+	public TimeInForceCode getTimeInForce() {
+<span class="fc" id="L368">		return timeInForce;</span>
+	}
+
+	public void setTimeInForce(TimeInForceCode timeInForce) {
+<span class="fc" id="L372">		this.timeInForce = timeInForce;</span>
+<span class="fc" id="L373">	}</span>
+
+	public Double getPrice() {
+<span class="fc" id="L376">		return price;</span>
+	}
+
+	public void setPrice(Double price) {
+<span class="fc" id="L380">		this.price = price;</span>
+<span class="fc" id="L381">	}</span>
+
+	public Double getOrderQty() {
+<span class="fc" id="L384">		return orderQty;</span>
+	}
+
+	public void setOrderQty(Double orderQty) {
+<span class="fc" id="L388">		this.orderQty = orderQty;</span>
+<span class="fc" id="L389">	}</span>
+
+	public Double getCumQty() {
+<span class="fc" id="L392">		return cumQty;</span>
+	}
+
+	public void setCumQty(Double cumQty) {
+<span class="fc" id="L396">		this.cumQty = cumQty;</span>
+<span class="fc" id="L397">	}</span>
+
+	public SideCode getSide() {
+<span class="fc" id="L400">		return side;</span>
+	}
+
+	public void setSide(SideCode side) {
+<span class="fc" id="L404">		this.side = side;</span>
+<span class="fc" id="L405">	}</span>
+
+	public CashmarginOCode getCashMargin() {
+<span class="fc" id="L408">		return cashMargin;</span>
+	}
+
+	public void setCashMargin(CashmarginOCode cashMargin) {
+<span class="fc" id="L412">		this.cashMargin = cashMargin;</span>
+<span class="fc" id="L413">	}</span>
+
+	public AccountTypeCode getAccountType() {
+<span class="fc" id="L416">		return accountType;</span>
+	}
+
+	public void setAccountType(AccountTypeCode accountType) {
+<span class="fc" id="L420">		this.accountType = accountType;</span>
+<span class="fc" id="L421">	}</span>
+
+	public DelivTypeCode getDelivType() {
+<span class="fc" id="L424">		return delivType;</span>
+	}
+
+	public void setDelivType(DelivTypeCode delivType) {
+<span class="fc" id="L428">		this.delivType = delivType;</span>
+<span class="fc" id="L429">	}</span>
+
+	public Integer getExpireDay() {
+<span class="fc" id="L432">		return expireDay;</span>
+	}
+
+	public void setExpireDay(Integer expireDay) {
+<span class="fc" id="L436">		this.expireDay = expireDay;</span>
+<span class="fc" id="L437">	}</span>
+
+	public MarginTradeTypeCode getMarginTradeType() {
+<span class="fc" id="L440">		return marginTradeType;</span>
+	}
+
+	public void setMarginTradeType(MarginTradeTypeCode marginTradeType) {
+<span class="fc" id="L444">		this.marginTradeType = marginTradeType;</span>
+<span class="fc" id="L445">	}</span>
+
+	public Double getMarginPremium() {
+<span class="fc" id="L448">		return marginPremium;</span>
+	}
+
+	public void setMarginPremium(Double marginPremium) {
+<span class="fc" id="L452">		this.marginPremium = marginPremium;</span>
+<span class="fc" id="L453">	}</span>
+
+	public List&lt;Detail&gt; getDetails() {
+<span class="fc" id="L456">		return details;</span>
+	}
+
+	public void setDetails(List&lt;Detail&gt; details) {
+<span class="fc" id="L460">		this.details = details;</span>
+<span class="fc" id="L461">	}</span>
+
+	public OrdersSuccess toOrdersSuccess() {
+<span class="fc" id="L464">		return response;</span>
+	}
+
+	@Override
+	public String toString() {
+<span class="fc" id="L469">		StringBuilder sb = new StringBuilder();</span>
+<span class="fc" id="L470">		sb.append(&quot;class OrdersSuccessEx {\n&quot;);</span>
+
+<span class="fc" id="L472">		sb.append(&quot;    ID: &quot;).append(toIndentedString(ID)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L473">		sb.append(&quot;    state: &quot;).append(toIndentedString(state)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L474">		sb.append(&quot;    orderState: &quot;).append(toIndentedString(orderState)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L475">		sb.append(&quot;    ordType: &quot;).append(toIndentedString(ordType)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L476">		sb.append(&quot;    recvTime: &quot;).append(toIndentedString(recvTime)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L477">		sb.append(&quot;    symbol: &quot;).append(toIndentedString(symbol)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L478">		sb.append(&quot;    symbolName: &quot;).append(toIndentedString(symbolName)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L479">		sb.append(&quot;    exchange: &quot;).append(toIndentedString(exchange)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L480">		sb.append(&quot;    exchangeName: &quot;).append(toIndentedString(exchangeName)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L481">		sb.append(&quot;    timeInForce: &quot;).append(toIndentedString(timeInForce)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L482">		sb.append(&quot;    price: &quot;).append(toIndentedString(price)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L483">		sb.append(&quot;    orderQty: &quot;).append(toIndentedString(orderQty)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L484">		sb.append(&quot;    cumQty: &quot;).append(toIndentedString(cumQty)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L485">		sb.append(&quot;    side: &quot;).append(toIndentedString(side)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L486">		sb.append(&quot;    cashMargin: &quot;).append(toIndentedString(cashMargin)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L487">		sb.append(&quot;    accountType: &quot;).append(toIndentedString(accountType)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L488">		sb.append(&quot;    delivType: &quot;).append(toIndentedString(delivType)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L489">		sb.append(&quot;    expireDay: &quot;).append(toIndentedString(expireDay)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L490">		sb.append(&quot;    marginTradeType: &quot;).append(toIndentedString(marginTradeType)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L491">		sb.append(&quot;    marginPremium: &quot;).append(toIndentedString(marginPremium)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L492">		sb.append(&quot;    details: &quot;).append(toIndentedString(details)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L493">		sb.append(&quot;}&quot;);</span>
+<span class="fc" id="L494">		return sb.toString();</span>
+	}
+
+	/**
+	 * Convert the given object to string with each line indented by 4 spaces
+	 * (except the first line).
+	 */
+	private String toIndentedString(java.lang.Object o) {
+<span class="fc bfc" id="L502" title="All 2 branches covered.">		if (o == null) {</span>
+<span class="fc" id="L503">			return &quot;null&quot;;</span>
+		}
+<span class="fc" id="L505">		return o.toString().replace(&quot;\n&quot;, &quot;\n    &quot;);</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

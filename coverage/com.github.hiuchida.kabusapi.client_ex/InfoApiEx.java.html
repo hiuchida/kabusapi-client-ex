@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>InfoApiEx.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">kabusapi-client-ex</a> &gt; <a href="index.source.html" class="el_package">com.github.hiuchida.kabusapi.client_ex</a> &gt; <span class="el_source">InfoApiEx.java</span></div><h1>InfoApiEx.java</h1><pre class="source lang-java linenums">package com.github.hiuchida.kabusapi.client_ex;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.github.hiuchida.kabusapi.client_ex.model.BoardSuccessEx;
+import com.github.hiuchida.kabusapi.client_ex.model.OrdersSuccessEx;
+import com.github.hiuchida.kabusapi.client_ex.model.PositionsSuccessEx;
+import com.github.hiuchida.kabusapi.enums.commons.ExchangeCode;
+import com.github.hiuchida.kabusapi.enums.commons.ProductCode;
+import com.github.hiuchida.kabusapi.enums.commons.SideCode;
+import com.github.hiuchida.kabusapi.enums.orders.CashmarginOCode;
+import com.github.hiuchida.kabusapi.enums.orders.StateOCode;
+import com.github.hiuchida.kabusapi.enums.symbolname.future.FutureCode;
+import com.github.hiuchida.kabusapi.enums.symbolname.option.OptionCode;
+import com.github.hiuchida.kabusapi.enums.symbolname.option.PutOrCallCode;
+import com.github.hiuchida.kabusapi.enums.util.EnumsUtil;
+
+import io.swagger.client.ApiClient;
+import io.swagger.client.ApiException;
+import io.swagger.client.api.InfoApi;
+import io.swagger.client.model.ApiSoftLimitResponse;
+import io.swagger.client.model.BoardSuccess;
+import io.swagger.client.model.OrdersSuccess;
+import io.swagger.client.model.PositionsSuccess;
+import io.swagger.client.model.SymbolNameSuccess;
+
+public class InfoApiEx {
+	private InfoApi api;
+
+<span class="fc" id="L31">	public InfoApiEx() {</span>
+<span class="fc" id="L32">		api = new InfoApi();</span>
+<span class="fc" id="L33">	}</span>
+
+<span class="fc" id="L35">	public InfoApiEx(ApiClient apiClient) {</span>
+<span class="fc" id="L36">		api = new InfoApi(apiClient);</span>
+<span class="fc" id="L37">	}</span>
+
+	public ApiSoftLimitResponse apisoftlimitGet(String X_API_KEY) throws ApiException {
+<span class="fc" id="L40">		ApiSoftLimitResponse response = api.apisoftlimitGet(X_API_KEY);</span>
+<span class="fc" id="L41">		return response;</span>
+	}
+
+	public BoardSuccessEx boardGet(String X_API_KEY, String symbol, ExchangeCode ec) throws ApiException {
+<span class="fc" id="L45">		String symbolStr = symbol + &quot;@&quot; + ec.toString();</span>
+<span class="fc" id="L46">		BoardSuccess response = api.boardGet(X_API_KEY, symbolStr);</span>
+<span class="fc" id="L47">		return new BoardSuccessEx(response);</span>
+	}
+
+	public List&lt;OrdersSuccessEx&gt; ordersGet(String X_API_KEY, ProductCode product, String id, String updtime, String details, String symbol, StateOCode state, SideCode side, CashmarginOCode cashmargin)
+			throws ApiException {
+<span class="fc" id="L52">		String productStr = EnumsUtil.toString(product);</span>
+<span class="fc" id="L53">		String stateStr = EnumsUtil.toString(state);</span>
+<span class="fc" id="L54">		String sideStr = EnumsUtil.toString(side);</span>
+<span class="fc" id="L55">		String cashmarginStr = EnumsUtil.toString(cashmargin);</span>
+<span class="fc" id="L56">		List&lt;OrdersSuccess&gt; response = api.ordersGet(X_API_KEY, productStr, id, updtime, details, symbol, stateStr, sideStr, cashmarginStr);</span>
+<span class="fc" id="L57">		List&lt;OrdersSuccessEx&gt; list = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">		for (OrdersSuccess os : response) {</span>
+<span class="fc" id="L59">			OrdersSuccessEx item = new OrdersSuccessEx(os);</span>
+<span class="fc" id="L60">			list.add(item);</span>
+<span class="fc" id="L61">		}</span>
+<span class="fc" id="L62">		return list;</span>
+	}
+
+	public List&lt;PositionsSuccessEx&gt; positionsGet(String X_API_KEY, ProductCode product, String symbol, SideCode side, String addinfo)
+			throws ApiException {
+<span class="fc" id="L67">		String productStr = EnumsUtil.toString(product);</span>
+<span class="fc" id="L68">		String sideStr = EnumsUtil.toString(side);</span>
+<span class="fc" id="L69">		List&lt;PositionsSuccess&gt; response = api.positionsGet(X_API_KEY, productStr, symbol, sideStr, addinfo);</span>
+<span class="fc" id="L70">		List&lt;PositionsSuccessEx&gt; list = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">		for (PositionsSuccess ps : response) {</span>
+<span class="fc" id="L72">			PositionsSuccessEx item = new PositionsSuccessEx(ps);</span>
+<span class="fc" id="L73">			list.add(item);</span>
+<span class="fc" id="L74">		}</span>
+<span class="fc" id="L75">		return list;</span>
+	}
+
+	public SymbolNameSuccess symbolnameFutureGet(String X_API_KEY, Integer derivMonth, FutureCode futureCode)
+			throws ApiException {
+<span class="fc" id="L80">		String futureCodeStr = EnumsUtil.toString(futureCode);</span>
+<span class="fc" id="L81">		SymbolNameSuccess response = api.symbolnameFutureGet(X_API_KEY, derivMonth, futureCodeStr);</span>
+<span class="fc" id="L82">		return response;</span>
+	}
+
+	public SymbolNameSuccess symbolnameOptionGet(String X_API_KEY, Integer derivMonth, PutOrCallCode putOrCall, Integer strikePrice)
+			throws ApiException {
+<span class="fc" id="L87">		SymbolNameSuccess response = this.symbolnameOptionGet(X_API_KEY, derivMonth, putOrCall, strikePrice, null);</span>
+<span class="fc" id="L88">		return response;</span>
+	}
+
+	public SymbolNameSuccess symbolnameOptionGet(String X_API_KEY, Integer derivMonth, PutOrCallCode putOrCall, Integer strikePrice, OptionCode optionCode)
+			throws ApiException {
+<span class="fc" id="L93">		String putOrCallStr = EnumsUtil.toString(putOrCall);</span>
+<span class="fc" id="L94">		String optionCodeStr = EnumsUtil.toString(optionCode);</span>
+<span class="fc" id="L95">		SymbolNameSuccess response = api.symbolnameOptionGet(X_API_KEY, derivMonth, putOrCallStr, strikePrice, optionCodeStr);</span>
+<span class="fc" id="L96">		return response;</span>
+	}
+
+	public SymbolNameSuccess symbolnameOptionMiniGet(String X_API_KEY, Integer derivMonth, Integer derivWeekly, PutOrCallCode putOrCall, Integer strikePrice)
+			throws ApiException {
+<span class="fc" id="L101">		String putOrCallStr = EnumsUtil.toString(putOrCall);</span>
+<span class="fc" id="L102">		SymbolNameSuccess response = api.symbolnameOptionMiniGet(X_API_KEY, derivMonth, derivWeekly, putOrCallStr, strikePrice);</span>
+<span class="fc" id="L103">		return response;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

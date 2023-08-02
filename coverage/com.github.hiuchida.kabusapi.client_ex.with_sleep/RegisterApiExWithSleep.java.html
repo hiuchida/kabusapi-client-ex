@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RegisterApiExWithSleep.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">kabusapi-client-ex</a> &gt; <a href="index.source.html" class="el_package">com.github.hiuchida.kabusapi.client_ex.with_sleep</a> &gt; <span class="el_source">RegisterApiExWithSleep.java</span></div><h1>RegisterApiExWithSleep.java</h1><pre class="source lang-java linenums">package com.github.hiuchida.kabusapi.client_ex.with_sleep;
+
+import java.util.List;
+
+import com.github.hiuchida.kabusapi.client_ex.RegisterApiEx;
+import com.github.hiuchida.kabusapi.client_ex.model.RegistSuccessEx;
+import com.github.hiuchida.kabusapi.client_ex.model.RegisterSymbolEx;
+
+import io.swagger.client.ApiClient;
+import io.swagger.client.ApiException;
+import io.swagger.client.model.UnregisterAllSuccess;
+
+public class RegisterApiExWithSleep {
+	private RegisterApiEx api;
+
+<span class="fc" id="L16">	public RegisterApiExWithSleep() {</span>
+<span class="fc" id="L17">		api = new RegisterApiEx();</span>
+<span class="fc" id="L18">	}</span>
+
+<span class="fc" id="L20">	public RegisterApiExWithSleep(ApiClient apiClient) {</span>
+<span class="fc" id="L21">		api = new RegisterApiEx(apiClient);</span>
+<span class="fc" id="L22">	}</span>
+
+	public RegistSuccessEx registerPut(RegisterSymbolEx req, String X_API_KEY) throws ApiException, InterruptedException {
+		try {
+<span class="fc" id="L26">			RegistSuccessEx response = api.registerPut(req, X_API_KEY);</span>
+<span class="fc" id="L27">			return response;</span>
+		} finally {
+<span class="fc" id="L29">			SleepUtil.sleep10times();</span>
+		}
+	}
+
+	public RegistSuccessEx registerPut(List&lt;RegisterSymbolEx&gt; reqList, String X_API_KEY) throws ApiException, InterruptedException {
+		try {
+<span class="fc" id="L35">			RegistSuccessEx response = api.registerPut(reqList, X_API_KEY);</span>
+<span class="fc" id="L36">			return response;</span>
+		} finally {
+<span class="fc" id="L38">			SleepUtil.sleep10times();</span>
+		}
+	}
+
+	public UnregisterAllSuccess unregisterAllPut(String X_API_KEY) throws ApiException, InterruptedException {
+		try {
+<span class="fc" id="L44">			UnregisterAllSuccess response = api.unregisterAllPut(X_API_KEY);</span>
+<span class="fc" id="L45">			return response;</span>
+		} finally {
+<span class="fc" id="L47">			SleepUtil.sleep10times();</span>
+		}
+	}
+
+	public RegistSuccessEx unregisterPut(RegisterSymbolEx req, String X_API_KEY) throws ApiException, InterruptedException {
+		try {
+<span class="fc" id="L53">			RegistSuccessEx response = api.unregisterPut(req, X_API_KEY);</span>
+<span class="fc" id="L54">			return response;</span>
+		} finally {
+<span class="fc" id="L56">			SleepUtil.sleep10times();</span>
+		}
+	}
+
+	public RegistSuccessEx unregisterPut(List&lt;RegisterSymbolEx&gt; reqList, String X_API_KEY) throws ApiException, InterruptedException {
+		try {
+<span class="fc" id="L62">			RegistSuccessEx response = api.unregisterPut(reqList, X_API_KEY);</span>
+<span class="fc" id="L63">			return response;</span>
+		} finally {
+<span class="fc" id="L65">			SleepUtil.sleep10times();</span>
+		}
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

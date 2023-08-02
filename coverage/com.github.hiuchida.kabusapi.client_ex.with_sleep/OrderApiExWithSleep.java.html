@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>OrderApiExWithSleep.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">kabusapi-client-ex</a> &gt; <a href="index.source.html" class="el_package">com.github.hiuchida.kabusapi.client_ex.with_sleep</a> &gt; <span class="el_source">OrderApiExWithSleep.java</span></div><h1>OrderApiExWithSleep.java</h1><pre class="source lang-java linenums">package com.github.hiuchida.kabusapi.client_ex.with_sleep;
+
+import com.github.hiuchida.kabusapi.client_ex.OrderApiEx;
+import com.github.hiuchida.kabusapi.client_ex.model.SendOrderFutureRequestEx;
+import com.github.hiuchida.kabusapi.client_ex.model.SendOrderOptionRequestEx;
+import com.github.hiuchida.kabusapi.client_ex.model.SendOrderRequestEx;
+
+import io.swagger.client.ApiClient;
+import io.swagger.client.ApiException;
+import io.swagger.client.model.OrderSuccess;
+
+public class OrderApiExWithSleep {
+	private OrderApiEx api;
+
+<span class="fc" id="L15">	public OrderApiExWithSleep() {</span>
+<span class="fc" id="L16">		api = new OrderApiEx();</span>
+<span class="fc" id="L17">	}</span>
+
+<span class="fc" id="L19">	public OrderApiExWithSleep(ApiClient apiClient) {</span>
+<span class="fc" id="L20">		api = new OrderApiEx(apiClient);</span>
+<span class="fc" id="L21">	}</span>
+
+	public OrderSuccess cancelorderPut(String orderId, String password, String X_API_KEY) throws ApiException, InterruptedException {
+		try {
+<span class="fc" id="L25">			OrderSuccess response = api.cancelorderPut(orderId, password, X_API_KEY);</span>
+<span class="fc" id="L26">			return response;</span>
+		} finally {
+<span class="fc" id="L28">			SleepUtil.sleep5times();</span>
+		}
+	}
+
+	public OrderSuccess sendoderFuturePost(SendOrderFutureRequestEx req, String password, String X_API_KEY)
+			throws ApiException, InterruptedException {
+		try {
+<span class="fc" id="L35">			OrderSuccess response = api.sendoderFuturePost(req, password, X_API_KEY);</span>
+<span class="fc" id="L36">			return response;</span>
+		} finally {
+<span class="fc" id="L38">			SleepUtil.sleep5times();</span>
+		}
+	}
+
+	public OrderSuccess sendorderOptionPost(SendOrderOptionRequestEx req, String password, String X_API_KEY)
+			throws ApiException, InterruptedException {
+		try {
+<span class="fc" id="L45">			OrderSuccess response = api.sendorderOptionPost(req, password, X_API_KEY);</span>
+<span class="fc" id="L46">			return response;</span>
+		} finally {
+<span class="fc" id="L48">			SleepUtil.sleep5times();</span>
+		}
+	}
+
+	public OrderSuccess sendorderPost(SendOrderRequestEx req, String password, String X_API_KEY)
+			throws ApiException, InterruptedException {
+		try {
+<span class="fc" id="L55">			OrderSuccess response = api.sendorderPost(req, password, X_API_KEY);</span>
+<span class="fc" id="L56">			return response;</span>
+		} finally {
+<span class="fc" id="L58">			SleepUtil.sleep5times();</span>
+		}
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

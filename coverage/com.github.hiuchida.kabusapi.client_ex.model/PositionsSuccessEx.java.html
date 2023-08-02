@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PositionsSuccessEx.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">kabusapi-client-ex</a> &gt; <a href="index.source.html" class="el_package">com.github.hiuchida.kabusapi.client_ex.model</a> &gt; <span class="el_source">PositionsSuccessEx.java</span></div><h1>PositionsSuccessEx.java</h1><pre class="source lang-java linenums">package com.github.hiuchida.kabusapi.client_ex.model;
+
+import com.github.hiuchida.kabusapi.enums.commons.ExchangeCode;
+import com.github.hiuchida.kabusapi.enums.commons.SecurityTypeCode;
+import com.github.hiuchida.kabusapi.enums.commons.SideCode;
+import com.github.hiuchida.kabusapi.enums.stock.AccountTypeCode;
+import com.github.hiuchida.kabusapi.enums.stock.MarginTradeTypeCode;
+
+import io.swagger.client.model.PositionsSuccess;
+
+public class PositionsSuccessEx {
+
+<span class="fc" id="L13">	private PositionsSuccess response = null;</span>
+
+<span class="fc" id="L15">	private String executionID = null;</span>
+
+<span class="fc" id="L17">	private AccountTypeCode accountType = null;</span>
+
+<span class="fc" id="L19">	private String symbol = null;</span>
+
+<span class="fc" id="L21">	private String symbolName = null;</span>
+
+<span class="fc" id="L23">	private ExchangeCode exchange = null;</span>
+
+<span class="fc" id="L25">	private String exchangeName = null;</span>
+
+<span class="fc" id="L27">	private SecurityTypeCode securityType = null;</span>
+
+<span class="fc" id="L29">	private Integer executionDay = null;</span>
+
+<span class="fc" id="L31">	private Double price = null;</span>
+
+<span class="fc" id="L33">	private Double leavesQty = null;</span>
+
+<span class="fc" id="L35">	private Double holdQty = null;</span>
+
+<span class="fc" id="L37">	private SideCode side = null;</span>
+
+<span class="fc" id="L39">	private Double expenses = null;</span>
+
+<span class="fc" id="L41">	private Double commission = null;</span>
+
+<span class="fc" id="L43">	private Double commissionTax = null;</span>
+
+<span class="fc" id="L45">	private Integer expireDay = null;</span>
+
+<span class="fc" id="L47">	private MarginTradeTypeCode marginTradeType = null;</span>
+
+<span class="fc" id="L49">	private Double currentPrice = null;</span>
+
+<span class="fc" id="L51">	private Double valuation = null;</span>
+
+<span class="fc" id="L53">	private Double profitLoss = null;</span>
+
+<span class="fc" id="L55">	private Double profitLossRate = null;</span>
+
+<span class="fc" id="L57">	public PositionsSuccessEx(PositionsSuccess response) {</span>
+<span class="fc" id="L58">		this.response = response;</span>
+<span class="fc" id="L59">		this.executionID = response.getExecutionID();</span>
+<span class="fc" id="L60">		this.accountType = AccountTypeCode.valueOf(response.getAccountType());</span>
+<span class="fc" id="L61">		this.symbol = response.getSymbol();</span>
+<span class="fc" id="L62">		this.symbolName = response.getSymbolName();</span>
+<span class="fc" id="L63">		this.exchange = ExchangeCode.valueOf(response.getExchange());</span>
+<span class="fc" id="L64">		this.exchangeName = response.getExchangeName();</span>
+<span class="fc" id="L65">		this.securityType = SecurityTypeCode.valueOf(response.getSecurityType());</span>
+<span class="fc" id="L66">		this.executionDay = response.getExecutionDay();</span>
+<span class="fc" id="L67">		this.price = response.getPrice();</span>
+<span class="fc" id="L68">		this.leavesQty = response.getLeavesQty();</span>
+<span class="fc" id="L69">		this.holdQty = response.getHoldQty();</span>
+<span class="fc" id="L70">		this.side = SideCode.valueOfCode(response.getSide());</span>
+<span class="fc" id="L71">		this.expenses = response.getExpenses();</span>
+<span class="fc" id="L72">		this.commission = response.getCommission();</span>
+<span class="fc" id="L73">		this.commissionTax = response.getCommissionTax();</span>
+<span class="fc" id="L74">		this.expireDay = response.getExpireDay();</span>
+<span class="fc" id="L75">		this.marginTradeType = MarginTradeTypeCode.valueOf(response.getMarginTradeType());</span>
+<span class="fc" id="L76">		this.currentPrice = response.getCurrentPrice();</span>
+<span class="fc" id="L77">		this.valuation = response.getValuation();</span>
+<span class="fc" id="L78">		this.profitLoss = response.getProfitLoss();</span>
+<span class="fc" id="L79">		this.profitLossRate = response.getProfitLossRate();</span>
+<span class="fc" id="L80">	}</span>
+
+	public String getExecutionID() {
+<span class="fc" id="L83">		return executionID;</span>
+	}
+
+	public void setExecutionID(String executionID) {
+<span class="fc" id="L87">		this.executionID = executionID;</span>
+<span class="fc" id="L88">	}</span>
+
+	public AccountTypeCode getAccountType() {
+<span class="fc" id="L91">		return accountType;</span>
+	}
+
+	public void setAccountType(AccountTypeCode accountType) {
+<span class="fc" id="L95">		this.accountType = accountType;</span>
+<span class="fc" id="L96">	}</span>
+
+	public String getSymbol() {
+<span class="fc" id="L99">		return symbol;</span>
+	}
+
+	public void setSymbol(String symbol) {
+<span class="fc" id="L103">		this.symbol = symbol;</span>
+<span class="fc" id="L104">	}</span>
+
+	public String getSymbolName() {
+<span class="fc" id="L107">		return symbolName;</span>
+	}
+
+	public void setSymbolName(String symbolName) {
+<span class="fc" id="L111">		this.symbolName = symbolName;</span>
+<span class="fc" id="L112">	}</span>
+
+	public ExchangeCode getExchange() {
+<span class="fc" id="L115">		return exchange;</span>
+	}
+
+	public void setExchange(ExchangeCode exchange) {
+<span class="fc" id="L119">		this.exchange = exchange;</span>
+<span class="fc" id="L120">	}</span>
+
+	public String getExchangeName() {
+<span class="fc" id="L123">		return exchangeName;</span>
+	}
+
+	public void setExchangeName(String exchangeName) {
+<span class="fc" id="L127">		this.exchangeName = exchangeName;</span>
+<span class="fc" id="L128">	}</span>
+
+	public SecurityTypeCode getSecurityType() {
+<span class="fc" id="L131">		return securityType;</span>
+	}
+
+	public void setSecurityType(SecurityTypeCode securityType) {
+<span class="fc" id="L135">		this.securityType = securityType;</span>
+<span class="fc" id="L136">	}</span>
+
+	public Integer getExecutionDay() {
+<span class="fc" id="L139">		return executionDay;</span>
+	}
+
+	public void setExecutionDay(Integer executionDay) {
+<span class="fc" id="L143">		this.executionDay = executionDay;</span>
+<span class="fc" id="L144">	}</span>
+
+	public Double getPrice() {
+<span class="fc" id="L147">		return price;</span>
+	}
+
+	public void setPrice(Double price) {
+<span class="fc" id="L151">		this.price = price;</span>
+<span class="fc" id="L152">	}</span>
+
+	public Double getLeavesQty() {
+<span class="fc" id="L155">		return leavesQty;</span>
+	}
+
+	public void setLeavesQty(Double leavesQty) {
+<span class="fc" id="L159">		this.leavesQty = leavesQty;</span>
+<span class="fc" id="L160">	}</span>
+
+	public Double getHoldQty() {
+<span class="fc" id="L163">		return holdQty;</span>
+	}
+
+	public void setHoldQty(Double holdQty) {
+<span class="fc" id="L167">		this.holdQty = holdQty;</span>
+<span class="fc" id="L168">	}</span>
+
+	public SideCode getSide() {
+<span class="fc" id="L171">		return side;</span>
+	}
+
+	public void setSide(SideCode side) {
+<span class="fc" id="L175">		this.side = side;</span>
+<span class="fc" id="L176">	}</span>
+
+	public Double getExpenses() {
+<span class="fc" id="L179">		return expenses;</span>
+	}
+
+	public void setExpenses(Double expenses) {
+<span class="fc" id="L183">		this.expenses = expenses;</span>
+<span class="fc" id="L184">	}</span>
+
+	public Double getCommission() {
+<span class="fc" id="L187">		return commission;</span>
+	}
+
+	public void setCommission(Double commission) {
+<span class="fc" id="L191">		this.commission = commission;</span>
+<span class="fc" id="L192">	}</span>
+
+	public Double getCommissionTax() {
+<span class="fc" id="L195">		return commissionTax;</span>
+	}
+
+	public void setCommissionTax(Double commissionTax) {
+<span class="fc" id="L199">		this.commissionTax = commissionTax;</span>
+<span class="fc" id="L200">	}</span>
+
+	public Integer getExpireDay() {
+<span class="fc" id="L203">		return expireDay;</span>
+	}
+
+	public void setExpireDay(Integer expireDay) {
+<span class="fc" id="L207">		this.expireDay = expireDay;</span>
+<span class="fc" id="L208">	}</span>
+
+	public MarginTradeTypeCode getMarginTradeType() {
+<span class="fc" id="L211">		return marginTradeType;</span>
+	}
+
+	public void setMarginTradeType(MarginTradeTypeCode marginTradeType) {
+<span class="fc" id="L215">		this.marginTradeType = marginTradeType;</span>
+<span class="fc" id="L216">	}</span>
+
+	public Double getCurrentPrice() {
+<span class="fc" id="L219">		return currentPrice;</span>
+	}
+
+	public void setCurrentPrice(Double currentPrice) {
+<span class="fc" id="L223">		this.currentPrice = currentPrice;</span>
+<span class="fc" id="L224">	}</span>
+
+	public Double getValuation() {
+<span class="fc" id="L227">		return valuation;</span>
+	}
+
+	public void setValuation(Double valuation) {
+<span class="fc" id="L231">		this.valuation = valuation;</span>
+<span class="fc" id="L232">	}</span>
+
+	public Double getProfitLoss() {
+<span class="fc" id="L235">		return profitLoss;</span>
+	}
+
+	public void setProfitLoss(Double profitLoss) {
+<span class="fc" id="L239">		this.profitLoss = profitLoss;</span>
+<span class="fc" id="L240">	}</span>
+
+	public Double getProfitLossRate() {
+<span class="fc" id="L243">		return profitLossRate;</span>
+	}
+
+	public void setProfitLossRate(Double profitLossRate) {
+<span class="fc" id="L247">		this.profitLossRate = profitLossRate;</span>
+<span class="fc" id="L248">	}</span>
+
+	public PositionsSuccess toPositionsSuccess() {
+<span class="fc" id="L251">		return response;</span>
+	}
+
+	@Override
+	public String toString() {
+<span class="fc" id="L256">		StringBuilder sb = new StringBuilder();</span>
+<span class="fc" id="L257">		sb.append(&quot;class PositionsSuccessEx {\n&quot;);</span>
+
+<span class="fc" id="L259">		sb.append(&quot;    executionID: &quot;).append(toIndentedString(executionID)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L260">		sb.append(&quot;    accountType: &quot;).append(toIndentedString(accountType)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L261">		sb.append(&quot;    symbol: &quot;).append(toIndentedString(symbol)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L262">		sb.append(&quot;    symbolName: &quot;).append(toIndentedString(symbolName)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L263">		sb.append(&quot;    exchange: &quot;).append(toIndentedString(exchange)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L264">		sb.append(&quot;    exchangeName: &quot;).append(toIndentedString(exchangeName)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L265">		sb.append(&quot;    securityType: &quot;).append(toIndentedString(securityType)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L266">		sb.append(&quot;    executionDay: &quot;).append(toIndentedString(executionDay)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L267">		sb.append(&quot;    price: &quot;).append(toIndentedString(price)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L268">		sb.append(&quot;    leavesQty: &quot;).append(toIndentedString(leavesQty)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L269">		sb.append(&quot;    holdQty: &quot;).append(toIndentedString(holdQty)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L270">		sb.append(&quot;    side: &quot;).append(toIndentedString(side)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L271">		sb.append(&quot;    expenses: &quot;).append(toIndentedString(expenses)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L272">		sb.append(&quot;    commission: &quot;).append(toIndentedString(commission)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L273">		sb.append(&quot;    commissionTax: &quot;).append(toIndentedString(commissionTax)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L274">		sb.append(&quot;    expireDay: &quot;).append(toIndentedString(expireDay)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L275">		sb.append(&quot;    marginTradeType: &quot;).append(toIndentedString(marginTradeType)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L276">		sb.append(&quot;    currentPrice: &quot;).append(toIndentedString(currentPrice)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L277">		sb.append(&quot;    valuation: &quot;).append(toIndentedString(valuation)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L278">		sb.append(&quot;    profitLoss: &quot;).append(toIndentedString(profitLoss)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L279">		sb.append(&quot;    profitLossRate: &quot;).append(toIndentedString(profitLossRate)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L280">		sb.append(&quot;}&quot;);</span>
+<span class="fc" id="L281">		return sb.toString();</span>
+	}
+
+	/**
+	 * Convert the given object to string with each line indented by 4 spaces
+	 * (except the first line).
+	 */
+	private String toIndentedString(java.lang.Object o) {
+<span class="fc bfc" id="L289" title="All 2 branches covered.">		if (o == null) {</span>
+<span class="fc" id="L290">			return &quot;null&quot;;</span>
+		}
+<span class="fc" id="L292">		return o.toString().replace(&quot;\n&quot;, &quot;\n    &quot;);</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

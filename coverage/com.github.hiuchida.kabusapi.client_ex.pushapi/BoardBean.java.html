@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BoardBean.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">kabusapi-client-ex</a> &gt; <a href="index.source.html" class="el_package">com.github.hiuchida.kabusapi.client_ex.pushapi</a> &gt; <span class="el_source">BoardBean.java</span></div><h1>BoardBean.java</h1><pre class="source lang-java linenums">package com.github.hiuchida.kabusapi.client_ex.pushapi;
+
+import java.time.OffsetDateTime;
+
+import com.google.gson.annotations.SerializedName;
+
+/**
+ * PUSH配信された時価情報Beanクラス。
+ */
+public class BoardBean {
+<span class="fc" id="L11">	@SerializedName(&quot;Symbol&quot;)</span>
+	public String symbol = null;
+
+<span class="fc" id="L14">	@SerializedName(&quot;SymbolName&quot;)</span>
+	public String symbolName = null;
+
+<span class="fc" id="L17">	@SerializedName(&quot;Exchange&quot;)</span>
+	public Integer exchange = null;
+
+<span class="fc" id="L20">	@SerializedName(&quot;ExchangeName&quot;)</span>
+	public String exchangeName = null;
+
+<span class="fc" id="L23">	@SerializedName(&quot;CurrentPrice&quot;)</span>
+	public Double currentPrice = null;
+
+<span class="fc" id="L26">	@SerializedName(&quot;CurrentPriceTime&quot;)</span>
+	public OffsetDateTime currentPriceTime = null;
+
+<span class="fc" id="L29">	@SerializedName(&quot;CurrentPriceChangeStatus&quot;)</span>
+	public String currentPriceChangeStatus = null;
+
+<span class="fc" id="L32">	@SerializedName(&quot;CurrentPriceStatus&quot;)</span>
+	public Integer currentPriceStatus = null;
+
+<span class="fc" id="L35">	@SerializedName(&quot;CalcPrice&quot;)</span>
+	public Double calcPrice = null;
+
+<span class="fc" id="L38">	@SerializedName(&quot;PreviousClose&quot;)</span>
+	public Double previousClose = null;
+
+<span class="fc" id="L41">	@SerializedName(&quot;PreviousCloseTime&quot;)</span>
+	public OffsetDateTime previousCloseTime = null;
+
+<span class="fc" id="L44">	@SerializedName(&quot;ChangePreviousClose&quot;)</span>
+	public Double changePreviousClose = null;
+
+<span class="fc" id="L47">	@SerializedName(&quot;ChangePreviousClosePer&quot;)</span>
+	public Double changePreviousClosePer = null;
+
+<span class="fc" id="L50">	@SerializedName(&quot;OpeningPrice&quot;)</span>
+	public Double openingPrice = null;
+
+<span class="fc" id="L53">	@SerializedName(&quot;OpeningPriceTime&quot;)</span>
+	public OffsetDateTime openingPriceTime = null;
+
+<span class="fc" id="L56">	@SerializedName(&quot;HighPrice&quot;)</span>
+	public Double highPrice = null;
+
+<span class="fc" id="L59">	@SerializedName(&quot;HighPriceTime&quot;)</span>
+	public OffsetDateTime highPriceTime = null;
+
+<span class="fc" id="L62">	@SerializedName(&quot;LowPrice&quot;)</span>
+	public Double lowPrice = null;
+
+<span class="fc" id="L65">	@SerializedName(&quot;LowPriceTime&quot;)</span>
+	public OffsetDateTime lowPriceTime = null;
+
+<span class="fc" id="L68">	@SerializedName(&quot;TradingVolume&quot;)</span>
+	public Double tradingVolume = null;
+
+<span class="fc" id="L71">	@SerializedName(&quot;TradingVolumeTime&quot;)</span>
+	public OffsetDateTime tradingVolumeTime = null;
+
+<span class="fc" id="L74">	@SerializedName(&quot;VWAP&quot;)</span>
+	public Double VWAP = null;
+
+<span class="fc" id="L77">	@SerializedName(&quot;TradingValue&quot;)</span>
+	public Double tradingValue = null;
+
+<span class="fc" id="L80">	@SerializedName(&quot;BidQty&quot;)</span>
+	public Double bidQty = null;
+
+<span class="fc" id="L83">	@SerializedName(&quot;BidPrice&quot;)</span>
+	public Double bidPrice = null;
+
+<span class="fc" id="L86">	@SerializedName(&quot;BidTime&quot;)</span>
+	public OffsetDateTime bidTime = null;
+
+<span class="fc" id="L89">	@SerializedName(&quot;BidSign&quot;)</span>
+	public String bidSign = null;
+
+<span class="fc" id="L92">	@SerializedName(&quot;MarketOrderSellQty&quot;)</span>
+	public Double marketOrderSellQty = null;
+
+<span class="fc" id="L95">	@SerializedName(&quot;Sell1&quot;)</span>
+	public BoardBeanQuotation1 sell1 = null;
+
+<span class="fc" id="L98">	@SerializedName(&quot;Sell2&quot;)</span>
+	public BoardBeanQuotation2 sell2 = null;
+
+<span class="fc" id="L101">	@SerializedName(&quot;Sell3&quot;)</span>
+	public BoardBeanQuotation2 sell3 = null;
+
+<span class="fc" id="L104">	@SerializedName(&quot;Sell4&quot;)</span>
+	public BoardBeanQuotation2 sell4 = null;
+
+<span class="fc" id="L107">	@SerializedName(&quot;Sell5&quot;)</span>
+	public BoardBeanQuotation2 sell5 = null;
+
+<span class="fc" id="L110">	@SerializedName(&quot;Sell6&quot;)</span>
+	public BoardBeanQuotation2 sell6 = null;
+
+<span class="fc" id="L113">	@SerializedName(&quot;Sell7&quot;)</span>
+	public BoardBeanQuotation2 sell7 = null;
+
+<span class="fc" id="L116">	@SerializedName(&quot;Sell8&quot;)</span>
+	public BoardBeanQuotation2 sell8 = null;
+
+<span class="fc" id="L119">	@SerializedName(&quot;Sell9&quot;)</span>
+	public BoardBeanQuotation2 sell9 = null;
+
+<span class="fc" id="L122">	@SerializedName(&quot;Sell10&quot;)</span>
+	public BoardBeanQuotation2 sell10 = null;
+
+<span class="fc" id="L125">	@SerializedName(&quot;AskQty&quot;)</span>
+	public Double askQty = null;
+
+<span class="fc" id="L128">	@SerializedName(&quot;AskPrice&quot;)</span>
+	public Double askPrice = null;
+
+<span class="fc" id="L131">	@SerializedName(&quot;AskTime&quot;)</span>
+	public OffsetDateTime askTime = null;
+
+<span class="fc" id="L134">	@SerializedName(&quot;AskSign&quot;)</span>
+	public String askSign = null;
+
+<span class="fc" id="L137">	@SerializedName(&quot;MarketOrderBuyQty&quot;)</span>
+	public Double marketOrderBuyQty = null;
+
+<span class="fc" id="L140">	@SerializedName(&quot;Buy1&quot;)</span>
+	public BoardBeanQuotation1 buy1 = null;
+
+<span class="fc" id="L143">	@SerializedName(&quot;Buy2&quot;)</span>
+	public BoardBeanQuotation2 buy2 = null;
+
+<span class="fc" id="L146">	@SerializedName(&quot;Buy3&quot;)</span>
+	public BoardBeanQuotation2 buy3 = null;
+
+<span class="fc" id="L149">	@SerializedName(&quot;Buy4&quot;)</span>
+	public BoardBeanQuotation2 buy4 = null;
+
+<span class="fc" id="L152">	@SerializedName(&quot;Buy5&quot;)</span>
+	public BoardBeanQuotation2 buy5 = null;
+
+<span class="fc" id="L155">	@SerializedName(&quot;Buy6&quot;)</span>
+	public BoardBeanQuotation2 buy6 = null;
+
+<span class="fc" id="L158">	@SerializedName(&quot;Buy7&quot;)</span>
+	public BoardBeanQuotation2 buy7 = null;
+
+<span class="fc" id="L161">	@SerializedName(&quot;Buy8&quot;)</span>
+	public BoardBeanQuotation2 buy8 = null;
+
+<span class="fc" id="L164">	@SerializedName(&quot;Buy9&quot;)</span>
+	public BoardBeanQuotation2 buy9 = null;
+
+<span class="fc" id="L167">	@SerializedName(&quot;Buy10&quot;)</span>
+	public BoardBeanQuotation2 buy10 = null;
+
+<span class="fc" id="L170">	@SerializedName(&quot;OverSellQty&quot;)</span>
+	public Double overSellQty = null;
+
+<span class="fc" id="L173">	@SerializedName(&quot;UnderBuyQty&quot;)</span>
+	public Double underBuyQty = null;
+
+<span class="fc" id="L176">	@SerializedName(&quot;TotalMarketValue&quot;)</span>
+	public Double totalMarketValue = null;
+
+<span class="fc" id="L179">	@SerializedName(&quot;ClearingPrice&quot;)</span>
+	public Double clearingPrice = null;
+
+<span class="fc" id="L182">	@SerializedName(&quot;IV&quot;)</span>
+	public Double IV = null;
+
+<span class="fc" id="L185">	@SerializedName(&quot;Gamma&quot;)</span>
+	public Double gamma = null;
+
+<span class="fc" id="L188">	@SerializedName(&quot;Theta&quot;)</span>
+	public Double theta = null;
+
+<span class="fc" id="L191">	@SerializedName(&quot;Vega&quot;)</span>
+	public Double vega = null;
+
+<span class="fc" id="L194">	@SerializedName(&quot;Delta&quot;)</span>
+	public Double delta = null;
+
+<span class="fc" id="L197">	@SerializedName(&quot;SecurityType&quot;)</span>
+	public Integer securityType = null;
+
+<span class="fc" id="L200">	public BoardBean() {</span>
+<span class="fc" id="L201">	}</span>
+
+	@Override
+	public String toString() {
+<span class="fc" id="L205">		StringBuilder sb = new StringBuilder();</span>
+<span class="fc" id="L206">		sb.append(&quot;class BoardBean {\n&quot;);</span>
+		
+<span class="fc" id="L208">		sb.append(&quot;    symbol: &quot;).append(toIndentedString(symbol)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L209">		sb.append(&quot;    symbolName: &quot;).append(toIndentedString(symbolName)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L210">		sb.append(&quot;    exchange: &quot;).append(toIndentedString(exchange)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L211">		sb.append(&quot;    exchangeName: &quot;).append(toIndentedString(exchangeName)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L212">		sb.append(&quot;    currentPrice: &quot;).append(toIndentedString(currentPrice)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L213">		sb.append(&quot;    currentPriceTime: &quot;).append(toIndentedString(currentPriceTime)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L214">		sb.append(&quot;    currentPriceChangeStatus: &quot;).append(toIndentedString(currentPriceChangeStatus)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L215">		sb.append(&quot;    currentPriceStatus: &quot;).append(toIndentedString(currentPriceStatus)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L216">		sb.append(&quot;    calcPrice: &quot;).append(toIndentedString(calcPrice)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L217">		sb.append(&quot;    previousClose: &quot;).append(toIndentedString(previousClose)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L218">		sb.append(&quot;    previousCloseTime: &quot;).append(toIndentedString(previousCloseTime)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L219">		sb.append(&quot;    changePreviousClose: &quot;).append(toIndentedString(changePreviousClose)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L220">		sb.append(&quot;    changePreviousClosePer: &quot;).append(toIndentedString(changePreviousClosePer)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L221">		sb.append(&quot;    openingPrice: &quot;).append(toIndentedString(openingPrice)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L222">		sb.append(&quot;    openingPriceTime: &quot;).append(toIndentedString(openingPriceTime)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L223">		sb.append(&quot;    highPrice: &quot;).append(toIndentedString(highPrice)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L224">		sb.append(&quot;    highPriceTime: &quot;).append(toIndentedString(highPriceTime)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L225">		sb.append(&quot;    lowPrice: &quot;).append(toIndentedString(lowPrice)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L226">		sb.append(&quot;    lowPriceTime: &quot;).append(toIndentedString(lowPriceTime)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L227">		sb.append(&quot;    tradingVolume: &quot;).append(toIndentedString(tradingVolume)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L228">		sb.append(&quot;    tradingVolumeTime: &quot;).append(toIndentedString(tradingVolumeTime)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L229">		sb.append(&quot;    VWAP: &quot;).append(toIndentedString(VWAP)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L230">		sb.append(&quot;    tradingValue: &quot;).append(toIndentedString(tradingValue)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L231">		sb.append(&quot;    bidQty: &quot;).append(toIndentedString(bidQty)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L232">		sb.append(&quot;    bidPrice: &quot;).append(toIndentedString(bidPrice)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L233">		sb.append(&quot;    bidTime: &quot;).append(toIndentedString(bidTime)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L234">		sb.append(&quot;    bidSign: &quot;).append(toIndentedString(bidSign)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L235">		sb.append(&quot;    marketOrderSellQty: &quot;).append(toIndentedString(marketOrderSellQty)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L236">		sb.append(&quot;    sell1: &quot;).append(toIndentedString(sell1)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L237">		sb.append(&quot;    sell2: &quot;).append(toIndentedString(sell2)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L238">		sb.append(&quot;    sell3: &quot;).append(toIndentedString(sell3)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L239">		sb.append(&quot;    sell4: &quot;).append(toIndentedString(sell4)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L240">		sb.append(&quot;    sell5: &quot;).append(toIndentedString(sell5)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L241">		sb.append(&quot;    sell6: &quot;).append(toIndentedString(sell6)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L242">		sb.append(&quot;    sell7: &quot;).append(toIndentedString(sell7)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L243">		sb.append(&quot;    sell8: &quot;).append(toIndentedString(sell8)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L244">		sb.append(&quot;    sell9: &quot;).append(toIndentedString(sell9)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L245">		sb.append(&quot;    sell10: &quot;).append(toIndentedString(sell10)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L246">		sb.append(&quot;    askQty: &quot;).append(toIndentedString(askQty)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L247">		sb.append(&quot;    askPrice: &quot;).append(toIndentedString(askPrice)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L248">		sb.append(&quot;    askTime: &quot;).append(toIndentedString(askTime)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L249">		sb.append(&quot;    askSign: &quot;).append(toIndentedString(askSign)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L250">		sb.append(&quot;    marketOrderBuyQty: &quot;).append(toIndentedString(marketOrderBuyQty)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L251">		sb.append(&quot;    buy1: &quot;).append(toIndentedString(buy1)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L252">		sb.append(&quot;    buy2: &quot;).append(toIndentedString(buy2)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L253">		sb.append(&quot;    buy3: &quot;).append(toIndentedString(buy3)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L254">		sb.append(&quot;    buy4: &quot;).append(toIndentedString(buy4)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L255">		sb.append(&quot;    buy5: &quot;).append(toIndentedString(buy5)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L256">		sb.append(&quot;    buy6: &quot;).append(toIndentedString(buy6)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L257">		sb.append(&quot;    buy7: &quot;).append(toIndentedString(buy7)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L258">		sb.append(&quot;    buy8: &quot;).append(toIndentedString(buy8)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L259">		sb.append(&quot;    buy9: &quot;).append(toIndentedString(buy9)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L260">		sb.append(&quot;    buy10: &quot;).append(toIndentedString(buy10)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L261">		sb.append(&quot;    overSellQty: &quot;).append(toIndentedString(overSellQty)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L262">		sb.append(&quot;    underBuyQty: &quot;).append(toIndentedString(underBuyQty)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L263">		sb.append(&quot;    totalMarketValue: &quot;).append(toIndentedString(totalMarketValue)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L264">		sb.append(&quot;    clearingPrice: &quot;).append(toIndentedString(clearingPrice)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L265">		sb.append(&quot;    IV: &quot;).append(toIndentedString(IV)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L266">		sb.append(&quot;    gamma: &quot;).append(toIndentedString(gamma)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L267">		sb.append(&quot;    theta: &quot;).append(toIndentedString(theta)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L268">		sb.append(&quot;    vega: &quot;).append(toIndentedString(vega)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L269">		sb.append(&quot;    delta: &quot;).append(toIndentedString(delta)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L270">		sb.append(&quot;    securityType: &quot;).append(toIndentedString(securityType)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L271">		sb.append(&quot;}&quot;);</span>
+<span class="fc" id="L272">		return sb.toString();</span>
+	}
+
+	/**
+	 * Convert the given object to string with each line indented by 4 spaces
+	 * (except the first line).
+	 */
+	private String toIndentedString(java.lang.Object o) {
+<span class="fc bfc" id="L280" title="All 2 branches covered.">		if (o == null) {</span>
+<span class="fc" id="L281">			return &quot;null&quot;;</span>
+		}
+<span class="fc" id="L283">		return o.toString().replace(&quot;\n&quot;, &quot;\n    &quot;);</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

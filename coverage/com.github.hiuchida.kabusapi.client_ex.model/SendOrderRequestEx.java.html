@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SendOrderRequestEx.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">kabusapi-client-ex</a> &gt; <a href="index.source.html" class="el_package">com.github.hiuchida.kabusapi.client_ex.model</a> &gt; <span class="el_source">SendOrderRequestEx.java</span></div><h1>SendOrderRequestEx.java</h1><pre class="source lang-java linenums">package com.github.hiuchida.kabusapi.client_ex.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.github.hiuchida.kabusapi.enums.commons.ClosePositionOrderCode;
+import com.github.hiuchida.kabusapi.enums.commons.SideCode;
+import com.github.hiuchida.kabusapi.enums.commons.UnderOverCode;
+import com.github.hiuchida.kabusapi.enums.stock.AccountTypeCode;
+import com.github.hiuchida.kabusapi.enums.stock.AfterHitOrderTypeSCode;
+import com.github.hiuchida.kabusapi.enums.stock.CashmarginStockCode;
+import com.github.hiuchida.kabusapi.enums.stock.DelivTypeCode;
+import com.github.hiuchida.kabusapi.enums.stock.ExchangeSCode;
+import com.github.hiuchida.kabusapi.enums.stock.FrontOrderTypeSCode;
+import com.github.hiuchida.kabusapi.enums.stock.FundTypeCode;
+import com.github.hiuchida.kabusapi.enums.stock.MarginTradeTypeCode;
+import com.github.hiuchida.kabusapi.enums.stock.SecurityTypeSCode;
+import com.github.hiuchida.kabusapi.enums.stock.TriggerSecCode;
+
+import io.swagger.client.model.Positions;
+import io.swagger.client.model.RequestSendOrder;
+import io.swagger.client.model.RequestSendOrderReverseLimitOrder;
+
+<span class="fc" id="L24">public class SendOrderRequestEx extends SendOrderCommonRequestEx {</span>
+
+	public static class ReverseLimitOrder {
+<span class="fc" id="L27">		private TriggerSecCode triggerSec = null;</span>
+
+<span class="fc" id="L29">		private Double triggerPrice = null;</span>
+
+<span class="fc" id="L31">		private UnderOverCode underOver = null;</span>
+
+<span class="fc" id="L33">		private AfterHitOrderTypeSCode afterHitOrderType = null;</span>
+
+<span class="fc" id="L35">		private Double afterHitPrice = null;</span>
+
+<span class="fc" id="L37">		public ReverseLimitOrder(TriggerSecCode triggerSec, Double triggerPrice, UnderOverCode underOver, AfterHitOrderTypeSCode afterHitOrderType, Double afterHitPrice) {</span>
+<span class="fc" id="L38">			this.triggerSec = triggerSec;</span>
+<span class="fc" id="L39">			this.triggerPrice = triggerPrice;</span>
+<span class="fc" id="L40">			this.underOver = underOver;</span>
+<span class="fc" id="L41">			this.afterHitOrderType = afterHitOrderType;</span>
+<span class="fc" id="L42">			this.afterHitPrice = afterHitPrice;</span>
+<span class="fc" id="L43">		}</span>
+
+		public TriggerSecCode getTriggerSec() {
+<span class="fc" id="L46">			return triggerSec;</span>
+		}
+
+		public void setTriggerSec(TriggerSecCode triggerSec) {
+<span class="fc" id="L50">			this.triggerSec = triggerSec;</span>
+<span class="fc" id="L51">		}</span>
+
+		public Double getTriggerPrice() {
+<span class="fc" id="L54">			return triggerPrice;</span>
+		}
+
+		public void setTriggerPrice(Double triggerPrice) {
+<span class="fc" id="L58">			this.triggerPrice = triggerPrice;</span>
+<span class="fc" id="L59">		}</span>
+
+		public UnderOverCode getUnderOver() {
+<span class="fc" id="L62">			return underOver;</span>
+		}
+
+		public void setUnderOver(UnderOverCode underOver) {
+<span class="fc" id="L66">			this.underOver = underOver;</span>
+<span class="fc" id="L67">		}</span>
+
+		public AfterHitOrderTypeSCode getAfterHitOrderType() {
+<span class="fc" id="L70">			return afterHitOrderType;</span>
+		}
+
+		public void setAfterHitOrderType(AfterHitOrderTypeSCode afterHitOrderType) {
+<span class="fc" id="L74">			this.afterHitOrderType = afterHitOrderType;</span>
+<span class="fc" id="L75">		}</span>
+
+		public Double getAfterHitPrice() {
+<span class="fc" id="L78">			return afterHitPrice;</span>
+		}
+
+		public void setAfterHitPrice(Double afterHitPrice) {
+<span class="fc" id="L82">			this.afterHitPrice = afterHitPrice;</span>
+<span class="fc" id="L83">		}</span>
+
+		public RequestSendOrderReverseLimitOrder toRequestSendOrderReverseLimitOrder() {
+<span class="fc" id="L86">			RequestSendOrderReverseLimitOrder rlo = new RequestSendOrderReverseLimitOrder();</span>
+<span class="fc" id="L87">			rlo.setTriggerSec(triggerSec.intValue());</span>
+<span class="fc" id="L88">			rlo.setTriggerPrice(triggerPrice);</span>
+<span class="fc" id="L89">			rlo.setUnderOver(underOver.intValue());</span>
+<span class="fc" id="L90">			rlo.setAfterHitOrderType(afterHitOrderType.intValue());</span>
+<span class="fc" id="L91">			rlo.setAfterHitPrice(afterHitPrice);</span>
+<span class="fc" id="L92">			return rlo;</span>
+		}
+
+		@Override
+		public String toString() {
+<span class="fc" id="L97">			StringBuilder sb = new StringBuilder();</span>
+<span class="fc" id="L98">			sb.append(&quot;class ReverseLimitOrder {\n&quot;);</span>
+			
+<span class="fc" id="L100">			sb.append(&quot;    triggerSec: &quot;).append(toIndentedString(triggerSec)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L101">			sb.append(&quot;    triggerPrice: &quot;).append(toIndentedString(triggerPrice)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L102">			sb.append(&quot;    underOver: &quot;).append(toIndentedString(underOver)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L103">			sb.append(&quot;    afterHitOrderType: &quot;).append(toIndentedString(afterHitOrderType)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L104">			sb.append(&quot;    afterHitPrice: &quot;).append(toIndentedString(afterHitPrice)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L105">			sb.append(&quot;}&quot;);</span>
+<span class="fc" id="L106">			return sb.toString();</span>
+		}
+
+		/**
+		 * Convert the given object to string with each line indented by 4 spaces
+		 * (except the first line).
+		 */
+		private String toIndentedString(java.lang.Object o) {
+<span class="fc bfc" id="L114" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L115">				return &quot;null&quot;;</span>
+			}
+<span class="fc" id="L117">			return o.toString().replace(&quot;\n&quot;, &quot;\n    &quot;);</span>
+		}
+
+	}
+
+//	  private String password = null;
+
+<span class="fc" id="L124">	private String symbol = null;</span>
+
+<span class="fc" id="L126">	private ExchangeSCode exchange = null;</span>
+
+<span class="fc" id="L128">	private SecurityTypeSCode securityType = null;</span>
+
+<span class="fc" id="L130">	private SideCode side = null;</span>
+
+<span class="fc" id="L132">	private CashmarginStockCode cashMargin = null;</span>
+
+<span class="fc" id="L134">	private MarginTradeTypeCode marginTradeType = null;</span>
+
+<span class="fc" id="L136">	private Double marginPremiumUnit = null;</span>
+
+<span class="fc" id="L138">	private DelivTypeCode delivType = null;</span>
+
+<span class="fc" id="L140">	private FundTypeCode fundType = null;</span>
+
+<span class="fc" id="L142">	private AccountTypeCode accountType = null;</span>
+
+<span class="fc" id="L144">	private Integer qty = null;</span>
+
+<span class="fc" id="L146">	private ClosePositionOrderCode closePositionOrder = null;</span>
+
+<span class="fc" id="L148">	private List&lt;ClosePosition&gt; closePositions = null;</span>
+
+<span class="fc" id="L150">	private FrontOrderTypeSCode frontOrderType = null;</span>
+
+<span class="fc" id="L152">	private Double price = null;</span>
+
+<span class="fc" id="L154">	private Integer expireDay = null;</span>
+
+<span class="fc" id="L156">	private ReverseLimitOrder reverseLimitOrder = null;</span>
+
+	public SendOrderRequestEx symbol(String symbol) {
+<span class="fc" id="L159">		this.symbol = symbol;</span>
+<span class="fc" id="L160">		return this;</span>
+	}
+
+	public String getSymbol() {
+<span class="fc" id="L164">		return symbol;</span>
+	}
+
+	public void setSymbol(String symbol) {
+<span class="fc" id="L168">		this.symbol = symbol;</span>
+<span class="fc" id="L169">	}</span>
+
+	public SendOrderRequestEx exchange(ExchangeSCode exchange) {
+<span class="fc" id="L172">		this.exchange = exchange;</span>
+<span class="fc" id="L173">		return this;</span>
+	}
+
+	public ExchangeSCode getExchange() {
+<span class="fc" id="L177">		return exchange;</span>
+	}
+
+	public void setExchange(ExchangeSCode exchange) {
+<span class="fc" id="L181">		this.exchange = exchange;</span>
+<span class="fc" id="L182">	}</span>
+
+	public SendOrderRequestEx securityType(SecurityTypeSCode securityType) {
+<span class="fc" id="L185">		this.securityType = securityType;</span>
+<span class="fc" id="L186">		return this;</span>
+	}
+
+	public SecurityTypeSCode getSecurityType() {
+<span class="fc" id="L190">		return securityType;</span>
+	}
+
+	public void setSecurityType(SecurityTypeSCode securityType) {
+<span class="fc" id="L194">		this.securityType = securityType;</span>
+<span class="fc" id="L195">	}</span>
+
+	public SendOrderRequestEx side(SideCode side) {
+<span class="fc" id="L198">		this.side = side;</span>
+<span class="fc" id="L199">		return this;</span>
+	}
+
+	public SideCode getSide() {
+<span class="fc" id="L203">		return side;</span>
+	}
+
+	public void setSide(SideCode side) {
+<span class="fc" id="L207">		this.side = side;</span>
+<span class="fc" id="L208">	}</span>
+
+	public SendOrderRequestEx cashMargin(CashmarginStockCode cashMargin) {
+<span class="fc" id="L211">		this.cashMargin = cashMargin;</span>
+<span class="fc" id="L212">		return this;</span>
+	}
+
+	public CashmarginStockCode getCashMargin() {
+<span class="fc" id="L216">		return cashMargin;</span>
+	}
+
+	public void setCashMargin(CashmarginStockCode cashMargin) {
+<span class="fc" id="L220">		this.cashMargin = cashMargin;</span>
+<span class="fc" id="L221">	}</span>
+
+	public SendOrderRequestEx marginTradeType(MarginTradeTypeCode marginTradeType) {
+<span class="fc" id="L224">		this.marginTradeType = marginTradeType;</span>
+<span class="fc" id="L225">		return this;</span>
+	}
+
+	public MarginTradeTypeCode getMarginTradeType() {
+<span class="fc" id="L229">		return marginTradeType;</span>
+	}
+
+	public void setMarginTradeType(MarginTradeTypeCode marginTradeType) {
+<span class="fc" id="L233">		this.marginTradeType = marginTradeType;</span>
+<span class="fc" id="L234">	}</span>
+
+	public SendOrderRequestEx marginPremiumUnit(Double marginPremiumUnit) {
+<span class="fc" id="L237">		this.marginPremiumUnit = marginPremiumUnit;</span>
+<span class="fc" id="L238">		return this;</span>
+	}
+
+	public Double getMarginPremiumUnit() {
+<span class="fc" id="L242">		return marginPremiumUnit;</span>
+	}
+
+	public void setMarginPremiumUnit(Double marginPremiumUnit) {
+<span class="fc" id="L246">		this.marginPremiumUnit = marginPremiumUnit;</span>
+<span class="fc" id="L247">	}</span>
+
+	public SendOrderRequestEx delivType(DelivTypeCode delivType) {
+<span class="fc" id="L250">		this.delivType = delivType;</span>
+<span class="fc" id="L251">		return this;</span>
+	}
+
+	public DelivTypeCode getDelivType() {
+<span class="fc" id="L255">		return delivType;</span>
+	}
+
+	public void setDelivType(DelivTypeCode delivType) {
+<span class="fc" id="L259">		this.delivType = delivType;</span>
+<span class="fc" id="L260">	}</span>
+
+	public SendOrderRequestEx fundType(FundTypeCode fundType) {
+<span class="fc" id="L263">		this.fundType = fundType;</span>
+<span class="fc" id="L264">		return this;</span>
+	}
+
+	public FundTypeCode getFundType() {
+<span class="fc" id="L268">		return fundType;</span>
+	}
+
+	public void setFundType(FundTypeCode fundType) {
+<span class="fc" id="L272">		this.fundType = fundType;</span>
+<span class="fc" id="L273">	}</span>
+
+	public SendOrderRequestEx accountType(AccountTypeCode accountType) {
+<span class="fc" id="L276">		this.accountType = accountType;</span>
+<span class="fc" id="L277">		return this;</span>
+	}
+
+	public AccountTypeCode getAccountType() {
+<span class="fc" id="L281">		return accountType;</span>
+	}
+
+	public void setAccountType(AccountTypeCode accountType) {
+<span class="fc" id="L285">		this.accountType = accountType;</span>
+<span class="fc" id="L286">	}</span>
+
+	public SendOrderRequestEx qty(Integer qty) {
+<span class="fc" id="L289">		this.qty = qty;</span>
+<span class="fc" id="L290">		return this;</span>
+	}
+
+	public Integer getQty() {
+<span class="fc" id="L294">		return qty;</span>
+	}
+
+	public void setQty(Integer qty) {
+<span class="fc" id="L298">		this.qty = qty;</span>
+<span class="fc" id="L299">	}</span>
+
+	public SendOrderRequestEx closePositionOrder(ClosePositionOrderCode closePositionOrder) {
+<span class="fc" id="L302">		this.closePositionOrder = closePositionOrder;</span>
+<span class="fc" id="L303">		return this;</span>
+	}
+
+	public ClosePositionOrderCode getClosePositionOrder() {
+<span class="fc" id="L307">		return closePositionOrder;</span>
+	}
+
+	public void setClosePositionOrder(ClosePositionOrderCode closePositionOrder) {
+<span class="fc" id="L311">		this.closePositionOrder = closePositionOrder;</span>
+<span class="fc" id="L312">	}</span>
+
+	public List&lt;ClosePosition&gt; getClosePositions() {
+<span class="fc" id="L315">		return closePositions;</span>
+	}
+
+	public void addClosePosition(String holdID, Integer qty) {
+<span class="fc bfc" id="L319" title="All 2 branches covered.">		if (closePositions == null) {</span>
+<span class="fc" id="L320">			closePositions = new ArrayList&lt;&gt;();</span>
+		}
+<span class="fc" id="L322">		ClosePosition cp = new ClosePosition(holdID, qty);</span>
+<span class="fc" id="L323">		closePositions.add(cp);</span>
+<span class="fc" id="L324">	}</span>
+
+	public void setClosePositions(List&lt;ClosePosition&gt; closePositions) {
+<span class="fc" id="L327">		this.closePositions = closePositions;</span>
+<span class="fc" id="L328">	}</span>
+
+	public SendOrderRequestEx frontOrderType(FrontOrderTypeSCode frontOrderType) {
+<span class="fc" id="L331">		this.frontOrderType = frontOrderType;</span>
+<span class="fc" id="L332">		return this;</span>
+	}
+
+	public FrontOrderTypeSCode getFrontOrderType() {
+<span class="fc" id="L336">		return frontOrderType;</span>
+	}
+
+	public void setFrontOrderType(FrontOrderTypeSCode frontOrderType) {
+<span class="fc" id="L340">		this.frontOrderType = frontOrderType;</span>
+<span class="fc" id="L341">	}</span>
+
+	public SendOrderRequestEx price(Double price) {
+<span class="fc" id="L344">		this.price = price;</span>
+<span class="fc" id="L345">		return this;</span>
+	}
+
+	public Double getPrice() {
+<span class="fc" id="L349">		return price;</span>
+	}
+
+	public void setPrice(Double price) {
+<span class="fc" id="L353">		this.price = price;</span>
+<span class="fc" id="L354">	}</span>
+
+	public SendOrderRequestEx expireDay(Integer expireDay) {
+<span class="fc" id="L357">		this.expireDay = expireDay;</span>
+<span class="fc" id="L358">		return this;</span>
+	}
+
+	public Integer getExpireDay() {
+<span class="fc" id="L362">		return expireDay;</span>
+	}
+
+	public void setExpireDay(Integer expireDay) {
+<span class="fc" id="L366">		this.expireDay = expireDay;</span>
+<span class="fc" id="L367">	}</span>
+
+	public SendOrderRequestEx reverseLimitOrder(ReverseLimitOrder reverseLimitOrder) {
+<span class="fc" id="L370">		this.reverseLimitOrder = reverseLimitOrder;</span>
+<span class="fc" id="L371">		return this;</span>
+	}
+
+	public ReverseLimitOrder getReverseLimitOrder() {
+<span class="fc" id="L375">		return reverseLimitOrder;</span>
+	}
+
+	public void setReverseLimitOrder(TriggerSecCode triggerSec, Double triggerPrice, UnderOverCode underOver, AfterHitOrderTypeSCode afterHitOrderType, Double afterHitPrice) {
+<span class="fc" id="L379">		ReverseLimitOrder rlo = new ReverseLimitOrder(triggerSec, triggerPrice, underOver, afterHitOrderType, afterHitPrice);</span>
+<span class="fc" id="L380">		this.reverseLimitOrder = rlo;</span>
+<span class="fc" id="L381">	}</span>
+
+	public void setReverseLimitOrder(ReverseLimitOrder reverseLimitOrder) {
+<span class="fc" id="L384">		this.reverseLimitOrder = reverseLimitOrder;</span>
+<span class="fc" id="L385">	}</span>
+
+	public RequestSendOrder toRequestSendOrder() {
+<span class="fc" id="L388">		RequestSendOrder body = new RequestSendOrder();</span>
+<span class="fc" id="L389">		body.setSymbol(symbol);</span>
+<span class="fc" id="L390">		body.setExchange(exchange.intValue());</span>
+<span class="fc" id="L391">		body.setSecurityType(securityType.intValue());</span>
+<span class="fc" id="L392">		body.setSide(side.toString());</span>
+<span class="fc" id="L393">		body.setCashMargin(cashMargin.intValue());</span>
+<span class="fc bfc" id="L394" title="All 2 branches covered.">		if (marginTradeType != null) {</span>
+<span class="fc" id="L395">			body.setMarginTradeType(marginTradeType.intValue());</span>
+		}
+<span class="fc" id="L397">		body.setMarginPremiumUnit(marginPremiumUnit);</span>
+<span class="fc" id="L398">		body.setDelivType(delivType.intValue());</span>
+<span class="fc bfc" id="L399" title="All 2 branches covered.">		if (fundType != null) {</span>
+<span class="fc" id="L400">			body.setFundType(fundType.toString());</span>
+		}
+<span class="fc" id="L402">		body.setAccountType(accountType.intValue());</span>
+<span class="fc" id="L403">		body.setQty(qty);</span>
+<span class="fc bfc" id="L404" title="All 2 branches covered.">		if (closePositionOrder != null) {</span>
+<span class="fc" id="L405">			body.setClosePositionOrder(closePositionOrder.intValue());</span>
+		}
+<span class="fc bfc" id="L407" title="All 2 branches covered.">		if (closePositions != null) {</span>
+<span class="fc" id="L408">			List&lt;Positions&gt; pl = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L409" title="All 2 branches covered.">			for (ClosePosition cp : closePositions) {</span>
+<span class="fc" id="L410">				Positions p = cp.toPositions();</span>
+<span class="fc" id="L411">				pl.add(p);</span>
+<span class="fc" id="L412">			}</span>
+<span class="fc" id="L413">			body.setClosePositions(pl);</span>
+		}
+<span class="fc" id="L415">		body.setFrontOrderType(frontOrderType.intValue());</span>
+<span class="fc" id="L416">		body.setPrice(price);</span>
+<span class="fc" id="L417">		body.setExpireDay(expireDay);</span>
+<span class="fc bfc" id="L418" title="All 2 branches covered.">		if (reverseLimitOrder != null) {</span>
+<span class="fc" id="L419">			RequestSendOrderReverseLimitOrder rlo = reverseLimitOrder.toRequestSendOrderReverseLimitOrder();</span>
+<span class="fc" id="L420">			body.setReverseLimitOrder(rlo);</span>
+		}
+<span class="fc" id="L422">		return body;</span>
+	}
+
+	@Override
+	public String toString() {
+<span class="fc" id="L427">		StringBuilder sb = new StringBuilder();</span>
+<span class="fc" id="L428">		sb.append(&quot;class SendOrderRequestEx {\n&quot;);</span>
+		
+//	    sb.append(&quot;    password: &quot;).append(toIndentedString(password)).append(&quot;\n&quot;);
+<span class="fc" id="L431">		sb.append(&quot;    symbol: &quot;).append(toIndentedString(symbol)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L432">		sb.append(&quot;    exchange: &quot;).append(toIndentedString(exchange)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L433">		sb.append(&quot;    securityType: &quot;).append(toIndentedString(securityType)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L434">		sb.append(&quot;    side: &quot;).append(toIndentedString(side)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L435">		sb.append(&quot;    cashMargin: &quot;).append(toIndentedString(cashMargin)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L436">		sb.append(&quot;    marginTradeType: &quot;).append(toIndentedString(marginTradeType)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L437">		sb.append(&quot;    marginPremiumUnit: &quot;).append(toIndentedString(marginPremiumUnit)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L438">		sb.append(&quot;    delivType: &quot;).append(toIndentedString(delivType)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L439">		sb.append(&quot;    fundType: &quot;).append(toIndentedString(fundType)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L440">		sb.append(&quot;    accountType: &quot;).append(toIndentedString(accountType)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L441">		sb.append(&quot;    qty: &quot;).append(toIndentedString(qty)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L442">		sb.append(&quot;    closePositionOrder: &quot;).append(toIndentedString(closePositionOrder)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L443">		sb.append(&quot;    closePositions: &quot;).append(toIndentedString(closePositions)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L444">		sb.append(&quot;    frontOrderType: &quot;).append(toIndentedString(frontOrderType)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L445">		sb.append(&quot;    price: &quot;).append(toIndentedString(price)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L446">		sb.append(&quot;    expireDay: &quot;).append(toIndentedString(expireDay)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L447">		sb.append(&quot;    reverseLimitOrder: &quot;).append(toIndentedString(reverseLimitOrder)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L448">		sb.append(&quot;}&quot;);</span>
+<span class="fc" id="L449">		return sb.toString();</span>
+	}
+
+	/**
+	 * Convert the given object to string with each line indented by 4 spaces
+	 * (except the first line).
+	 */
+	private String toIndentedString(java.lang.Object o) {
+<span class="fc bfc" id="L457" title="All 2 branches covered.">		if (o == null) {</span>
+<span class="fc" id="L458">			return &quot;null&quot;;</span>
+		}
+<span class="fc" id="L460">		return o.toString().replace(&quot;\n&quot;, &quot;\n    &quot;);</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

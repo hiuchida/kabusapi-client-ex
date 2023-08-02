@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RegistSuccessEx.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">kabusapi-client-ex</a> &gt; <a href="index.source.html" class="el_package">com.github.hiuchida.kabusapi.client_ex.model</a> &gt; <span class="el_source">RegistSuccessEx.java</span></div><h1>RegistSuccessEx.java</h1><pre class="source lang-java linenums">package com.github.hiuchida.kabusapi.client_ex.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.github.hiuchida.kabusapi.enums.commons.ExchangeCode;
+
+import io.swagger.client.model.RegistSuccess;
+import io.swagger.client.model.RequestRegisterSymbols;
+
+public class RegistSuccessEx {
+
+<span class="fc" id="L13">	private RegistSuccess response = null;</span>
+
+<span class="fc" id="L15">	private List&lt;RegisterSymbolEx&gt; registList = null;</span>
+
+<span class="fc" id="L17">	public RegistSuccessEx(RegistSuccess response) {</span>
+<span class="fc" id="L18">		this.response = response;</span>
+<span class="fc" id="L19">		List&lt;RequestRegisterSymbols&gt; list = response.getRegistList();</span>
+<span class="fc bfc" id="L20" title="All 2 branches covered.">		if (list != null) {</span>
+<span class="fc" id="L21">			registList = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L22" title="All 2 branches covered.">			for (RequestRegisterSymbols item : list) {</span>
+<span class="fc" id="L23">				ExchangeCode ec = ExchangeCode.valueOf(item.getExchange());</span>
+<span class="fc" id="L24">				RegisterSymbolEx regist = new RegisterSymbolEx(item.getSymbol(), ec);</span>
+<span class="fc" id="L25">				registList.add(regist);</span>
+<span class="fc" id="L26">			}</span>
+		}
+<span class="fc" id="L28">	}</span>
+
+	public List&lt;RegisterSymbolEx&gt; getRegistList() {
+<span class="fc" id="L31">		return registList;</span>
+	}
+
+	public void setRegistList(List&lt;RegisterSymbolEx&gt; registList) {
+<span class="fc" id="L35">		this.registList = registList;</span>
+<span class="fc" id="L36">	}</span>
+
+	public RegistSuccess toRegistSuccess() {
+<span class="fc" id="L39">		return response;</span>
+	}
+
+	@Override
+	public String toString() {
+<span class="fc" id="L44">		StringBuilder sb = new StringBuilder();</span>
+<span class="fc" id="L45">		sb.append(&quot;class RegistSuccessEx {\n&quot;);</span>
+
+<span class="fc" id="L47">		sb.append(&quot;    registList: &quot;).append(toIndentedString(registList)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L48">		sb.append(&quot;}&quot;);</span>
+<span class="fc" id="L49">		return sb.toString();</span>
+	}
+
+	/**
+	 * Convert the given object to string with each line indented by 4 spaces
+	 * (except the first line).
+	 */
+	private String toIndentedString(java.lang.Object o) {
+<span class="fc bfc" id="L57" title="All 2 branches covered.">		if (o == null) {</span>
+<span class="fc" id="L58">			return &quot;null&quot;;</span>
+		}
+<span class="fc" id="L60">		return o.toString().replace(&quot;\n&quot;, &quot;\n    &quot;);</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

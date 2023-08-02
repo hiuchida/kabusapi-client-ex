@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>OrderApiEx.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">kabusapi-client-ex</a> &gt; <a href="index.source.html" class="el_package">com.github.hiuchida.kabusapi.client_ex</a> &gt; <span class="el_source">OrderApiEx.java</span></div><h1>OrderApiEx.java</h1><pre class="source lang-java linenums">package com.github.hiuchida.kabusapi.client_ex;
+
+import com.github.hiuchida.kabusapi.client_ex.model.SendOrderFutureRequestEx;
+import com.github.hiuchida.kabusapi.client_ex.model.SendOrderOptionRequestEx;
+import com.github.hiuchida.kabusapi.client_ex.model.SendOrderRequestEx;
+
+import io.swagger.client.ApiClient;
+import io.swagger.client.ApiException;
+import io.swagger.client.api.OrderApi;
+import io.swagger.client.model.OrderSuccess;
+import io.swagger.client.model.RequestCancelOrder;
+import io.swagger.client.model.RequestSendOrder;
+import io.swagger.client.model.RequestSendOrderDerivFuture;
+import io.swagger.client.model.RequestSendOrderDerivOption;
+
+public class OrderApiEx {
+	private OrderApi api;
+
+<span class="fc" id="L19">	public OrderApiEx() {</span>
+<span class="fc" id="L20">		api = new OrderApi();</span>
+<span class="fc" id="L21">	}</span>
+
+<span class="fc" id="L23">	public OrderApiEx(ApiClient apiClient) {</span>
+<span class="fc" id="L24">		api = new OrderApi(apiClient);</span>
+<span class="fc" id="L25">	}</span>
+
+	public OrderSuccess cancelorderPut(String orderId, String password, String X_API_KEY) throws ApiException {
+<span class="fc" id="L28">		RequestCancelOrder body = new RequestCancelOrder();</span>
+<span class="fc" id="L29">		body.setOrderId(orderId);</span>
+<span class="fc" id="L30">		body.setPassword(password);</span>
+<span class="fc" id="L31">		OrderSuccess response = api.cancelorderPut(body, X_API_KEY);</span>
+<span class="fc" id="L32">		return response;</span>
+	}
+
+	public OrderSuccess sendoderFuturePost(SendOrderFutureRequestEx req, String password, String X_API_KEY)
+			throws ApiException {
+<span class="fc" id="L37">		RequestSendOrderDerivFuture body = req.toRequestSendOrderDerivFuture();</span>
+<span class="fc" id="L38">		body.setPassword(password);</span>
+<span class="fc" id="L39">		OrderSuccess response = api.sendoderFuturePost(body, X_API_KEY);</span>
+<span class="fc" id="L40">		return response;</span>
+	}
+
+	public OrderSuccess sendorderOptionPost(SendOrderOptionRequestEx req, String password, String X_API_KEY)
+			throws ApiException {
+<span class="fc" id="L45">		RequestSendOrderDerivOption body = req.toRequestSendOrderDerivOption();</span>
+<span class="fc" id="L46">		body.setPassword(password);</span>
+<span class="fc" id="L47">		OrderSuccess response = api.sendorderOptionPost(body, X_API_KEY);</span>
+<span class="fc" id="L48">		return response;</span>
+	}
+
+	public OrderSuccess sendorderPost(SendOrderRequestEx req, String password, String X_API_KEY)
+			throws ApiException {
+<span class="fc" id="L53">		RequestSendOrder body = req.toRequestSendOrder();</span>
+<span class="fc" id="L54">		body.setPassword(password);</span>
+<span class="fc" id="L55">		OrderSuccess response = api.sendorderPost(body, X_API_KEY);</span>
+<span class="fc" id="L56">		return response;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>InfoApiExWithSleep.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">kabusapi-client-ex</a> &gt; <a href="index.source.html" class="el_package">com.github.hiuchida.kabusapi.client_ex.with_sleep</a> &gt; <span class="el_source">InfoApiExWithSleep.java</span></div><h1>InfoApiExWithSleep.java</h1><pre class="source lang-java linenums">package com.github.hiuchida.kabusapi.client_ex.with_sleep;
+
+import java.util.List;
+
+import com.github.hiuchida.kabusapi.client_ex.InfoApiEx;
+import com.github.hiuchida.kabusapi.client_ex.model.BoardSuccessEx;
+import com.github.hiuchida.kabusapi.client_ex.model.OrdersSuccessEx;
+import com.github.hiuchida.kabusapi.client_ex.model.PositionsSuccessEx;
+import com.github.hiuchida.kabusapi.enums.commons.ExchangeCode;
+import com.github.hiuchida.kabusapi.enums.commons.ProductCode;
+import com.github.hiuchida.kabusapi.enums.commons.SideCode;
+import com.github.hiuchida.kabusapi.enums.orders.CashmarginOCode;
+import com.github.hiuchida.kabusapi.enums.orders.StateOCode;
+import com.github.hiuchida.kabusapi.enums.symbolname.future.FutureCode;
+import com.github.hiuchida.kabusapi.enums.symbolname.option.OptionCode;
+import com.github.hiuchida.kabusapi.enums.symbolname.option.PutOrCallCode;
+
+import io.swagger.client.ApiClient;
+import io.swagger.client.ApiException;
+import io.swagger.client.model.ApiSoftLimitResponse;
+import io.swagger.client.model.SymbolNameSuccess;
+
+public class InfoApiExWithSleep {
+	private InfoApiEx api;
+
+<span class="fc" id="L26">	public InfoApiExWithSleep() {</span>
+<span class="fc" id="L27">		api = new InfoApiEx();</span>
+<span class="fc" id="L28">	}</span>
+
+<span class="fc" id="L30">	public InfoApiExWithSleep(ApiClient apiClient) {</span>
+<span class="fc" id="L31">		api = new InfoApiEx(apiClient);</span>
+<span class="fc" id="L32">	}</span>
+
+	public ApiSoftLimitResponse apisoftlimitGet(String X_API_KEY) throws ApiException, InterruptedException {
+		try {
+<span class="fc" id="L36">			ApiSoftLimitResponse response = api.apisoftlimitGet(X_API_KEY);</span>
+<span class="fc" id="L37">			return response;</span>
+		} finally {
+<span class="fc" id="L39">			SleepUtil.sleep10times();</span>
+		}
+	}
+
+	public BoardSuccessEx boardGet(String X_API_KEY, String symbol, ExchangeCode ec) throws ApiException, InterruptedException {
+		try {
+<span class="fc" id="L45">			BoardSuccessEx response = api.boardGet(X_API_KEY, symbol, ec);</span>
+<span class="fc" id="L46">			return response;</span>
+		} finally {
+<span class="fc" id="L48">			SleepUtil.sleep10times();</span>
+		}
+	}
+
+	public List&lt;OrdersSuccessEx&gt; ordersGet(String X_API_KEY, ProductCode product, String id, String updtime, String details, String symbol, StateOCode state, SideCode side, CashmarginOCode cashmargin)
+			throws ApiException, InterruptedException {
+		try {
+<span class="fc" id="L55">			List&lt;OrdersSuccessEx&gt; response = api.ordersGet(X_API_KEY, product, id, updtime, details, symbol, state, side, cashmargin);</span>
+<span class="fc" id="L56">			return response;</span>
+		} finally {
+<span class="fc" id="L58">			SleepUtil.sleep10times();</span>
+		}
+	}
+
+	public List&lt;PositionsSuccessEx&gt; positionsGet(String X_API_KEY, ProductCode product, String symbol, SideCode side, String addinfo)
+			throws ApiException, InterruptedException {
+		try {
+<span class="fc" id="L65">			List&lt;PositionsSuccessEx&gt; response = api.positionsGet(X_API_KEY, product, symbol, side, addinfo);</span>
+<span class="fc" id="L66">			return response;</span>
+		} finally {
+<span class="fc" id="L68">			SleepUtil.sleep10times();</span>
+		}
+	}
+
+	public SymbolNameSuccess symbolnameFutureGet(String X_API_KEY, Integer derivMonth, FutureCode futureCode)
+			throws ApiException, InterruptedException {
+		try {
+<span class="fc" id="L75">			SymbolNameSuccess response = api.symbolnameFutureGet(X_API_KEY, derivMonth, futureCode);</span>
+<span class="fc" id="L76">			return response;</span>
+		} finally {
+<span class="fc" id="L78">			SleepUtil.sleep10times();</span>
+		}
+	}
+
+	public SymbolNameSuccess symbolnameOptionGet(String X_API_KEY, Integer derivMonth, PutOrCallCode putOrCall, Integer strikePrice)
+			throws ApiException, InterruptedException {
+<span class="fc" id="L84">		SymbolNameSuccess response = this.symbolnameOptionGet(X_API_KEY, derivMonth, putOrCall, strikePrice, null);</span>
+<span class="fc" id="L85">		return response;</span>
+	}
+
+	public SymbolNameSuccess symbolnameOptionGet(String X_API_KEY, Integer derivMonth, PutOrCallCode putOrCall, Integer strikePrice, OptionCode optionCode)
+			throws ApiException, InterruptedException {
+		try {
+<span class="fc" id="L91">			SymbolNameSuccess response = api.symbolnameOptionGet(X_API_KEY, derivMonth, putOrCall, strikePrice, optionCode);</span>
+<span class="fc" id="L92">			return response;</span>
+		} finally {
+<span class="fc" id="L94">			SleepUtil.sleep10times();</span>
+		}
+	}
+
+	public SymbolNameSuccess symbolnameOptionMiniGet(String X_API_KEY, Integer derivMonth, Integer derivWeekly, PutOrCallCode putOrCall, Integer strikePrice)
+			throws ApiException, InterruptedException {
+		try {
+<span class="fc" id="L101">			SymbolNameSuccess response = api.symbolnameOptionMiniGet(X_API_KEY, derivMonth, derivWeekly, putOrCall, strikePrice);</span>
+<span class="fc" id="L102">			return response;</span>
+		} finally {
+<span class="fc" id="L104">			SleepUtil.sleep10times();</span>
+		}
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

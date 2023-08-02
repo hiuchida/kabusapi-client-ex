@@ -1,0 +1,1086 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BoardSuccessEx.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">kabusapi-client-ex</a> &gt; <a href="index.source.html" class="el_package">com.github.hiuchida.kabusapi.client_ex.model</a> &gt; <span class="el_source">BoardSuccessEx.java</span></div><h1>BoardSuccessEx.java</h1><pre class="source lang-java linenums">package com.github.hiuchida.kabusapi.client_ex.model;
+
+import java.time.OffsetDateTime;
+
+import com.github.hiuchida.kabusapi.enums.board.SignCode;
+import com.github.hiuchida.kabusapi.enums.commons.ExchangeCode;
+import com.github.hiuchida.kabusapi.enums.commons.SecurityTypeCode;
+
+import io.swagger.client.model.BoardSuccess;
+import io.swagger.client.model.BoardSuccessBuy1;
+import io.swagger.client.model.BoardSuccessBuy10;
+import io.swagger.client.model.BoardSuccessBuy2;
+import io.swagger.client.model.BoardSuccessBuy3;
+import io.swagger.client.model.BoardSuccessBuy4;
+import io.swagger.client.model.BoardSuccessBuy5;
+import io.swagger.client.model.BoardSuccessBuy6;
+import io.swagger.client.model.BoardSuccessBuy7;
+import io.swagger.client.model.BoardSuccessBuy8;
+import io.swagger.client.model.BoardSuccessBuy9;
+import io.swagger.client.model.BoardSuccessSell1;
+import io.swagger.client.model.BoardSuccessSell10;
+import io.swagger.client.model.BoardSuccessSell2;
+import io.swagger.client.model.BoardSuccessSell3;
+import io.swagger.client.model.BoardSuccessSell4;
+import io.swagger.client.model.BoardSuccessSell5;
+import io.swagger.client.model.BoardSuccessSell6;
+import io.swagger.client.model.BoardSuccessSell7;
+import io.swagger.client.model.BoardSuccessSell8;
+import io.swagger.client.model.BoardSuccessSell9;
+
+public class BoardSuccessEx {
+
+	public static class Quotation1 {
+
+		public static Quotation1 create(BoardSuccessSell1 o) {
+<span class="fc bfc" id="L36" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L37">				return null;</span>
+			}
+<span class="fc" id="L39">			return new Quotation1(o.getTime(), o.getSign(), o.getPrice(), o.getQty());</span>
+		}
+
+		public static Quotation1 create(BoardSuccessBuy1 o) {
+<span class="fc bfc" id="L43" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L44">				return null;</span>
+			}
+<span class="fc" id="L46">			return new Quotation1(o.getTime(), o.getSign(), o.getPrice(), o.getQty());</span>
+		}
+
+<span class="fc" id="L49">		private OffsetDateTime time = null;</span>
+
+<span class="fc" id="L51">		private SignCode sign = null;</span>
+
+<span class="fc" id="L53">		private Double price = null;</span>
+
+<span class="fc" id="L55">		private Double qty = null;</span>
+
+<span class="fc" id="L57">		private Quotation1(OffsetDateTime time, String signStr, Double price, Double qty) {</span>
+<span class="fc" id="L58">			this.time = time;</span>
+<span class="fc" id="L59">			this.sign = SignCode.valueOfCode(signStr);</span>
+<span class="fc" id="L60">			this.price = price;</span>
+<span class="fc" id="L61">			this.qty = qty;</span>
+<span class="fc" id="L62">		}</span>
+
+		public OffsetDateTime getTime() {
+<span class="fc" id="L65">			return time;</span>
+		}
+
+		public void setTime(OffsetDateTime time) {
+<span class="fc" id="L69">			this.time = time;</span>
+<span class="fc" id="L70">		}</span>
+
+		public SignCode getSign() {
+<span class="fc" id="L73">			return sign;</span>
+		}
+
+		public void setSign(SignCode sign) {
+<span class="fc" id="L77">			this.sign = sign;</span>
+<span class="fc" id="L78">		}</span>
+
+		public Double getPrice() {
+<span class="fc" id="L81">			return price;</span>
+		}
+
+		public void setPrice(Double price) {
+<span class="fc" id="L85">			this.price = price;</span>
+<span class="fc" id="L86">		}</span>
+
+		public Double getQty() {
+<span class="fc" id="L89">			return qty;</span>
+		}
+
+		public void setQty(Double qty) {
+<span class="fc" id="L93">			this.qty = qty;</span>
+<span class="fc" id="L94">		}</span>
+
+		@Override
+		public String toString() {
+<span class="fc" id="L98">			StringBuilder sb = new StringBuilder();</span>
+<span class="fc" id="L99">			sb.append(&quot;class Quotation1 {\n&quot;);</span>
+
+<span class="fc" id="L101">			sb.append(&quot;    time: &quot;).append(toIndentedString(time)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L102">			sb.append(&quot;    sign: &quot;).append(toIndentedString(sign)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L103">			sb.append(&quot;    price: &quot;).append(toIndentedString(price)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L104">			sb.append(&quot;    qty: &quot;).append(toIndentedString(qty)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L105">			sb.append(&quot;}&quot;);</span>
+<span class="fc" id="L106">			return sb.toString();</span>
+		}
+
+		/**
+		 * Convert the given object to string with each line indented by 4 spaces
+		 * (except the first line).
+		 */
+		private String toIndentedString(java.lang.Object o) {
+<span class="fc bfc" id="L114" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L115">				return &quot;null&quot;;</span>
+			}
+<span class="fc" id="L117">			return o.toString().replace(&quot;\n&quot;, &quot;\n    &quot;);</span>
+		}
+
+	}
+
+	public static class Quotation2 {
+
+		public static Quotation2 create(BoardSuccessSell2 o) {
+<span class="fc bfc" id="L125" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L126">				return null;</span>
+			}
+<span class="fc" id="L128">			return new Quotation2(o.getPrice(), o.getQty());</span>
+		}
+
+		public static Quotation2 create(BoardSuccessSell3 o) {
+<span class="fc bfc" id="L132" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L133">				return null;</span>
+			}
+<span class="fc" id="L135">			return new Quotation2(o.getPrice(), o.getQty());</span>
+		}
+
+		public static Quotation2 create(BoardSuccessSell4 o) {
+<span class="fc bfc" id="L139" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L140">				return null;</span>
+			}
+<span class="fc" id="L142">			return new Quotation2(o.getPrice(), o.getQty());</span>
+		}
+
+		public static Quotation2 create(BoardSuccessSell5 o) {
+<span class="fc bfc" id="L146" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L147">				return null;</span>
+			}
+<span class="fc" id="L149">			return new Quotation2(o.getPrice(), o.getQty());</span>
+		}
+
+		public static Quotation2 create(BoardSuccessSell6 o) {
+<span class="fc bfc" id="L153" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L154">				return null;</span>
+			}
+<span class="fc" id="L156">			return new Quotation2(o.getPrice(), o.getQty());</span>
+		}
+
+		public static Quotation2 create(BoardSuccessSell7 o) {
+<span class="fc bfc" id="L160" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L161">				return null;</span>
+			}
+<span class="fc" id="L163">			return new Quotation2(o.getPrice(), o.getQty());</span>
+		}
+
+		public static Quotation2 create(BoardSuccessSell8 o) {
+<span class="fc bfc" id="L167" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L168">				return null;</span>
+			}
+<span class="fc" id="L170">			return new Quotation2(o.getPrice(), o.getQty());</span>
+		}
+
+		public static Quotation2 create(BoardSuccessSell9 o) {
+<span class="fc bfc" id="L174" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L175">				return null;</span>
+			}
+<span class="fc" id="L177">			return new Quotation2(o.getPrice(), o.getQty());</span>
+		}
+
+		public static Quotation2 create(BoardSuccessSell10 o) {
+<span class="fc bfc" id="L181" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L182">				return null;</span>
+			}
+<span class="fc" id="L184">			return new Quotation2(o.getPrice(), o.getQty());</span>
+		}
+
+		public static Quotation2 create(BoardSuccessBuy2 o) {
+<span class="fc bfc" id="L188" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L189">				return null;</span>
+			}
+<span class="fc" id="L191">			return new Quotation2(o.getPrice(), o.getQty());</span>
+		}
+
+		public static Quotation2 create(BoardSuccessBuy3 o) {
+<span class="fc bfc" id="L195" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L196">				return null;</span>
+			}
+<span class="fc" id="L198">			return new Quotation2(o.getPrice(), o.getQty());</span>
+		}
+
+		public static Quotation2 create(BoardSuccessBuy4 o) {
+<span class="fc bfc" id="L202" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L203">				return null;</span>
+			}
+<span class="fc" id="L205">			return new Quotation2(o.getPrice(), o.getQty());</span>
+		}
+
+		public static Quotation2 create(BoardSuccessBuy5 o) {
+<span class="fc bfc" id="L209" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L210">				return null;</span>
+			}
+<span class="fc" id="L212">			return new Quotation2(o.getPrice(), o.getQty());</span>
+		}
+
+		public static Quotation2 create(BoardSuccessBuy6 o) {
+<span class="fc bfc" id="L216" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L217">				return null;</span>
+			}
+<span class="fc" id="L219">			return new Quotation2(o.getPrice(), o.getQty());</span>
+		}
+
+		public static Quotation2 create(BoardSuccessBuy7 o) {
+<span class="fc bfc" id="L223" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L224">				return null;</span>
+			}
+<span class="fc" id="L226">			return new Quotation2(o.getPrice(), o.getQty());</span>
+		}
+
+		public static Quotation2 create(BoardSuccessBuy8 o) {
+<span class="fc bfc" id="L230" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L231">				return null;</span>
+			}
+<span class="fc" id="L233">			return new Quotation2(o.getPrice(), o.getQty());</span>
+		}
+
+		public static Quotation2 create(BoardSuccessBuy9 o) {
+<span class="fc bfc" id="L237" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L238">				return null;</span>
+			}
+<span class="fc" id="L240">			return new Quotation2(o.getPrice(), o.getQty());</span>
+		}
+
+		public static Quotation2 create(BoardSuccessBuy10 o) {
+<span class="fc bfc" id="L244" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L245">				return null;</span>
+			}
+<span class="fc" id="L247">			return new Quotation2(o.getPrice(), o.getQty());</span>
+		}
+
+<span class="fc" id="L250">		private Double price = null;</span>
+
+<span class="fc" id="L252">		private Double qty = null;</span>
+
+<span class="fc" id="L254">		private Quotation2(Double price, Double qty) {</span>
+<span class="fc" id="L255">			this.price = price;</span>
+<span class="fc" id="L256">			this.qty = qty;</span>
+<span class="fc" id="L257">		}</span>
+
+		public Double getPrice() {
+<span class="fc" id="L260">			return price;</span>
+		}
+
+		public void setPrice(Double price) {
+<span class="fc" id="L264">			this.price = price;</span>
+<span class="fc" id="L265">		}</span>
+
+		public Double getQty() {
+<span class="fc" id="L268">			return qty;</span>
+		}
+
+		public void setQty(Double qty) {
+<span class="fc" id="L272">			this.qty = qty;</span>
+<span class="fc" id="L273">		}</span>
+
+		@Override
+		public String toString() {
+<span class="fc" id="L277">			StringBuilder sb = new StringBuilder();</span>
+<span class="fc" id="L278">			sb.append(&quot;class Quotation2 {\n&quot;);</span>
+
+<span class="fc" id="L280">			sb.append(&quot;    price: &quot;).append(toIndentedString(price)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L281">			sb.append(&quot;    qty: &quot;).append(toIndentedString(qty)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L282">			sb.append(&quot;}&quot;);</span>
+<span class="fc" id="L283">			return sb.toString();</span>
+		}
+
+		/**
+		 * Convert the given object to string with each line indented by 4 spaces
+		 * (except the first line).
+		 */
+		private String toIndentedString(java.lang.Object o) {
+<span class="fc bfc" id="L291" title="All 2 branches covered.">			if (o == null) {</span>
+<span class="fc" id="L292">				return &quot;null&quot;;</span>
+			}
+<span class="fc" id="L294">			return o.toString().replace(&quot;\n&quot;, &quot;\n    &quot;);</span>
+		}
+
+	}
+
+<span class="fc" id="L299">	private BoardSuccess response = null;</span>
+
+<span class="fc" id="L301">	private String symbol = null;</span>
+
+<span class="fc" id="L303">	private String symbolName = null;</span>
+
+<span class="fc" id="L305">	private ExchangeCode exchange = null;</span>
+
+<span class="fc" id="L307">	private String exchangeName = null;</span>
+
+<span class="fc" id="L309">	private Double currentPrice = null;</span>
+
+<span class="fc" id="L311">	private OffsetDateTime currentPriceTime = null;</span>
+
+<span class="fc" id="L313">	private String currentPriceChangeStatus = null;</span>
+
+<span class="fc" id="L315">	private Integer currentPriceStatus = null;</span>
+
+<span class="fc" id="L317">	private Double calcPrice = null;</span>
+
+<span class="fc" id="L319">	private Double previousClose = null;</span>
+
+<span class="fc" id="L321">	private OffsetDateTime previousCloseTime = null;</span>
+
+<span class="fc" id="L323">	private Double changePreviousClose = null;</span>
+
+<span class="fc" id="L325">	private Double changePreviousClosePer = null;</span>
+
+<span class="fc" id="L327">	private Double openingPrice = null;</span>
+
+<span class="fc" id="L329">	private OffsetDateTime openingPriceTime = null;</span>
+
+<span class="fc" id="L331">	private Double highPrice = null;</span>
+
+<span class="fc" id="L333">	private OffsetDateTime highPriceTime = null;</span>
+
+<span class="fc" id="L335">	private Double lowPrice = null;</span>
+
+<span class="fc" id="L337">	private OffsetDateTime lowPriceTime = null;</span>
+
+<span class="fc" id="L339">	private Double tradingVolume = null;</span>
+
+<span class="fc" id="L341">	private OffsetDateTime tradingVolumeTime = null;</span>
+
+<span class="fc" id="L343">	private Double VWAP = null;</span>
+
+<span class="fc" id="L345">	private Double tradingValue = null;</span>
+
+<span class="fc" id="L347">	private Double bidQty = null;</span>
+
+<span class="fc" id="L349">	private Double bidPrice = null;</span>
+
+<span class="fc" id="L351">	private OffsetDateTime bidTime = null;</span>
+
+<span class="fc" id="L353">	private SignCode bidSign = null;</span>
+
+<span class="fc" id="L355">	private Double marketOrderSellQty = null;</span>
+
+<span class="fc" id="L357">	private Quotation1 sell1 = null;</span>
+
+<span class="fc" id="L359">	private Quotation2 sell2 = null;</span>
+
+<span class="fc" id="L361">	private Quotation2 sell3 = null;</span>
+
+<span class="fc" id="L363">	private Quotation2 sell4 = null;</span>
+
+<span class="fc" id="L365">	private Quotation2 sell5 = null;</span>
+
+<span class="fc" id="L367">	private Quotation2 sell6 = null;</span>
+
+<span class="fc" id="L369">	private Quotation2 sell7 = null;</span>
+
+<span class="fc" id="L371">	private Quotation2 sell8 = null;</span>
+
+<span class="fc" id="L373">	private Quotation2 sell9 = null;</span>
+
+<span class="fc" id="L375">	private Quotation2 sell10 = null;</span>
+
+<span class="fc" id="L377">	private Double askQty = null;</span>
+
+<span class="fc" id="L379">	private Double askPrice = null;</span>
+
+<span class="fc" id="L381">	private OffsetDateTime askTime = null;</span>
+
+<span class="fc" id="L383">	private SignCode askSign = null;</span>
+
+<span class="fc" id="L385">	private Double marketOrderBuyQty = null;</span>
+
+<span class="fc" id="L387">	private Quotation1 buy1 = null;</span>
+
+<span class="fc" id="L389">	private Quotation2 buy2 = null;</span>
+
+<span class="fc" id="L391">	private Quotation2 buy3 = null;</span>
+
+<span class="fc" id="L393">	private Quotation2 buy4 = null;</span>
+
+<span class="fc" id="L395">	private Quotation2 buy5 = null;</span>
+
+<span class="fc" id="L397">	private Quotation2 buy6 = null;</span>
+
+<span class="fc" id="L399">	private Quotation2 buy7 = null;</span>
+
+<span class="fc" id="L401">	private Quotation2 buy8 = null;</span>
+
+<span class="fc" id="L403">	private Quotation2 buy9 = null;</span>
+
+<span class="fc" id="L405">	private Quotation2 buy10 = null;</span>
+
+<span class="fc" id="L407">	private Double overSellQty = null;</span>
+
+<span class="fc" id="L409">	private Double underBuyQty = null;</span>
+
+<span class="fc" id="L411">	private Double totalMarketValue = null;</span>
+
+<span class="fc" id="L413">	private Double clearingPrice = null;</span>
+
+<span class="fc" id="L415">	private Double IV = null;</span>
+
+<span class="fc" id="L417">	private Double gamma = null;</span>
+
+<span class="fc" id="L419">	private Double theta = null;</span>
+
+<span class="fc" id="L421">	private Double vega = null;</span>
+
+<span class="fc" id="L423">	private Double delta = null;</span>
+
+<span class="fc" id="L425">	private SecurityTypeCode securityType = null;</span>
+
+<span class="fc" id="L427">	public BoardSuccessEx(BoardSuccess response) {</span>
+<span class="fc" id="L428">		this.response = response;</span>
+<span class="fc" id="L429">		this.symbol = response.getSymbol();</span>
+<span class="fc" id="L430">		this.symbolName = response.getSymbolName();</span>
+<span class="fc" id="L431">		this.exchange = ExchangeCode.valueOf(response.getExchange());</span>
+<span class="fc" id="L432">		this.exchangeName = response.getExchangeName();</span>
+<span class="fc" id="L433">		this.currentPrice = response.getCurrentPrice();</span>
+<span class="fc" id="L434">		this.currentPriceTime = response.getCurrentPriceTime();</span>
+<span class="fc" id="L435">		this.currentPriceChangeStatus = response.getCurrentPriceChangeStatus();</span>
+<span class="fc" id="L436">		this.currentPriceStatus = response.getCurrentPriceStatus();</span>
+<span class="fc" id="L437">		this.calcPrice = response.getCalcPrice();</span>
+<span class="fc" id="L438">		this.previousClose = response.getPreviousClose();</span>
+<span class="fc" id="L439">		this.previousCloseTime = response.getPreviousCloseTime();</span>
+<span class="fc" id="L440">		this.changePreviousClose = response.getChangePreviousClose();</span>
+<span class="fc" id="L441">		this.changePreviousClosePer = response.getChangePreviousClosePer();</span>
+<span class="fc" id="L442">		this.openingPrice = response.getOpeningPrice();</span>
+<span class="fc" id="L443">		this.openingPriceTime = response.getOpeningPriceTime();</span>
+<span class="fc" id="L444">		this.highPrice = response.getHighPrice();</span>
+<span class="fc" id="L445">		this.highPriceTime = response.getHighPriceTime();</span>
+<span class="fc" id="L446">		this.lowPrice = response.getLowPrice();</span>
+<span class="fc" id="L447">		this.lowPriceTime = response.getLowPriceTime();</span>
+<span class="fc" id="L448">		this.tradingVolume = response.getTradingVolume();</span>
+<span class="fc" id="L449">		this.tradingVolumeTime = response.getTradingVolumeTime();</span>
+<span class="fc" id="L450">		this.VWAP = response.getVWAP();</span>
+<span class="fc" id="L451">		this.tradingValue = response.getTradingValue();</span>
+<span class="fc" id="L452">		this.bidQty = response.getBidQty();</span>
+<span class="fc" id="L453">		this.bidPrice = response.getBidPrice();</span>
+<span class="fc" id="L454">		this.bidTime = response.getBidTime();</span>
+<span class="fc" id="L455">		this.bidSign = SignCode.valueOfCode(response.getBidSign());</span>
+<span class="fc" id="L456">		this.marketOrderSellQty = response.getMarketOrderSellQty();</span>
+<span class="fc" id="L457">		this.sell1 = Quotation1.create(response.getSell1());</span>
+<span class="fc" id="L458">		this.sell2 = Quotation2.create(response.getSell2());</span>
+<span class="fc" id="L459">		this.sell3 = Quotation2.create(response.getSell3());</span>
+<span class="fc" id="L460">		this.sell4 = Quotation2.create(response.getSell4());</span>
+<span class="fc" id="L461">		this.sell5 = Quotation2.create(response.getSell5());</span>
+<span class="fc" id="L462">		this.sell6 = Quotation2.create(response.getSell6());</span>
+<span class="fc" id="L463">		this.sell7 = Quotation2.create(response.getSell7());</span>
+<span class="fc" id="L464">		this.sell8 = Quotation2.create(response.getSell8());</span>
+<span class="fc" id="L465">		this.sell9 = Quotation2.create(response.getSell9());</span>
+<span class="fc" id="L466">		this.sell10 = Quotation2.create(response.getSell10());</span>
+<span class="fc" id="L467">		this.askQty = response.getAskQty();</span>
+<span class="fc" id="L468">		this.askPrice = response.getAskPrice();</span>
+<span class="fc" id="L469">		this.askTime = response.getAskTime();</span>
+<span class="fc" id="L470">		this.askSign = SignCode.valueOfCode(response.getAskSign());</span>
+<span class="fc" id="L471">		this.marketOrderBuyQty = response.getMarketOrderBuyQty();</span>
+<span class="fc" id="L472">		this.buy1 = Quotation1.create(response.getBuy1());</span>
+<span class="fc" id="L473">		this.buy2 = Quotation2.create(response.getBuy2());</span>
+<span class="fc" id="L474">		this.buy3 = Quotation2.create(response.getBuy3());</span>
+<span class="fc" id="L475">		this.buy4 = Quotation2.create(response.getBuy4());</span>
+<span class="fc" id="L476">		this.buy5 = Quotation2.create(response.getBuy5());</span>
+<span class="fc" id="L477">		this.buy6 = Quotation2.create(response.getBuy6());</span>
+<span class="fc" id="L478">		this.buy7 = Quotation2.create(response.getBuy7());</span>
+<span class="fc" id="L479">		this.buy8 = Quotation2.create(response.getBuy8());</span>
+<span class="fc" id="L480">		this.buy9 = Quotation2.create(response.getBuy9());</span>
+<span class="fc" id="L481">		this.buy10 = Quotation2.create(response.getBuy10());</span>
+<span class="fc" id="L482">		this.overSellQty = response.getOverSellQty();</span>
+<span class="fc" id="L483">		this.underBuyQty = response.getUnderBuyQty();</span>
+<span class="fc" id="L484">		this.totalMarketValue = response.getTotalMarketValue();</span>
+<span class="fc" id="L485">		this.clearingPrice = response.getClearingPrice();</span>
+<span class="fc" id="L486">		this.IV = response.getIV();</span>
+<span class="fc" id="L487">		this.gamma = response.getGamma();</span>
+<span class="fc" id="L488">		this.theta = response.getTheta();</span>
+<span class="fc" id="L489">		this.vega = response.getVega();</span>
+<span class="fc" id="L490">		this.delta = response.getDelta();</span>
+<span class="fc" id="L491">		this.securityType = SecurityTypeCode.valueOf(response.getSecurityType());</span>
+<span class="fc" id="L492">	}</span>
+
+	public String getSymbol() {
+<span class="fc" id="L495">		return symbol;</span>
+	}
+
+	public void setSymbol(String symbol) {
+<span class="fc" id="L499">		this.symbol = symbol;</span>
+<span class="fc" id="L500">	}</span>
+
+	public String getSymbolName() {
+<span class="fc" id="L503">		return symbolName;</span>
+	}
+
+	public void setSymbolName(String symbolName) {
+<span class="fc" id="L507">		this.symbolName = symbolName;</span>
+<span class="fc" id="L508">	}</span>
+
+	public ExchangeCode getExchange() {
+<span class="fc" id="L511">		return exchange;</span>
+	}
+
+	public void setExchange(ExchangeCode exchange) {
+<span class="fc" id="L515">		this.exchange = exchange;</span>
+<span class="fc" id="L516">	}</span>
+
+	public String getExchangeName() {
+<span class="fc" id="L519">		return exchangeName;</span>
+	}
+
+	public void setExchangeName(String exchangeName) {
+<span class="fc" id="L523">		this.exchangeName = exchangeName;</span>
+<span class="fc" id="L524">	}</span>
+
+	public Double getCurrentPrice() {
+<span class="fc" id="L527">		return currentPrice;</span>
+	}
+
+	public void setCurrentPrice(Double currentPrice) {
+<span class="fc" id="L531">		this.currentPrice = currentPrice;</span>
+<span class="fc" id="L532">	}</span>
+
+	public OffsetDateTime getCurrentPriceTime() {
+<span class="fc" id="L535">		return currentPriceTime;</span>
+	}
+
+	public void setCurrentPriceTime(OffsetDateTime currentPriceTime) {
+<span class="fc" id="L539">		this.currentPriceTime = currentPriceTime;</span>
+<span class="fc" id="L540">	}</span>
+
+	public String getCurrentPriceChangeStatus() {
+<span class="fc" id="L543">		return currentPriceChangeStatus;</span>
+	}
+
+	public void setCurrentPriceChangeStatus(String currentPriceChangeStatus) {
+<span class="fc" id="L547">		this.currentPriceChangeStatus = currentPriceChangeStatus;</span>
+<span class="fc" id="L548">	}</span>
+
+	public Integer getCurrentPriceStatus() {
+<span class="fc" id="L551">		return currentPriceStatus;</span>
+	}
+
+	public void setCurrentPriceStatus(Integer currentPriceStatus) {
+<span class="fc" id="L555">		this.currentPriceStatus = currentPriceStatus;</span>
+<span class="fc" id="L556">	}</span>
+
+	public Double getCalcPrice() {
+<span class="fc" id="L559">		return calcPrice;</span>
+	}
+
+	public void setCalcPrice(Double calcPrice) {
+<span class="fc" id="L563">		this.calcPrice = calcPrice;</span>
+<span class="fc" id="L564">	}</span>
+
+	public Double getPreviousClose() {
+<span class="fc" id="L567">		return previousClose;</span>
+	}
+
+	public void setPreviousClose(Double previousClose) {
+<span class="fc" id="L571">		this.previousClose = previousClose;</span>
+<span class="fc" id="L572">	}</span>
+
+	public OffsetDateTime getPreviousCloseTime() {
+<span class="fc" id="L575">		return previousCloseTime;</span>
+	}
+
+	public void setPreviousCloseTime(OffsetDateTime previousCloseTime) {
+<span class="fc" id="L579">		this.previousCloseTime = previousCloseTime;</span>
+<span class="fc" id="L580">	}</span>
+
+	public Double getChangePreviousClose() {
+<span class="fc" id="L583">		return changePreviousClose;</span>
+	}
+
+	public void setChangePreviousClose(Double changePreviousClose) {
+<span class="fc" id="L587">		this.changePreviousClose = changePreviousClose;</span>
+<span class="fc" id="L588">	}</span>
+
+	public Double getChangePreviousClosePer() {
+<span class="fc" id="L591">		return changePreviousClosePer;</span>
+	}
+
+	public void setChangePreviousClosePer(Double changePreviousClosePer) {
+<span class="fc" id="L595">		this.changePreviousClosePer = changePreviousClosePer;</span>
+<span class="fc" id="L596">	}</span>
+
+	public Double getOpeningPrice() {
+<span class="fc" id="L599">		return openingPrice;</span>
+	}
+
+	public void setOpeningPrice(Double openingPrice) {
+<span class="fc" id="L603">		this.openingPrice = openingPrice;</span>
+<span class="fc" id="L604">	}</span>
+
+	public OffsetDateTime getOpeningPriceTime() {
+<span class="fc" id="L607">		return openingPriceTime;</span>
+	}
+
+	public void setOpeningPriceTime(OffsetDateTime openingPriceTime) {
+<span class="fc" id="L611">		this.openingPriceTime = openingPriceTime;</span>
+<span class="fc" id="L612">	}</span>
+
+	public Double getHighPrice() {
+<span class="fc" id="L615">		return highPrice;</span>
+	}
+
+	public void setHighPrice(Double highPrice) {
+<span class="fc" id="L619">		this.highPrice = highPrice;</span>
+<span class="fc" id="L620">	}</span>
+
+	public OffsetDateTime getHighPriceTime() {
+<span class="fc" id="L623">		return highPriceTime;</span>
+	}
+
+	public void setHighPriceTime(OffsetDateTime highPriceTime) {
+<span class="fc" id="L627">		this.highPriceTime = highPriceTime;</span>
+<span class="fc" id="L628">	}</span>
+
+	public Double getLowPrice() {
+<span class="fc" id="L631">		return lowPrice;</span>
+	}
+
+	public void setLowPrice(Double lowPrice) {
+<span class="fc" id="L635">		this.lowPrice = lowPrice;</span>
+<span class="fc" id="L636">	}</span>
+
+	public OffsetDateTime getLowPriceTime() {
+<span class="fc" id="L639">		return lowPriceTime;</span>
+	}
+
+	public void setLowPriceTime(OffsetDateTime lowPriceTime) {
+<span class="fc" id="L643">		this.lowPriceTime = lowPriceTime;</span>
+<span class="fc" id="L644">	}</span>
+
+	public Double getTradingVolume() {
+<span class="fc" id="L647">		return tradingVolume;</span>
+	}
+
+	public void setTradingVolume(Double tradingVolume) {
+<span class="fc" id="L651">		this.tradingVolume = tradingVolume;</span>
+<span class="fc" id="L652">	}</span>
+
+	public OffsetDateTime getTradingVolumeTime() {
+<span class="fc" id="L655">		return tradingVolumeTime;</span>
+	}
+
+	public void setTradingVolumeTime(OffsetDateTime tradingVolumeTime) {
+<span class="fc" id="L659">		this.tradingVolumeTime = tradingVolumeTime;</span>
+<span class="fc" id="L660">	}</span>
+
+	public Double getVWAP() {
+<span class="fc" id="L663">		return VWAP;</span>
+	}
+
+	public void setVWAP(Double vWAP) {
+<span class="fc" id="L667">		VWAP = vWAP;</span>
+<span class="fc" id="L668">	}</span>
+
+	public Double getTradingValue() {
+<span class="fc" id="L671">		return tradingValue;</span>
+	}
+
+	public void setTradingValue(Double tradingValue) {
+<span class="fc" id="L675">		this.tradingValue = tradingValue;</span>
+<span class="fc" id="L676">	}</span>
+
+	public Double getBidQty() {
+<span class="fc" id="L679">		return bidQty;</span>
+	}
+
+	public void setBidQty(Double bidQty) {
+<span class="fc" id="L683">		this.bidQty = bidQty;</span>
+<span class="fc" id="L684">	}</span>
+
+	public Double getBidPrice() {
+<span class="fc" id="L687">		return bidPrice;</span>
+	}
+
+	public void setBidPrice(Double bidPrice) {
+<span class="fc" id="L691">		this.bidPrice = bidPrice;</span>
+<span class="fc" id="L692">	}</span>
+
+	public OffsetDateTime getBidTime() {
+<span class="fc" id="L695">		return bidTime;</span>
+	}
+
+	public void setBidTime(OffsetDateTime bidTime) {
+<span class="fc" id="L699">		this.bidTime = bidTime;</span>
+<span class="fc" id="L700">	}</span>
+
+	public SignCode getBidSign() {
+<span class="fc" id="L703">		return bidSign;</span>
+	}
+
+	public void setBidSign(SignCode bidSign) {
+<span class="fc" id="L707">		this.bidSign = bidSign;</span>
+<span class="fc" id="L708">	}</span>
+
+	public Double getMarketOrderSellQty() {
+<span class="fc" id="L711">		return marketOrderSellQty;</span>
+	}
+
+	public void setMarketOrderSellQty(Double marketOrderSellQty) {
+<span class="fc" id="L715">		this.marketOrderSellQty = marketOrderSellQty;</span>
+<span class="fc" id="L716">	}</span>
+
+	public Quotation1 getSell1() {
+<span class="fc" id="L719">		return sell1;</span>
+	}
+
+	public void setSell1(Quotation1 sell1) {
+<span class="fc" id="L723">		this.sell1 = sell1;</span>
+<span class="fc" id="L724">	}</span>
+
+	public Quotation2 getSell2() {
+<span class="fc" id="L727">		return sell2;</span>
+	}
+
+	public void setSell2(Quotation2 sell2) {
+<span class="fc" id="L731">		this.sell2 = sell2;</span>
+<span class="fc" id="L732">	}</span>
+
+	public Quotation2 getSell3() {
+<span class="fc" id="L735">		return sell3;</span>
+	}
+
+	public void setSell3(Quotation2 sell3) {
+<span class="fc" id="L739">		this.sell3 = sell3;</span>
+<span class="fc" id="L740">	}</span>
+
+	public Quotation2 getSell4() {
+<span class="fc" id="L743">		return sell4;</span>
+	}
+
+	public void setSell4(Quotation2 sell4) {
+<span class="fc" id="L747">		this.sell4 = sell4;</span>
+<span class="fc" id="L748">	}</span>
+
+	public Quotation2 getSell5() {
+<span class="fc" id="L751">		return sell5;</span>
+	}
+
+	public void setSell5(Quotation2 sell5) {
+<span class="fc" id="L755">		this.sell5 = sell5;</span>
+<span class="fc" id="L756">	}</span>
+
+	public Quotation2 getSell6() {
+<span class="fc" id="L759">		return sell6;</span>
+	}
+
+	public void setSell6(Quotation2 sell6) {
+<span class="fc" id="L763">		this.sell6 = sell6;</span>
+<span class="fc" id="L764">	}</span>
+
+	public Quotation2 getSell7() {
+<span class="fc" id="L767">		return sell7;</span>
+	}
+
+	public void setSell7(Quotation2 sell7) {
+<span class="fc" id="L771">		this.sell7 = sell7;</span>
+<span class="fc" id="L772">	}</span>
+
+	public Quotation2 getSell8() {
+<span class="fc" id="L775">		return sell8;</span>
+	}
+
+	public void setSell8(Quotation2 sell8) {
+<span class="fc" id="L779">		this.sell8 = sell8;</span>
+<span class="fc" id="L780">	}</span>
+
+	public Quotation2 getSell9() {
+<span class="fc" id="L783">		return sell9;</span>
+	}
+
+	public void setSell9(Quotation2 sell9) {
+<span class="fc" id="L787">		this.sell9 = sell9;</span>
+<span class="fc" id="L788">	}</span>
+
+	public Quotation2 getSell10() {
+<span class="fc" id="L791">		return sell10;</span>
+	}
+
+	public void setSell10(Quotation2 sell10) {
+<span class="fc" id="L795">		this.sell10 = sell10;</span>
+<span class="fc" id="L796">	}</span>
+
+	public Double getAskQty() {
+<span class="fc" id="L799">		return askQty;</span>
+	}
+
+	public void setAskQty(Double askQty) {
+<span class="fc" id="L803">		this.askQty = askQty;</span>
+<span class="fc" id="L804">	}</span>
+
+	public Double getAskPrice() {
+<span class="fc" id="L807">		return askPrice;</span>
+	}
+
+	public void setAskPrice(Double askPrice) {
+<span class="fc" id="L811">		this.askPrice = askPrice;</span>
+<span class="fc" id="L812">	}</span>
+
+	public OffsetDateTime getAskTime() {
+<span class="fc" id="L815">		return askTime;</span>
+	}
+
+	public void setAskTime(OffsetDateTime askTime) {
+<span class="fc" id="L819">		this.askTime = askTime;</span>
+<span class="fc" id="L820">	}</span>
+
+	public SignCode getAskSign() {
+<span class="fc" id="L823">		return askSign;</span>
+	}
+
+	public void setAskSign(SignCode askSign) {
+<span class="fc" id="L827">		this.askSign = askSign;</span>
+<span class="fc" id="L828">	}</span>
+
+	public Double getMarketOrderBuyQty() {
+<span class="fc" id="L831">		return marketOrderBuyQty;</span>
+	}
+
+	public void setMarketOrderBuyQty(Double marketOrderBuyQty) {
+<span class="fc" id="L835">		this.marketOrderBuyQty = marketOrderBuyQty;</span>
+<span class="fc" id="L836">	}</span>
+
+	public Quotation1 getBuy1() {
+<span class="fc" id="L839">		return buy1;</span>
+	}
+
+	public void setBuy1(Quotation1 buy1) {
+<span class="fc" id="L843">		this.buy1 = buy1;</span>
+<span class="fc" id="L844">	}</span>
+
+	public Quotation2 getBuy2() {
+<span class="fc" id="L847">		return buy2;</span>
+	}
+
+	public void setBuy2(Quotation2 buy2) {
+<span class="fc" id="L851">		this.buy2 = buy2;</span>
+<span class="fc" id="L852">	}</span>
+
+	public Quotation2 getBuy3() {
+<span class="fc" id="L855">		return buy3;</span>
+	}
+
+	public void setBuy3(Quotation2 buy3) {
+<span class="fc" id="L859">		this.buy3 = buy3;</span>
+<span class="fc" id="L860">	}</span>
+
+	public Quotation2 getBuy4() {
+<span class="fc" id="L863">		return buy4;</span>
+	}
+
+	public void setBuy4(Quotation2 buy4) {
+<span class="fc" id="L867">		this.buy4 = buy4;</span>
+<span class="fc" id="L868">	}</span>
+
+	public Quotation2 getBuy5() {
+<span class="fc" id="L871">		return buy5;</span>
+	}
+
+	public void setBuy5(Quotation2 buy5) {
+<span class="fc" id="L875">		this.buy5 = buy5;</span>
+<span class="fc" id="L876">	}</span>
+
+	public Quotation2 getBuy6() {
+<span class="fc" id="L879">		return buy6;</span>
+	}
+
+	public void setBuy6(Quotation2 buy6) {
+<span class="fc" id="L883">		this.buy6 = buy6;</span>
+<span class="fc" id="L884">	}</span>
+
+	public Quotation2 getBuy7() {
+<span class="fc" id="L887">		return buy7;</span>
+	}
+
+	public void setBuy7(Quotation2 buy7) {
+<span class="fc" id="L891">		this.buy7 = buy7;</span>
+<span class="fc" id="L892">	}</span>
+
+	public Quotation2 getBuy8() {
+<span class="fc" id="L895">		return buy8;</span>
+	}
+
+	public void setBuy8(Quotation2 buy8) {
+<span class="fc" id="L899">		this.buy8 = buy8;</span>
+<span class="fc" id="L900">	}</span>
+
+	public Quotation2 getBuy9() {
+<span class="fc" id="L903">		return buy9;</span>
+	}
+
+	public void setBuy9(Quotation2 buy9) {
+<span class="fc" id="L907">		this.buy9 = buy9;</span>
+<span class="fc" id="L908">	}</span>
+
+	public Quotation2 getBuy10() {
+<span class="fc" id="L911">		return buy10;</span>
+	}
+
+	public void setBuy10(Quotation2 buy10) {
+<span class="fc" id="L915">		this.buy10 = buy10;</span>
+<span class="fc" id="L916">	}</span>
+
+	public Double getOverSellQty() {
+<span class="fc" id="L919">		return overSellQty;</span>
+	}
+
+	public void setOverSellQty(Double overSellQty) {
+<span class="fc" id="L923">		this.overSellQty = overSellQty;</span>
+<span class="fc" id="L924">	}</span>
+
+	public Double getUnderBuyQty() {
+<span class="fc" id="L927">		return underBuyQty;</span>
+	}
+
+	public void setUnderBuyQty(Double underBuyQty) {
+<span class="fc" id="L931">		this.underBuyQty = underBuyQty;</span>
+<span class="fc" id="L932">	}</span>
+
+	public Double getTotalMarketValue() {
+<span class="fc" id="L935">		return totalMarketValue;</span>
+	}
+
+	public void setTotalMarketValue(Double totalMarketValue) {
+<span class="fc" id="L939">		this.totalMarketValue = totalMarketValue;</span>
+<span class="fc" id="L940">	}</span>
+
+	public Double getClearingPrice() {
+<span class="fc" id="L943">		return clearingPrice;</span>
+	}
+
+	public void setClearingPrice(Double clearingPrice) {
+<span class="fc" id="L947">		this.clearingPrice = clearingPrice;</span>
+<span class="fc" id="L948">	}</span>
+
+	public Double getIV() {
+<span class="fc" id="L951">		return IV;</span>
+	}
+
+	public void setIV(Double iV) {
+<span class="fc" id="L955">		IV = iV;</span>
+<span class="fc" id="L956">	}</span>
+
+	public Double getGamma() {
+<span class="fc" id="L959">		return gamma;</span>
+	}
+
+	public void setGamma(Double gamma) {
+<span class="fc" id="L963">		this.gamma = gamma;</span>
+<span class="fc" id="L964">	}</span>
+
+	public Double getTheta() {
+<span class="fc" id="L967">		return theta;</span>
+	}
+
+	public void setTheta(Double theta) {
+<span class="fc" id="L971">		this.theta = theta;</span>
+<span class="fc" id="L972">	}</span>
+
+	public Double getVega() {
+<span class="fc" id="L975">		return vega;</span>
+	}
+
+	public void setVega(Double vega) {
+<span class="fc" id="L979">		this.vega = vega;</span>
+<span class="fc" id="L980">	}</span>
+
+	public Double getDelta() {
+<span class="fc" id="L983">		return delta;</span>
+	}
+
+	public void setDelta(Double delta) {
+<span class="fc" id="L987">		this.delta = delta;</span>
+<span class="fc" id="L988">	}</span>
+
+	public SecurityTypeCode getSecurityType() {
+<span class="fc" id="L991">		return securityType;</span>
+	}
+
+	public void setSecurityType(SecurityTypeCode securityType) {
+<span class="fc" id="L995">		this.securityType = securityType;</span>
+<span class="fc" id="L996">	}</span>
+
+	public BoardSuccess toBoardSuccess() {
+<span class="fc" id="L999">		return response;</span>
+	}
+
+	@Override
+	public String toString() {
+<span class="fc" id="L1004">		StringBuilder sb = new StringBuilder();</span>
+<span class="fc" id="L1005">		sb.append(&quot;class BoardSuccessEx {\n&quot;);</span>
+
+<span class="fc" id="L1007">		sb.append(&quot;    symbol: &quot;).append(toIndentedString(symbol)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1008">		sb.append(&quot;    symbolName: &quot;).append(toIndentedString(symbolName)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1009">		sb.append(&quot;    exchange: &quot;).append(toIndentedString(exchange)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1010">		sb.append(&quot;    exchangeName: &quot;).append(toIndentedString(exchangeName)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1011">		sb.append(&quot;    currentPrice: &quot;).append(toIndentedString(currentPrice)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1012">		sb.append(&quot;    currentPriceTime: &quot;).append(toIndentedString(currentPriceTime)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1013">		sb.append(&quot;    currentPriceChangeStatus: &quot;).append(toIndentedString(currentPriceChangeStatus)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1014">		sb.append(&quot;    currentPriceStatus: &quot;).append(toIndentedString(currentPriceStatus)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1015">		sb.append(&quot;    calcPrice: &quot;).append(toIndentedString(calcPrice)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1016">		sb.append(&quot;    previousClose: &quot;).append(toIndentedString(previousClose)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1017">		sb.append(&quot;    previousCloseTime: &quot;).append(toIndentedString(previousCloseTime)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1018">		sb.append(&quot;    changePreviousClose: &quot;).append(toIndentedString(changePreviousClose)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1019">		sb.append(&quot;    changePreviousClosePer: &quot;).append(toIndentedString(changePreviousClosePer)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1020">		sb.append(&quot;    openingPrice: &quot;).append(toIndentedString(openingPrice)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1021">		sb.append(&quot;    openingPriceTime: &quot;).append(toIndentedString(openingPriceTime)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1022">		sb.append(&quot;    highPrice: &quot;).append(toIndentedString(highPrice)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1023">		sb.append(&quot;    highPriceTime: &quot;).append(toIndentedString(highPriceTime)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1024">		sb.append(&quot;    lowPrice: &quot;).append(toIndentedString(lowPrice)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1025">		sb.append(&quot;    lowPriceTime: &quot;).append(toIndentedString(lowPriceTime)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1026">		sb.append(&quot;    tradingVolume: &quot;).append(toIndentedString(tradingVolume)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1027">		sb.append(&quot;    tradingVolumeTime: &quot;).append(toIndentedString(tradingVolumeTime)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1028">		sb.append(&quot;    VWAP: &quot;).append(toIndentedString(VWAP)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1029">		sb.append(&quot;    tradingValue: &quot;).append(toIndentedString(tradingValue)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1030">		sb.append(&quot;    bidQty: &quot;).append(toIndentedString(bidQty)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1031">		sb.append(&quot;    bidPrice: &quot;).append(toIndentedString(bidPrice)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1032">		sb.append(&quot;    bidTime: &quot;).append(toIndentedString(bidTime)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1033">		sb.append(&quot;    bidSign: &quot;).append(toIndentedString(bidSign)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1034">		sb.append(&quot;    marketOrderSellQty: &quot;).append(toIndentedString(marketOrderSellQty)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1035">		sb.append(&quot;    sell1: &quot;).append(toIndentedString(sell1)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1036">		sb.append(&quot;    sell2: &quot;).append(toIndentedString(sell2)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1037">		sb.append(&quot;    sell3: &quot;).append(toIndentedString(sell3)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1038">		sb.append(&quot;    sell4: &quot;).append(toIndentedString(sell4)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1039">		sb.append(&quot;    sell5: &quot;).append(toIndentedString(sell5)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1040">		sb.append(&quot;    sell6: &quot;).append(toIndentedString(sell6)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1041">		sb.append(&quot;    sell7: &quot;).append(toIndentedString(sell7)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1042">		sb.append(&quot;    sell8: &quot;).append(toIndentedString(sell8)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1043">		sb.append(&quot;    sell9: &quot;).append(toIndentedString(sell9)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1044">		sb.append(&quot;    sell10: &quot;).append(toIndentedString(sell10)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1045">		sb.append(&quot;    askQty: &quot;).append(toIndentedString(askQty)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1046">		sb.append(&quot;    askPrice: &quot;).append(toIndentedString(askPrice)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1047">		sb.append(&quot;    askTime: &quot;).append(toIndentedString(askTime)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1048">		sb.append(&quot;    askSign: &quot;).append(toIndentedString(askSign)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1049">		sb.append(&quot;    marketOrderBuyQty: &quot;).append(toIndentedString(marketOrderBuyQty)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1050">		sb.append(&quot;    buy1: &quot;).append(toIndentedString(buy1)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1051">		sb.append(&quot;    buy2: &quot;).append(toIndentedString(buy2)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1052">		sb.append(&quot;    buy3: &quot;).append(toIndentedString(buy3)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1053">		sb.append(&quot;    buy4: &quot;).append(toIndentedString(buy4)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1054">		sb.append(&quot;    buy5: &quot;).append(toIndentedString(buy5)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1055">		sb.append(&quot;    buy6: &quot;).append(toIndentedString(buy6)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1056">		sb.append(&quot;    buy7: &quot;).append(toIndentedString(buy7)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1057">		sb.append(&quot;    buy8: &quot;).append(toIndentedString(buy8)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1058">		sb.append(&quot;    buy9: &quot;).append(toIndentedString(buy9)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1059">		sb.append(&quot;    buy10: &quot;).append(toIndentedString(buy10)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1060">		sb.append(&quot;    overSellQty: &quot;).append(toIndentedString(overSellQty)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1061">		sb.append(&quot;    underBuyQty: &quot;).append(toIndentedString(underBuyQty)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1062">		sb.append(&quot;    totalMarketValue: &quot;).append(toIndentedString(totalMarketValue)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1063">		sb.append(&quot;    clearingPrice: &quot;).append(toIndentedString(clearingPrice)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1064">		sb.append(&quot;    IV: &quot;).append(toIndentedString(IV)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1065">		sb.append(&quot;    gamma: &quot;).append(toIndentedString(gamma)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1066">		sb.append(&quot;    theta: &quot;).append(toIndentedString(theta)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1067">		sb.append(&quot;    vega: &quot;).append(toIndentedString(vega)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1068">		sb.append(&quot;    delta: &quot;).append(toIndentedString(delta)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1069">		sb.append(&quot;    securityType: &quot;).append(toIndentedString(securityType)).append(&quot;\n&quot;);</span>
+<span class="fc" id="L1070">		sb.append(&quot;}&quot;);</span>
+<span class="fc" id="L1071">		return sb.toString();</span>
+	}
+
+	/**
+	 * Convert the given object to string with each line indented by 4 spaces
+	 * (except the first line).
+	 */
+	private String toIndentedString(java.lang.Object o) {
+<span class="fc bfc" id="L1079" title="All 2 branches covered.">		if (o == null) {</span>
+<span class="fc" id="L1080">			return &quot;null&quot;;</span>
+		}
+<span class="fc" id="L1082">		return o.toString().replace(&quot;\n&quot;, &quot;\n    &quot;);</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

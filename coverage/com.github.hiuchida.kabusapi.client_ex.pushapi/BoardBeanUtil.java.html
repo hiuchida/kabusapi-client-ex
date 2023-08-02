@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BoardBeanUtil.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">kabusapi-client-ex</a> &gt; <a href="index.source.html" class="el_package">com.github.hiuchida.kabusapi.client_ex.pushapi</a> &gt; <span class="el_source">BoardBeanUtil.java</span></div><h1>BoardBeanUtil.java</h1><pre class="source lang-java linenums">package com.github.hiuchida.kabusapi.client_ex.pushapi;
+
+import com.github.hiuchida.kabusapi.client_ex.util.GsonUtil;
+import com.google.gson.Gson;
+
+/**
+ * 時価情報Beanクラスに関するユーティリティクラス。
+ */
+public class BoardBeanUtil {
+
+	/**
+	 * 時価情報BeanからJSON文字列を生成する。
+	 * 
+	 * @param bb 時価情報Bean。
+	 * @return JSON文字列。
+	 */
+	public static String toJsonString(BoardBean bb) {
+<span class="fc" id="L18">		Gson gson = GsonUtil.getGson();</span>
+<span class="fc" id="L19">		String s = gson.toJson(bb);</span>
+<span class="fc" id="L20">		return s;</span>
+	}
+
+	private BoardBeanUtil() {
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
